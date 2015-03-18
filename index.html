@@ -1,0 +1,30 @@
+{% capture content %}
+
+  <header class="peakaboo" data-page="main">
+    <div class="wrapper">
+      <div class="header-title">
+        <span class="section-title">Section</span>
+        <span class="chapter-title">Chapter</span>
+      </div>
+    </div>
+  </header>
+  
+  <section id="content">
+    <article class="full">
+        {{ body }}
+    </article>
+  
+    {% for post in site.posts %}
+    <article>
+      <h3><a href="{{post.url}}">{{post.title}}</a></h3>
+      {{post.body}}
+    </article>
+    {% endfor %}
+
+    {% if parent %}
+      <p><a href="{{parent.url}}">&larr; Back to {{parent.title}}</a></p>
+    {% endif %}  
+  </section>
+{% endcapture %}
+
+{% include 'layouts/default' %}

@@ -1,0 +1,62 @@
+{% capture content %}
+  <header class="peakaboo" {% if title == 'Blog' %} data-page="main" {% endif %}>
+    <div class="wrapper">
+      <div class="header-title">
+        <span class="section-title">Blog</span>
+        <span class="chapter-title">{{ title }}</span>
+      </div>
+    </div>
+  </header>
+  <nav>
+      {% if previous %}<a href="{{ previous.url }}">previous</a>{% endif %}
+      {% if next %}<a href="{{ next.url }}">next</a>{% endif %}
+  </nav>
+  <section id="content">
+    <article>
+        {{ body }}
+    </article>
+    {% if title == 'Blog' %}
+    <article>
+      <ul class="posts diamondswrap">
+        {% for post in site.pages.blog.posts %}
+          <li>
+            <a href=""{% if page.url == url %} class="is-current-page"{% endif %}>
+               <div class="content">{{post.title}}</div>
+            </a>
+          </li>
+          <li>
+            <a href=""{% if page.url == url %} class="is-current-page"{% endif %}>
+               <div class="content">{{post.title}}</div>
+            </a>
+          </li>
+          <li>
+            <a href=""{% if page.url == url %} class="is-current-page"{% endif %}>
+               <div class="content">{{post.title}}</div>
+            </a>
+          </li>
+          <li>
+            <a href=""{% if page.url == url %} class="is-current-page"{% endif %}>
+              <div class="content">{{post.title}}</div>
+            </a>
+          </li>
+          <li>
+            <a href=""{% if page.url == url %} class="is-current-page"{% endif %}>
+               <div class="content">{{post.title}}</div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </article>
+    {% endif %}
+    
+    {% if parent %}
+    <article>
+      <p><a href="{{parent.url}}">&larr; Back to {{parent.title}}</a></p>
+    </article>
+    {% endif %}
+    <article id="post-content">
+    </article>
+  </section>
+{% endcapture %}
+
+{% include 'layouts/default' %}

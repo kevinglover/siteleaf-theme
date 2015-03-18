@@ -1,0 +1,143 @@
+@import "bourbon/bourbon";
+@import "base/grid-settings";
+@import "neat/neat";
+@import "base/base";
+
+@import "base/peakaboo";
+@import "diamonds";
+
+body.scroll-lock{
+  overflow:hidden;
+}
+
+#masthead, #figures, #content, footer .inner{
+  @include container;
+}
+
+#masthead h1{
+  @include site-title;
+}
+
+
+.wrapper, #content > article{
+  @include wrapper;
+}
+
+#content > .half{
+  @include wrapper;
+  @include media($medium-2-screen-up){
+    width:50%;
+    float:left;
+  }
+}
+
+h1 a{ 
+  
+  img{
+    height: 1em;
+    display: inline-block;
+    opacity: 0.8;
+    padding-top: 12px;
+  }
+  
+  &:hover{
+    img{
+      opacity: 1;
+    }
+  }
+}
+
+p.lead{
+  @include lead;
+}
+
+#content{
+  ul.default {
+    @extend %default-ul;
+  }
+
+  ol.default {
+    @extend %default-ol;
+  }
+  
+  ol.circle {
+    @extend %circle-ol;
+  }
+  
+  ul.circle {
+    @extend %circle-ul;
+  }
+}
+
+article#post-content{
+  position: fixed;
+  z-index: 100;
+  width: 50%;
+  height:100%;
+  margin: 3em 25%;
+  display: none;
+  top: 0;
+  left: 0;
+  overflow:scroll;
+  
+  .content{
+    
+  }
+}
+
+.posts li:nth-child(2n+1) a {
+  color: red;
+}
+
+
+.posts{
+}
+
+.posts .diamond-box-wrap{
+  position:relative;
+  @include transition(z-index 1s);
+  &.active{
+    z-index:5;
+  }
+}
+
+
+.posts li a{
+  border-radius: 50%;
+  display: block;
+  
+  .ripple-wrapper{
+    overflow:visible;
+  }
+  .ripple {
+    position: absolute;
+    width: 2000px;
+    height: 2000px;
+    margin-left: -1000px;
+    margin-top: -1000px;
+    border-radius: 100%;
+    background-color: rgba(0,0,0,0.05);
+    @include transform(scale(0.01));
+    @include transform-origin(50%);
+    opacity: 0;
+    pointer-events: auto;
+  }
+  .ripple.ripple-on {
+    transform: scale(100)!important;
+    @include transition(color 0.15s ease-in 0s, opacity 0.15s ease-in 0s, transform 6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s);
+    opacity: 1;
+  }
+  
+  .ripple.ripple-out {
+    transition: opacity 0.1s linear 0s !important;
+    // opacity: 0;
+  }
+}
+
+
+footer.main{
+  margin-top:1.5em;
+  padding:1.5em 0;
+  background-color:$grey-800;
+  color:$grey-100;
+}
