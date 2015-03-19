@@ -1,6 +1,12 @@
 /* @group diamonds */
-	$diamondSize: 10em;
+	$diamondSize: 8em;
 	$belowDiamondSize: 100%;
+  
+  .diamondswrap {
+    display:inline-block;
+    width:100%;
+  }
+
   .diamonds {
       text-align: center;
       overflow: visible;
@@ -55,7 +61,7 @@
       margin: 14.644660941%;
       
       border: 1px solid transparent;
-      background:$light-grey;
+      background:transparent;
   }
 
   .diamond-box-inner {
@@ -78,14 +84,16 @@
       height: 141.421356237%;
       margin: -20.7106781185% 0 0 -20.7106781185%; /* (1 - sqrt(2)) / 2 */
       
-      li.item {
-        width: 67%;
+      .item {
+        height: 100%;
+        width: 100%;
         position: relative;
-        top: 37%;
+        top: 0px;
         margin: auto;
-        font-size: 80%;
+        font-size: 100%;
         text-align: center;
         white-space:normal;
+        display:table;
       }
   }
 /* @end */

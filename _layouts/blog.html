@@ -11,41 +11,24 @@
       {% if previous %}<a href="{{ previous.url }}">previous</a>{% endif %}
       {% if next %}<a href="{{ next.url }}">next</a>{% endif %}
   </nav>
-  <section id="content">
+  <section id="content" class="blog">
     <article>
         {{ body }}
     </article>
     {% if title == 'Blog' %}
-    <article>
-      <ul class="posts diamondswrap">
+    <article class="posts">
+      <section class="diamondswrap">
         {% for post in site.pages.blog.posts %}
-          <li>
-            <a href=""{% if page.url == url %} class="is-current-page"{% endif %}>
+          <article class="post {{post.meta['color-bg']}}">
+            <a data-ripple-color="#FFF" data-html="true" 
+              data-content='<h2>{{post.title}}</h2><div class="date">{{post.date | date: "%b %d, %Y"}}</div>{{post.body}}' 
+              href="{{post.url}}"{% if page.url == url %} class="is-current-page"{% endif %}>
                <div class="content">{{post.title}}</div>
+               <div class="date">{{post.date | date: "%b %d, %Y"}}</div>
             </a>
-          </li>
-          <li>
-            <a href=""{% if page.url == url %} class="is-current-page"{% endif %}>
-               <div class="content">{{post.title}}</div>
-            </a>
-          </li>
-          <li>
-            <a href=""{% if page.url == url %} class="is-current-page"{% endif %}>
-               <div class="content">{{post.title}}</div>
-            </a>
-          </li>
-          <li>
-            <a href=""{% if page.url == url %} class="is-current-page"{% endif %}>
-              <div class="content">{{post.title}}</div>
-            </a>
-          </li>
-          <li>
-            <a href=""{% if page.url == url %} class="is-current-page"{% endif %}>
-               <div class="content">{{post.title}}</div>
-            </a>
-          </li>
+          </article>
         {% endfor %}
-      </ul>
+      </section>
     </article>
     {% endif %}
     
@@ -55,6 +38,8 @@
     </article>
     {% endif %}
     <article id="post-content">
+      <a class="btn close">x</a>
+      <div class="content"></div>
     </article>
   </section>
 {% endcapture %}

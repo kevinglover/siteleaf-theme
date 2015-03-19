@@ -2319,6 +2319,11 @@ header.peakaboo.mini .header-title .section-title:after {
 }
 
 /* @group diamonds */
+.diamondswrap {
+  display: inline-block;
+  width: 100%;
+}
+
 .diamonds {
   text-align: center;
   overflow: visible;
@@ -2374,7 +2379,7 @@ header.peakaboo.mini .header-title .section-title:after {
   height: 70.710678118%;
   margin: 14.644660941%;
   border: 1px solid transparent;
-  background: #f5f5f5;
+  background: transparent;
 }
 
 .diamond-box-inner {
@@ -2396,14 +2401,16 @@ header.peakaboo.mini .header-title .section-title:after {
   margin: -20.7106781185% 0 0 -20.7106781185%;
   /* (1 - sqrt(2)) / 2 */
 }
-.diamond-box-inner li.item {
-  width: 67%;
+.diamond-box-inner .item {
+  height: 100%;
+  width: 100%;
   position: relative;
-  top: 37%;
+  top: 0px;
   margin: auto;
-  font-size: 80%;
+  font-size: 100%;
   text-align: center;
   white-space: normal;
+  display: table;
 }
 
 /* @end */
@@ -2438,6 +2445,13 @@ body.scroll-lock {
   #masthead, #figures, #content, footer .inner {
     margin: 0 27.77777778%;
   }
+}
+
+#content.blog {
+  margin: 0;
+}
+#content.blog .posts {
+  padding: 0;
 }
 
 #masthead h1, #masthead header.peakaboo .header-title, header.peakaboo #masthead .header-title {
@@ -2483,38 +2497,42 @@ p.lead {
   padding: 0.70721358em 0 0.50015105em;
 }
 
-article#post-content {
-  position: absolute;
-  z-index: 100;
+#post-content {
+  position: fixed;
+  z-index: 520;
   width: 50%;
-  margin: 3em 25%;
+  height: 100%;
+  margin: 0 25%;
   display: none;
   top: 0;
   left: 0;
-}
-
-.posts li:nth-child(2n+1) a {
-  color: red;
-}
-
-.posts .diamond-box-wrap {
-  position: relative;
-  -webkit-transition: z-index 1s;
-  -moz-transition: z-index 1s;
-  transition: z-index 1s;
-}
-.posts .diamond-box-wrap.active {
-  z-index: 5;
-}
-
-.posts li a {
-  border-radius: 50%;
-  display: block;
-}
-.posts li a .ripple-wrapper {
   overflow: visible;
 }
-.posts li a .ripple {
+#post-content .content {
+  padding: 2em 0.75em 10em;
+  overflow: scroll;
+  height: 100%;
+  margin-left: -0.75em;
+  margin-right: -0.75em;
+}
+#post-content a.btn.close {
+  position: absolute;
+  right: -150px;
+  font-size: 2em;
+}
+
+.posts .post a {
+  transform: rotate(-45deg);
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border-radius: 50%;
+  display: table-cell;
+}
+.posts .post a .ripple-wrapper {
+  overflow: visible;
+}
+.posts .post a .ripple {
   position: absolute;
   width: 2000px;
   height: 2000px;
@@ -2534,16 +2552,235 @@ article#post-content {
   transform-origin: 50%;
   opacity: 0;
   pointer-events: auto;
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
 }
-.posts li a .ripple.ripple-on {
+.posts .post a .ripple.ripple-on {
   transform: scale(100) !important;
   -webkit-transition: color 0.15s ease-in 0s, opacity 0.15s ease-in 0s, -webkit-transform 6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
   -moz-transition: color 0.15s ease-in 0s, opacity 0.15s ease-in 0s, -moz-transform 6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
   transition: color 0.15s ease-in 0s, opacity 0.15s ease-in 0s, transform 6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
   opacity: 1;
 }
-.posts li a .ripple.ripple-out {
+.posts .post a .ripple.ripple-out {
   transition: opacity 0.1s linear 0s !important;
+}
+.posts .item {
+  background-color: #eeeeee;
+}
+.posts .item.red {
+  background-color: #f44336;
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+.posts .item.red a {
+  color: #f5f5f5;
+}
+.posts .item.red:hover {
+  background-color: #f55a4e;
+}
+.posts .item.pink {
+  background-color: #e91e63;
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+.posts .item.pink a {
+  color: #f5f5f5;
+}
+.posts .item.pink:hover {
+  background-color: #eb3573;
+}
+.posts .item.purple {
+  background-color: #9c27b0;
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+.posts .item.purple a {
+  color: #f5f5f5;
+}
+.posts .item.purple:hover {
+  background-color: #af2cc5;
+}
+.posts .item.deep-purple {
+  background-color: #673ab7;
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+.posts .item.deep-purple a {
+  color: #f5f5f5;
+}
+.posts .item.deep-purple:hover {
+  background-color: #7446c4;
+}
+.posts .item.indigo {
+  background-color: #3f51b5;
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+.posts .item.indigo a {
+  color: #f5f5f5;
+}
+.posts .item.indigo:hover {
+  background-color: #4d5ec1;
+}
+.posts .item.green {
+  background-color: #4caf50;
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+.posts .item.green a {
+  color: #f5f5f5;
+}
+.posts .item.green:hover {
+  background-color: #5cb860;
+}
+.posts .item.light-green {
+  background-color: #8bc34a;
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+.posts .item.light-green a {
+  color: #f5f5f5;
+}
+.posts .item.light-green:hover {
+  background-color: #97c95d;
+}
+.posts .item.teal {
+  background-color: #009688;
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+.posts .item.teal a {
+  color: #616161;
+}
+.posts .item.teal:hover {
+  background-color: #00b09f;
+}
+.posts .item.light-blue {
+  background-color: #03a9f4;
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+.posts .item.light-blue a {
+  color: #f5f5f5;
+}
+.posts .item.light-blue:hover {
+  background-color: #14b4fc;
+}
+.posts .item.lime {
+  background-color: #cddc39;
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+.posts .item.lime a {
+  color: #f5f5f5;
+}
+.posts .item.lime:hover {
+  background-color: #d2e04f;
+}
+.posts .item.blue {
+  background-color: #2196f3;
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+.posts .item.blue a {
+  color: #f5f5f5;
+}
+.posts .item.blue:hover {
+  background-color: #39a1f4;
+}
+.posts .item.yellow {
+  background-color: #ffeb3b;
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+.posts .item.yellow a {
+  color: #f5f5f5;
+}
+.posts .item.yellow:hover {
+  background-color: #ffee55;
+}
+.posts .item.amber {
+  background-color: #ffc107;
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+.posts .item.amber a {
+  color: #f5f5f5;
+}
+.posts .item.amber:hover {
+  background-color: #ffc721;
+}
+.posts .item.orange {
+  background-color: #ff9800;
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+.posts .item.orange a {
+  color: #f5f5f5;
+}
+.posts .item.orange:hover {
+  background-color: #ffa21a;
+}
+.posts .item.deep-orange {
+  background-color: #ff5722;
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+.posts .item.deep-orange a {
+  color: #f5f5f5;
+}
+.posts .item.deep-orange:hover {
+  background-color: #ff6a3c;
+}
+.posts .diamond-box-wrap {
+  position: relative;
+  -webkit-transition: z-index 1s;
+  -moz-transition: z-index 1s;
+  transition: z-index 1s;
+}
+.posts .diamond-box-wrap.active {
+  z-index: 500;
+}
+.posts .diamond-box-inner {
+  transform: rotate(0deg);
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.posts .diamond-box-inner .content {
+  margin-top: 59px;
+  font-size: 1.35em;
+  font-weight: 500;
+}
+.posts .diamond-box-inner .date {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  font-weight: 300;
+  opacity: 0.8;
 }
 
 footer.main {

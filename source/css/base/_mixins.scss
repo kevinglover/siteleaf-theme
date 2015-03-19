@@ -1,1 +1,32 @@
 // Mixins
+
+$color_names: "red","pink","purple","deep-purple","indigo","green", "light-green","teal","light-blue",
+"lime","blue","yellow","amber","orange","deep-orange";
+$colors: $red, $pink, $purple, $deep-purple, $indigo, $green, $light-green, $teal, 
+$light-blue, $lime, $blue, $yellow, $amber, $orange, $deep-orange;
+
+$i: 1;
+
+@mixin color-variants{
+  @each $color in $colors {
+    
+    &.#{nth($color_names, $i)}{
+      background-color:$color;
+      @include transition(background-color 0.2s ease);
+      
+      a{
+        @if lightness($color) < 40% {
+          color: $lightbg-text;
+        } @else {
+          color: $darkbg-text;
+        }
+      }
+      &:hover{
+        background-color: lighten($color, 5%);
+      }
+    }
+    
+    
+    $i: $i + 1;
+  }
+}

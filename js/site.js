@@ -1,22 +1,20 @@
 (function(){
-  
-  
+
   $(function(){
     var $body = $("body"),
-        $content = $("#post-content");
-        
-        
-    $(".posts li a")
+        $post = $("#post-content"),
+        $content = $("#post-content .content");
+        $items = $(".posts .post a");
+    
+    $items
     .addClass('withripple')
     .on('click.colorize',function(evt){
       evt.preventDefault();
       var $this = $(this),
           $ripples = $this.find(".ripple"),
           $parent = $(this).closest('.diamond-box-wrap'),
-          background = $this.css('background-color'),
-          text = $this.html();
-      
-      console.log($parent);
+          background = $this.closest(".post").css('background-color'),
+          text = $this.attr('data-content');
       if (background =='rgba(0, 0, 0, 0)' || background == 'transparent'){
         background = $this.css('color');
       }
@@ -25,27 +23,44 @@
       $ripples.not(":first").remove();
       if($parent.hasClass('active')){
         $this.find(".ripple").first().fadeOut(300,
-            function(){$(this).remove();});
+            function(){$(this).remove();
+        });
         $body.removeClass('scroll-lock');
         $parent.removeClass('active');
-        $content.fadeOut(400).html("");
+        $post.fadeOut(400);
+        $content.html("");
       }
       else{
         $body.addClass('scroll-lock');
         $parent.addClass('active');
-        $content.animate({"opacity":1}, 500, function(){
-          $(this).fadeIn(400).html(text);
+        $post.animate({"opacity":1}, 500, function(){
+          $content.html(text);
+          $(this).show();
+          $(this).fadeIn(400);
         });
       }
     });
     // Init Material 
     $.material.init();
     
-    $(".diamondswrap > li").addClass('item');
+    $("#post-content .close").on("click",function(){
+      var $parent = $(this).closest('.diamond-box-wrap');
+      $(".active").find(".ripple").first().fadeOut(300,
+          function(){$(this).remove();
+      });
+      $body.removeClass('scroll-lock');
+      $post.fadeOut(500,function(){
+        $(this).hide();
+        $(".diamond-box-wrap").removeClass('active');
+      });
+      $content.html("");
+    });
+    
+    $(".diamondswrap > .post").addClass('item');
     
     $(".diamondswrap").diamonds({
-        size: 300, // Size of the squares
-        gap: 5 // Pixels between squares
+        size: 260, // Size of the squares
+        gap: 0 // Pixels between squares
     });
     
   });
