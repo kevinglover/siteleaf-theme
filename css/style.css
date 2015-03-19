@@ -2321,7 +2321,7 @@ header.peakaboo.mini .header-title .section-title:after {
 /* @group diamonds */
 .diamondswrap {
   display: inline-block;
-  width: 100%;
+  width: 99%;
 }
 
 .diamonds {
@@ -2766,7 +2766,7 @@ p.lead {
 }
 .posts .diamond-box-inner .content {
   margin-top: 59px;
-  font-size: 1.35em;
+  font-size: 1.25em;
   font-weight: 500;
 }
 .posts .diamond-box-inner .date {
@@ -2774,6 +2774,7 @@ p.lead {
   position: absolute;
   right: 0;
   bottom: 0;
+  font-size: 0.9em;
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);

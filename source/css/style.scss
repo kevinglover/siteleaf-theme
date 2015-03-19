@@ -162,7 +162,7 @@ p.lead{
     
     .content{
       margin-top: 59px;
-      font-size: 1.35em;
+      font-size: 1.25em;
       font-weight: $bold-font-weight;
     }
     .date{
@@ -170,6 +170,7 @@ p.lead{
       position: absolute;
       right: 0;
       bottom: 0;
+      font-size: 0.9em;
       @include transform(rotate(-45deg));
       font-weight: $light-font-weight;
       opacity: 0.8;

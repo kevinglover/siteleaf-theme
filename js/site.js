@@ -59,8 +59,9 @@
     $(".diamondswrap > .post").addClass('item');
     
     $(".diamondswrap").diamonds({
-        size: 260, // Size of the squares
-        gap: 0 // Pixels between squares
+        size: 240, // Size of the squares
+        gap: 0, // Pixels between squares
+        minDiamondsPerRow: 1
     });
     
   });
