@@ -7,10 +7,6 @@
       </div>
     </div>
   </header>
-  <nav>
-      {% if previous %}<a href="{{ previous.url }}">previous</a>{% endif %}
-      {% if next %}<a href="{{ next.url }}">next</a>{% endif %}
-  </nav>
   <section id="content" class="blog">
     <article>
         {{ body }}
@@ -20,7 +16,7 @@
       <section class="diamondswrap">
         {% for post in site.pages.blog.posts %}
           <article class="post {{post.meta['color-bg']}}">
-            <a data-ripple-color="#FFF" data-html="true" 
+            <a data-ripple-color="transparent" data-html="true" 
               data-content='<h2>{{post.title}}</h2><div class="date">{{post.date | date: "%b %d, %Y"}}</div>{{post.body}}' 
               href="{{post.url}}"{% if page.url == url %} class="is-current-page"{% endif %}>
                <div class="content">{{post.title}}</div>
@@ -38,7 +34,7 @@
     </article>
     {% endif %}
     <article id="post-content">
-      <a class="btn close">x</a>
+      <a class="btn btn-flat close"><span class="mdi-navigation-close"></span></a>
       <div class="content"></div>
     </article>
   </section>

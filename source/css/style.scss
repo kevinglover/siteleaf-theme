@@ -6,6 +6,10 @@
 @import "base/peakaboo";
 @import "diamonds";
 
+body{
+  overflow-x: hidden;
+}
+
 body.scroll-lock{
   overflow:hidden;
 }
@@ -14,21 +18,16 @@ body.scroll-lock{
   @include container;
 }
 
-#content.blog{
-  margin:0;
-  
-  .posts{
-    padding:0;
-  }
-}
-
 #masthead h1{
   @include site-title;
 }
 
-
 .wrapper, #content > article{
   @include wrapper;
+}
+
+#content > article.posts{
+  padding:0;
 }
 
 #content > .half{
@@ -77,6 +76,7 @@ p.lead{
   }
 }
 
+
 #post-content{
   position: fixed;
   z-index: 520;
@@ -89,17 +89,26 @@ p.lead{
   overflow:visible;
   
   .content {
-    padding: 2em 0.75em 10em;
+    padding: 2em 0 10em;
     overflow: scroll;
     height: 100%;
-    margin-left: -0.75em;
-    margin-right: -0.75em;
   }
 
   a.btn.close {
-      position: absolute;
-      right: -150px;
-      font-size: 2em;
+    position: absolute;
+    right: -150px;
+    font-size: 2em;
+    text-align: center;
+    padding: 10px;
+    border-radius: 50%;
+    color: white;
+    color: rgba(255,255,255,0.5);
+    @include transition(color 0.2s ease, transform 0.2s ease);
+    
+    &:hover, &:focus{
+      color: white;
+      @include transform(rotateZ(90deg));
+    }
   }
 }
 
@@ -142,11 +151,6 @@ p.lead{
     }
   }
   
-  .item{
-    background-color:$grey-200;
-    @include color-variants;
-  }
-  
   .diamond-box-wrap{
     position:relative;
     @include transition(z-index 1s);
@@ -174,10 +178,18 @@ p.lead{
       @include transform(rotate(-45deg));
       font-weight: $light-font-weight;
       opacity: 0.8;
+      
+      @media (max-width: 40em){
+        right: 12px;
+      }
     }
   }
 }
 
+header.peakaboo.mini .wrapper{
+  padding: 0.2em 15px 0;
+  margin-left:3.75em;
+}
 
 footer.main{
   margin-top:1.5em;

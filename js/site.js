@@ -18,25 +18,14 @@
       if (background =='rgba(0, 0, 0, 0)' || background == 'transparent'){
         background = $this.css('color');
       }
-      
       $ripples.css({'background-color':background});
       $ripples.not(":first").remove();
-      if($parent.hasClass('active')){
-        $this.find(".ripple").first().fadeOut(300,
-            function(){$(this).remove();
-        });
-        $body.removeClass('scroll-lock');
-        $parent.removeClass('active');
-        $post.fadeOut(400);
-        $content.html("");
-      }
-      else{
+      if(!$parent.hasClass('active')){
         $body.addClass('scroll-lock');
         $parent.addClass('active');
         $post.animate({"opacity":1}, 500, function(){
           $content.html(text);
-          $(this).show();
-          $(this).fadeIn(400);
+          $(this).fadeIn(500);
         });
       }
     });
@@ -45,12 +34,13 @@
     
     $("#post-content .close").on("click",function(){
       var $parent = $(this).closest('.diamond-box-wrap');
-      $(".active").find(".ripple").first().fadeOut(300,
+      $(".active").find(".ripple").first()
+      .css({'opacity':0})
+      .animate({'top':0},300,
           function(){$(this).remove();
       });
       $body.removeClass('scroll-lock');
-      $post.fadeOut(500,function(){
-        $(this).hide();
+      $post.hide(500,function(){
         $(".diamond-box-wrap").removeClass('active');
       });
       $content.html("");
