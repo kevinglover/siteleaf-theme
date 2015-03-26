@@ -4,7 +4,9 @@
 @import "base/base";
 
 @import "base/peakaboo";
-@import "diamonds";
+
+
+$paper-color: #f2ede0;
 
 body{
   overflow-x: hidden;
@@ -14,16 +16,25 @@ body.scroll-lock{
   overflow:hidden;
 }
 
-#masthead, #figures, #content, footer .inner{
+.main, #footer{
+  display: inline-block;
+  width: 100%;
+}
+
+#footer{
+  margin-top:1em;
+  padding-top:1em;
+}
+
+#masthead, #figures, #summary, #content, #footer .inner{
   @include container;
+  section {
+    @include wrapper;
+  }
 }
 
 #masthead h1{
   @include site-title;
-}
-
-.wrapper, #content > article{
-  @include wrapper;
 }
 
 #content > article.posts{
@@ -37,6 +48,17 @@ body.scroll-lock{
     float:left;
   }
 }
+
+
+header.peakaboo.mini .wrapper{
+  padding: 0.2em 15px 0;
+  margin-left:3.75em;
+}
+
+header.peakaboo .header-title {
+  padding-left: 0.25em;
+}
+
 
 h1 a{ 
   
@@ -77,119 +99,101 @@ p.lead{
 }
 
 
-#post-content{
-  position: fixed;
-  z-index: 520;
+// Home
+$primary-blog-color: $blue-grey-700;
+
+.blog header{
+  display: table;
+  width: 100%;
+
+  &:before {
+    content: '';
+    background: $primary-blog-color;
+    display: none;
+    width:0;
+    
+    @include media($medium-screen-up){
+      display: table-cell;
+      width: 25%;
+      height: 10em;
+    }
+  }
+
+  .inner {
+    background:$paper-color;
+    display: table-cell;
+    vertical-align: bottom;
+    padding: 1em 1.75em;
+  }
+}
+
+.blog .posts{
+  float: left;
+  width: 100%;
+  display: block;
+}
+
+.morph-button-fixed, 
+.morph-button-fixed:not(.open) .morph-content,
+.post{
+  height: 12em;
+}
+
+.blog .post {
+  float:left;
   width: 50%;
-  height:100%;
-  margin: 0 25%;
-  display: none;
-  top: 0;
-  left: 0;
-  overflow:visible;
+  position:relative;
+  background: $primary-blog-color;
   
-  .content {
-    padding: 2em 0 10em;
-    overflow: scroll;
-    height: 100%;
+  a, button, .morph-content{
+    background-color:$primary-blog-color;
   }
-
-  a.btn.close {
-    position: absolute;
-    right: -150px;
-    font-size: 2em;
-    text-align: center;
-    padding: 10px;
-    border-radius: 50%;
-    color: white;
-    color: rgba(255,255,255,0.5);
-    @include transition(color 0.2s ease, transform 0.2s ease);
-    
-    &:hover, &:focus{
-      color: white;
-      @include transform(rotateZ(90deg));
-    }
+  .morph-content{
+    color: $paper-color;
   }
-}
-
-
-.posts{
-  .post a{
-    transform: rotate(-45deg);
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    border-radius: 50%;
-    display:table-cell;
-    
-    .ripple-wrapper{
-      overflow:visible;
+  
+  &:nth-child(2n){
+    background:$red;
+    a, button, .morph-content{
+      background-color:$red;
     }
-    .ripple {
-      position: absolute;
-      width: 2000px;
-      height: 2000px;
-      margin-left: -1000px;
-      margin-top: -1000px;
-      border-radius: 100%;
-      background-color: rgba(0,0,0,0.05);
-      @include transform(scale(0.01));
-      @include transform-origin(50%);
-      opacity: 0;
-      pointer-events: auto;
-      @include transition(background-color 0.2s ease);
-    }
-    .ripple.ripple-on {
-      transform: scale(100)!important;
-      @include transition(color 0.15s ease-in 0s, opacity 0.15s ease-in 0s, transform 6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s);
-      opacity: 1;
-    }
-    
-    .ripple.ripple-out {
-      transition: opacity 0.1s linear 0s !important;
-      // opacity: 0;
+    .morph-content{
+      color: $paper-color;
     }
   }
   
-  .diamond-box-wrap{
-    position:relative;
-    @include transition(z-index 1s);
-    &.active{
-      z-index:500;
+  &:nth-child(3n){
+    background:$cyan;
+    a, button, .morph-content{
+      background-color:$cyan;
+    }
+    .morph-content{
+      color: $lightbg-text;
     }
   }
-  .diamond-box-inner {
-    transform: rotate(0deg);
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    
-    .content{
-      margin-top: 59px;
-      font-size: 1.25em;
-      font-weight: $bold-font-weight;
+  
+  &:nth-child(4n){
+    background:$primary-blog-color;
+    a, button, .morph-content{
+      background-color:$primary-blog-color;
     }
-    .date{
-      display: block;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      font-size: 0.9em;
-      @include transform(rotate(-45deg));
-      font-weight: $light-font-weight;
-      opacity: 0.8;
-      
-      @media (max-width: 40em){
-        right: 12px;
-      }
+    .morph-content{
+      color: $paper-color;
+    }
+  }
+  
+  @include media($medium-screen-up){
+    &, .morph-button-overlay .morph-content{
+      width:25%;
+    }
+    .morph-button-overlay.open .morph-content{
+      width:100%;
     }
   }
 }
 
-header.peakaboo.mini .wrapper{
-  padding: 0.2em 15px 0;
-  margin-left:3.75em;
-}
+// Blog page
+@import "blog-page";
 
 footer.main{
   margin-top:1.5em;
