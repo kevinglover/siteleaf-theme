@@ -8,7 +8,6 @@ header.peakaboo{
   }
   
   .header-title{
-    @extend h1;
     color: $white;
     
     .section-title{
@@ -39,7 +38,13 @@ header.peakaboo{
       }
     }
   }
-  
+  &[data-top="true"].mini .header-title{
+    .section-title{
+      &:after{
+        content:'';
+      }
+    }
+  }
   &.p-hidden{
     .header-title{
       color: transparent;

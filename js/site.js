@@ -38,6 +38,11 @@
         offset = $peakaboo.offset().top,
         $mini = $peakaboo.clone().addClass('mini');
         
+        var $h1 = $mini.find('h1');
+        console.log($h1);
+        $h1.after($("<span/>").attr({'class':$h1.attr('class')}).html($h1.html()));
+        $h1.remove();
+        
         $mini.insertAfter($peakaboo);
     
     var scrollTimer = null;

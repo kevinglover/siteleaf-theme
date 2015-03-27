@@ -102,6 +102,46 @@ p.lead{
 // Home
 $primary-blog-color: $blue-grey-700;
 
+
+header.peakaboo.index{
+    padding-top:0;
+    overflow: hidden;
+
+  .header-title{
+    display:table;
+    margin: 0;
+    padding:0;
+    
+    .logo,
+    .section-title{
+        display:table-cell;
+        vertical-align: top;
+    }
+    
+    .logo{
+        width: 27.6666%;
+        height: 15em;
+        background: whitesmoke;
+        overflow:hidden;
+        padding-top: 1.25em;
+    }
+    .section-title{
+        padding-left:0.25em;
+        padding-right:0.25em;
+        padding-top: 1em;
+    }
+  }
+  &.mini .header-title .logo{
+    height: 2.5em;
+    text-align: center;
+    width: 21.6666%;
+    img{
+      height:100%;
+      max-height:100%;
+    }
+  }
+}
+
 .blog header{
   display: table;
   width: 100%;

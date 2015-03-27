@@ -5,18 +5,22 @@
     button, .morph-content{
       background-color:$color;
 
-        @if lightness($color) > 70% {
-          color: $lightbg-text;
-        } @else {
-          color: $darkbg-text;
-        }
-      
-      button{
-        border-color:$color;
-      
-        &:hover{
-          background-color: lighten($color, 5%);
-        }
+      @if lightness($color) > 70% {
+        color: $lightbg-text;
+      } @else {
+        color: $darkbg-text;
+      }
+    }
+    
+    .morph-content{
+      @if ($color == $yellow-600){
+        color: darken($color, 50%);
+      }
+    }
+    
+    button{
+      &:hover{
+        background-color: lighten($color, 5%);
       }
     }
   }
