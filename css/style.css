@@ -2439,7 +2439,7 @@ header.peakaboo.header .header-title .section-title {
   vertical-align: top;
 }
 header.peakaboo.header .header-title .logo {
-  width: 25.1%;
+  width: 25%;
   height: 15em;
   background: whitesmoke;
   overflow: hidden;
@@ -2463,7 +2463,7 @@ header.peakaboo.header.mini .header-title .logo {
 }
 @media screen and (min-width: 40em) {
   header.peakaboo.header.mini .header-title .logo {
-    width: 25.1%;
+    width: 25%;
   }
 }
 header.peakaboo.header.mini .header-title .logo img {
@@ -2479,6 +2479,7 @@ header.peakaboo.header.mini .header-title .logo img {
   float: left;
   color: #ffffff;
   padding: 2.5em 0 1.5em;
+  width: 100%;
 }
 #summary section {
   width: 100%;
@@ -2536,8 +2537,6 @@ header.peakaboo.header.mini .header-title .logo img {
   #preamble section {
     width: 75%;
   }
-}
-@media screen and (min-width: 55.5em) {
   #preamble aside {
     border: none;
     width: 25%;
@@ -2564,6 +2563,12 @@ header.peakaboo.header.mini .header-title .logo img {
   #about {
     min-height: 28em;
     display: table;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 156em) {
+  #about {
+    min-height: 18em;
   }
 }
 #about header, #about section {
@@ -2595,12 +2600,21 @@ header.peakaboo.header.mini .header-title .logo img {
   }
 }
 #about section {
-  width: 100%;
+  margin: 0 5.55555556%;
 }
 @media screen and (min-width: 45em) {
   #about section {
     width: 75%;
+    margin: 0;
     display: table-cell;
+    padding-left: 1.99em;
+    padding-right: 3.15em;
+  }
+}
+@media screen and (min-width: 61.5em) {
+  #about section {
+    padding-left: 2.4em;
+    padding-right: 4.15em;
   }
 }
 
@@ -2613,6 +2627,12 @@ header.peakaboo.header.mini .header-title .logo img {
     text-align: right;
   }
 }
+@media screen and (min-width: 156em) {
+  .csstransforms #about header h2 {
+    top: 6em;
+  }
+}
+
 .blog header {
   display: table;
   width: 100%;

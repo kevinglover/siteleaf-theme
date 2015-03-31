@@ -120,7 +120,7 @@ header.peakaboo.header{
     }
     
     .logo{
-        width: 25.1%;
+        width: 25%;
         height: 15em;
         background: whitesmoke;
         overflow:hidden;
@@ -146,7 +146,7 @@ header.peakaboo.header{
       position: relative;
       
       @include media($medium-screen-up){
-        width: 25.1%;
+        width: 25%;
       }
       
       img{
@@ -166,6 +166,7 @@ header.peakaboo.header{
   float: left;
   color: $white;
   padding: 2.5em 0 1.5em;
+  width: 100%;
   
   section{
     width: 100%;
@@ -197,8 +198,7 @@ header.peakaboo.header{
     section{
       width:75%;
     }
-  }
-  @include media($large-screen-up){
+    
     aside{
       border:none;
       width:25%;
@@ -227,6 +227,11 @@ header.peakaboo.header{
   @include media($medium-2-screen-up){
     min-height: 28em;
     display: table;
+    width:100%;
+  }
+  
+  @include media($massive-screen-up){
+    min-height: 18em;
   }
   
   header, section{
@@ -251,21 +256,33 @@ header.peakaboo.header{
     }
   }
   section{
-    width: 100%;
+    margin: 0 5.55555556%;
     
     @include media($medium-2-screen-up){
       width: 75%;
+      margin:0;
       display: table-cell;
+      padding-left: 1.99em;
+      padding-right: 3.15em;
+    }
+    
+    @include media($large-2-screen-up){
+      padding-left: 2.4em;
+      padding-right: 4.15em;
     }
   }
 }
-@include media($medium-2-screen-up){
-  .csstransforms #about header h2{
+
+.csstransforms #about header h2{
+  @include media($medium-2-screen-up){
     white-space: nowrap;
     position:absolute;
     top:1em;
     left:0;
     text-align: right;
+  }
+  @include media($massive-screen-up){
+    top:6em;
   }
 }
 
