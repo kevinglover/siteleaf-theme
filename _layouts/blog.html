@@ -1,43 +1,40 @@
+{% capture section_title %}
+  {{ title }}
+{% endcapture %}
+
+{% capture chapter_title %}
+{% if title != 'Blog' %}
+  {{ title }}
+{% endif %}
+{% endcapture %}
+
+{% capture header_meta %}
+  {% if title == 'Blog' %} data-page="main" data-top="true"{% endif %}
+{% endcapture %}
+
 {% capture content %}
-  <header class="peakaboo" {% if title == 'Blog' %} data-page="main" {% endif %}>
-    <div class="wrapper">
-      <div class="header-title">
-        <span class="section-title">Blog</span>
-        <span class="chapter-title">{{ title }}</span>
-      </div>
-    </div>
-  </header>
-  <section id="content" class="blog">
-    <article>
-        {{ body }}
-    </article>
-    {% if title == 'Blog' %}
-    <article class="posts">
-      <section class="diamondswrap">
-        {% for post in site.pages.blog.posts %}
-          <article class="post {{post.meta['color-bg']}}">
-            <a data-ripple-color="transparent" data-html="true" 
-              data-content='<h2>{{post.title}}</h2><div class="date">{{post.date | date: "%b %d, %Y"}}</div>{{post.body}}' 
-              href="{{post.url}}"{% if page.url == url %} class="is-current-page"{% endif %}>
-               <div class="content">{{post.title}}</div>
-               <div class="date">{{post.date | date: "%b %d, %Y"}}</div>
-            </a>
-          </article>
-        {% endfor %}
-      </section>
-    </article>
-    {% endif %}
-    
-    {% if parent %}
-    <article>
-      <p><a href="{{parent.url}}">&larr; Back to {{parent.title}}</a></p>
-    </article>
-    {% endif %}
-    <article id="post-content">
-      <a class="btn btn-flat close"><span class="mdi-navigation-close"></span></a>
-      <div class="content"></div>
-    </article>
-  </section>
+  <article class="blog page">
+    <ol class="posts">
+      {% for post in site.pages.blog.posts %}
+        <li class="post {{post.meta['bg-color']}}">
+          <div class="morph-button morph-button-overlay morph-button-fixed">
+            <button type="button">{{post.title}}</button>
+            <div class="morph-content">
+              <div>
+                <div class="content-style-overlay">
+                  <span class="icon icon-close">Close the overlay</span>
+                  <div class="content">
+                    <h2>{{post.title}}</h2>
+                    {{post.body}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- morph-button -->
+        </li>
+      {% endfor %} 
+    </ol>
+  </article>
 {% endcapture %}
 
 {% include 'layouts/default' %}

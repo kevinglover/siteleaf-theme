@@ -1,0 +1,90 @@
+/* @group diamonds */
+	$diamondSize: 8em;
+	$belowDiamondSize: 100%;
+	  
+
+.content-style-overlay{
+	@include container;
+	.content{
+		@include wrapper;
+	}
+}
+
+.blog.page{
+	// .morph-button-fixed, 
+	// .morph-button-fixed:not(.open) .morph-content,
+	// .post{
+	// 	width:$diamondSize;
+	// 	height:$diamondSize;
+	// }
+  
+  .posts{
+		background-color:$paper-color;
+	}
+  // Material background shades
+	.post{
+    @include background-color-variant($grey-400);
+    
+    &.red {
+        @include background-color-variant($red)
+    }
+    &.pink {
+        @include background-color-variant($pink);
+    }
+    &.purple {
+        @include background-color-variant($purple);
+    }
+    &.deep-purple {
+        @include background-color-variant($deep-purple);
+    }
+    &.indigo {
+        @include background-color-variant($indigo);
+    }
+    &.light-blue {
+        @include background-color-variant($light-blue);
+    }
+    &.blue {
+        @include background-color-variant($blue-300);
+    }
+    &.green {
+        @include background-color-variant($green-300);
+    }
+    &.cyan {
+        @include background-color-variant($cyan);
+    }
+    &.teal {
+        @include background-color-variant($teal);
+    }
+    &.light-green {
+        @include background-color-variant($light-green);
+    }
+    &.lime {
+        @include background-color-variant($lime);
+    }
+    &.light-yellow {
+        @include background-color-variant($yellow-300);
+    }
+		&.yellow {
+        @include background-color-variant($yellow-600);
+    }
+    &.orange {
+        @include background-color-variant($orange);
+    }
+    &.deep-orange {
+        @include background-color-variant($deep-orange);
+    }
+    &.grey {
+        @include background-color-variant($grey);
+    }
+    &.blue-grey {
+        @include background-color-variant($blue-grey);
+    }
+    &.brown {
+        @include background-color-variant($brown);
+    }
+    &.light-grey {
+        @include background-color-variant($light-grey);
+    }
+  }
+}
+/* @end */

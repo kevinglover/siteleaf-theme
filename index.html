@@ -1,30 +1,68 @@
+{% capture section_title %}
+  {{site.pages.index.title}}
+{% endcapture %}
+
+{% capture chapter_title %}
+{% endcapture %}
+
+{% capture header_meta %}
+  data-page="main" data-top="true"
+{% endcapture %}
+
+
 {% capture content %}
-
-  <header class="peakaboo" data-page="main">
-    <div class="wrapper">
-      <div class="header-title">
-        <span class="section-title">Section</span>
-        <span class="chapter-title">Chapter</span>
-      </div>
+  <section id="summary">
+    <div class="content">
+      <section>
+        {{ site.pages.index.posts.summary }}
+      </section>
     </div>
-  </header>
-  
-  <section id="content">
-    <article class="full">
-        {{ body }}
-    </article>
-  
-    {% for post in site.posts %}
-    <article>
-      <h3><a href="{{post.url}}">{{post.title}}</a></h3>
-      {{post.body}}
-    </article>
-    {% endfor %}
-
-    {% if parent %}
-      <p><a href="{{parent.url}}">&larr; Back to {{parent.title}}</a></p>
-    {% endif %}  
   </section>
+  
+  <article id="preamble">
+    <section>
+      {{ site.pages.index.posts.preamble }}
+    </section>
+    <aside>
+      {{ site.pages.index.posts.sidebar }}
+    </aside>
+  </article>
+  
+  <article id="about">
+    <header>
+      <h2>About Me</h2>
+    </header>
+    <section>
+      {{ site.pages.index.posts.about }}
+    </section>
+  </article>
+  
+  <article class="blog">
+    <header>
+      <div class="inner">
+        <h2><a href="{{site.pages.blog.url}}">Blog</a></h2>
+        <p>Latest on my mind.</p>
+      </div>
+    </header>
+    <ol class="posts">
+      {% for post in site.pages.blog.posts limit:4 %}
+        <li class="post">
+          <div class="morph-button morph-button-overlay morph-button-fixed">
+            <button type="button">{{post.title}}</button>
+            <div class="morph-content">
+              <div>
+                <div class="content-style-overlay">
+                  <span class="icon icon-close">Close the overlay</span>
+                  <h2>{{post.title}}</h2>
+                  {{post.body}}
+                </div>
+              </div>
+            </div>
+          </div><!-- morph-button -->
+        </li>
+      {% endfor %} 
+    </ol>
+  </article>
 {% endcapture %}
 
 {% include 'layouts/default' %}

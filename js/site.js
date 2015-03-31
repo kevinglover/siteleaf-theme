@@ -1,60 +1,21 @@
 (function(){
 
-  $(function(){
-    var $body = $("body"),
-        $post = $("#post-content"),
-        $content = $("#post-content .content");
-        $items = $(".posts .post a");
-    
-    $items
-    .addClass('withripple')
-    .on('click.colorize',function(evt){
-      evt.preventDefault();
-      var $this = $(this),
-          $ripples = $this.find(".ripple"),
-          $parent = $(this).closest('.diamond-box-wrap'),
-          background = $this.closest(".post").css('background-color'),
-          text = $this.attr('data-content');
-      if (background =='rgba(0, 0, 0, 0)' || background == 'transparent'){
-        background = $this.css('color');
+  function colorToHex(color) {
+      if (color.substr(0, 1) === '#') {
+          return color;
       }
-      $ripples.css({'background-color':background});
-      $ripples.not(":first").remove();
-      if(!$parent.hasClass('active')){
-        $body.addClass('scroll-lock');
-        $parent.addClass('active');
-        $post.animate({"opacity":1}, 500, function(){
-          $content.html(text);
-          $(this).fadeIn(500);
-        });
+      var digits = /(.*?)rgb\((\d+), (\d+), (\d+)\)/.exec(color);
+
+      var red = parseInt(digits[2]);
+      var green = parseInt(digits[3]);
+      var blue = parseInt(digits[4]);
+      var rgb = blue | (green << 8) | (red << 16);
+      rgb = rgb.toString(16);
+      if (rgb.length<6){
+        return digits[1] + '#00' + rgb;
       }
-    });
-    // Init Material 
-    $.material.init();
-    
-    $("#post-content .close").on("click",function(){
-      var $parent = $(this).closest('.diamond-box-wrap');
-      $(".active").find(".ripple").first()
-      .css({'opacity':0})
-      .animate({'top':0},300,
-          function(){$(this).remove();
-      });
-      $body.removeClass('scroll-lock');
-      $post.hide(500,function(){
-        $(".diamond-box-wrap").removeClass('active');
-      });
-      $content.html("");
-    });
-    
-    $(".diamondswrap > .post").addClass('item');
-    
-    $(".diamondswrap").diamonds({
-        size: 240, // Size of the squares
-        gap: 0, // Pixels between squares
-        minDiamondsPerRow: 1
-    });
-    
-  });
+      return digits[1] + '#' + rgb;
+  }
   
   // Init Selectize 
   $(function() {
@@ -76,6 +37,11 @@
     var $peakaboo = $("header.peakaboo"),
         offset = $peakaboo.offset().top,
         $mini = $peakaboo.clone().addClass('mini');
+        
+        var $h1 = $mini.find('h1');
+        console.log($h1);
+        $h1.after($("<span/>").attr({'class':$h1.attr('class')}).html($h1.html()));
+        $h1.remove();
         
         $mini.insertAfter($peakaboo);
     
@@ -103,7 +69,96 @@
         $mini.removeClass('shadow');
       }
     }
-    
   });
+  
+  $(function(){
+    $(document).ready(function(){
+      var url = window.location.pathname,
+          $logo = $(".logo a");
+      if($logo.attr('href') == url){
+        $logo.on('click',function(evt){
+          evt.preventDefault();
+          $("html, body").animate({scrollTop:0},500, 'easeInQuad');
+        });
+      }
+    });
+  });
+  
+  //Init expandable content
+  (function() {	
+		var docElem = window.document.documentElement, didScroll, scrollPosition;
+
+		// trick to prevent scrolling when opening/closing button
+		function noScrollFn() {
+			window.scrollTo( scrollPosition ? scrollPosition.x : 0, scrollPosition ? scrollPosition.y : 0 );
+		}
+
+		function noScroll() {
+			window.removeEventListener( 'scroll', scrollHandler );
+			window.addEventListener( 'scroll', noScrollFn );
+		}
+
+		function scrollFn() {
+			window.addEventListener( 'scroll', scrollHandler );
+		}
+
+		function canScroll() {
+			window.removeEventListener( 'scroll', noScrollFn );
+			scrollFn();
+		}
+
+		function scrollHandler() {
+			if( !didScroll ) {
+				didScroll = true;
+				setTimeout( function() { scrollPage(); }, 60 );
+			}
+		};
+
+		function scrollPage() {
+			scrollPosition = { x : window.pageXOffset || docElem.scrollLeft, y : window.pageYOffset || docElem.scrollTop };
+			didScroll = false;
+		};
+
+		scrollFn();
+		
+		var $buttons = $( '.morph-button' );
+		
+    $buttons.each(function(){
+      var el = this;
+
+		new UIMorphingButton( el, {
+			closeEl : '.icon-close',
+			onBeforeOpen : function() {
+				// don't allow to scroll
+				noScroll();
+        var $header = $("header.peakaboo.mini");
+        if($(el).offset().top <= ($header.offset().top+$header.height())){
+          $header.animate({"top":"-100px"},150,'easeInQuad');
+        }
+			},
+			onAfterOpen : function() {
+				// can scroll again
+				canScroll();
+				// add class "noscroll" to body
+				classie.addClass( document.body, 'noscroll' );
+				// add scroll class to main el
+				classie.addClass( el, 'scroll' );
+			},
+			onBeforeClose : function() {
+				// remove class "noscroll" to body
+				classie.removeClass( document.body, 'noscroll' );
+				// remove scroll class from main el
+				classie.removeClass( el, 'scroll' );
+				// don't allow to scroll
+				noScroll();
+			},
+			onAfterClose : function() {
+				// can scroll again
+				canScroll();
+        $("header.peakaboo.mini").animate({"top":"0"},150,'easeOutQuad');
+			}
+		} );
+  });
+	})();
   
 })(this);

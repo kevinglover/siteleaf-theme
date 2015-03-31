@@ -1,18 +1,27 @@
 // Mixins
 
 @mixin background-color-variant($color){
-  
-  background-color:$color;
-  @include transition(background-color 0.2s ease);
-  
-  a{
-    @if lightness($color) < 45% {
-      color: $lightbg-text;
-    } @else {
-      color: $darkbg-text;
+  &{
+    button, .morph-content{
+      background-color:$color;
+
+      @if lightness($color) > 70% {
+        color: $lightbg-text;
+      } @else {
+        color: $darkbg-text;
+      }
     }
-  }
-  &:hover{
-    background-color: lighten($color, 5%);
+    
+    .morph-content{
+      @if ($color == $yellow-600){
+        color: darken($color, 50%);
+      }
+    }
+    
+    button{
+      &:hover{
+        background-color: lighten($color, 5%);
+      }
+    }
   }
 }

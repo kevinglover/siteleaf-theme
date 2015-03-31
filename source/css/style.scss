@@ -4,7 +4,9 @@
 @import "base/base";
 
 @import "base/peakaboo";
-@import "diamonds";
+
+
+$paper-color: #f2ede0;
 
 body{
   overflow-x: hidden;
@@ -14,16 +16,25 @@ body.scroll-lock{
   overflow:hidden;
 }
 
-#masthead, #figures, #content, footer .inner{
+.main, #footer{
+  display: inline-block;
+  width: 100%;
+}
+
+#footer{
+  margin-top:1em;
+  padding-top:1em;
+}
+
+#masthead, #figures, #summary>.content, #content, #footer .inner{
   @include container;
+  section {
+    @include wrapper;
+  }
 }
 
 #masthead h1{
   @include site-title;
-}
-
-.wrapper, #content > article{
-  @include wrapper;
 }
 
 #content > article.posts{
@@ -37,6 +48,17 @@ body.scroll-lock{
     float:left;
   }
 }
+
+
+header.peakaboo.mini .wrapper{
+  padding: 0.2em 15px 0;
+  margin-left:3.75em;
+}
+
+header.peakaboo .header-title {
+  padding-left: 0.25em;
+}
+
 
 h1 a{ 
   
@@ -77,119 +99,286 @@ p.lead{
 }
 
 
-#post-content{
-  position: fixed;
-  z-index: 520;
-  width: 50%;
-  height:100%;
-  margin: 0 25%;
-  display: none;
-  top: 0;
-  left: 0;
-  overflow:visible;
-  
-  .content {
-    padding: 2em 0 10em;
-    overflow: scroll;
-    height: 100%;
-  }
-
-  a.btn.close {
-    position: absolute;
-    right: -150px;
-    font-size: 2em;
-    text-align: center;
-    padding: 10px;
-    border-radius: 50%;
-    color: white;
-    color: rgba(255,255,255,0.5);
-    @include transition(color 0.2s ease, transform 0.2s ease);
-    
-    &:hover, &:focus{
-      color: white;
-      @include transform(rotateZ(90deg));
-    }
-  }
-}
+// Home
+$primary-blog-color: $blue-grey-700;
 
 
-.posts{
-  .post a{
-    transform: rotate(-45deg);
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    border-radius: 50%;
-    display:table-cell;
-    
-    .ripple-wrapper{
-      overflow:visible;
-    }
-    .ripple {
-      position: absolute;
-      width: 2000px;
-      height: 2000px;
-      margin-left: -1000px;
-      margin-top: -1000px;
-      border-radius: 100%;
-      background-color: rgba(0,0,0,0.05);
-      @include transform(scale(0.01));
-      @include transform-origin(50%);
-      opacity: 0;
-      pointer-events: auto;
-      @include transition(background-color 0.2s ease);
-    }
-    .ripple.ripple-on {
-      transform: scale(100)!important;
-      @include transition(color 0.15s ease-in 0s, opacity 0.15s ease-in 0s, transform 6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s);
-      opacity: 1;
-    }
-    
-    .ripple.ripple-out {
-      transition: opacity 0.1s linear 0s !important;
-      // opacity: 0;
-    }
-  }
-  
-  .diamond-box-wrap{
-    position:relative;
-    @include transition(z-index 1s);
-    &.active{
-      z-index:500;
-    }
-  }
-  .diamond-box-inner {
-    transform: rotate(0deg);
-    width: 100%;
-    height: 100%;
+header.peakaboo.header{
+    padding-top:0;
+    overflow: hidden;
+
+  .header-title{
+    display:table;
+    width:100%;
     margin: 0;
+    padding:0;
     
-    .content{
-      margin-top: 59px;
-      font-size: 1.25em;
-      font-weight: $bold-font-weight;
+    .logo,
+    .section-title{
+        display:table-cell;
+        vertical-align: top;
     }
-    .date{
-      display: block;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      font-size: 0.9em;
-      @include transform(rotate(-45deg));
-      font-weight: $light-font-weight;
-      opacity: 0.8;
+    
+    .logo{
+        width: 25%;
+        height: 15em;
+        background: whitesmoke;
+        overflow:hidden;
+        padding-top: 1.25em;
+    }
+    .section-title{
+        padding-left:0.25em;
+        padding-right:0.25em;
+        padding-top: 1em;
+    }
+  }
+  &.mini .header-title{
+    .section-title,
+    .chapter-title{
+      padding-top: 0.5em;
+      display:inline-block;
+    }
+    
+    .logo{
+      height: 2.5em;
+      text-align: center;
+      width: 50%;
+      position: relative;
       
-      @media (max-width: 40em){
-        right: 12px;
+      @include media($medium-screen-up){
+        width: 25%;
+      }
+      
+      img{
+        height:100%;
+        max-height:100%;
+        position: absolute;
+        top: 0;
+        left: 30%;
       }
     }
   }
 }
 
-header.peakaboo.mini .wrapper{
-  padding: 0.2em 15px 0;
-  margin-left:3.75em;
+// Summary 
+#summary{
+  background: $purple-200;
+  float: left;
+  color: $white;
+  padding: 2.5em 0 1.5em;
+  width: 100%;
+  
+  section{
+    width: 100%;
+    float: right;
+    
+    @include media($medium-screen-up){
+      width: 75%;
+    }
+  }
 }
+
+//Preamble
+#preamble{
+  @include container;
+  
+  section, aside{
+    @include wrapper;
+    float:left;
+    position:relative;
+  }
+  
+  aside{
+    border: 2px solid $purple-200;
+    padding-top: 1.75em;
+    padding-bottom: 1.25em;
+  }
+  
+  @include media($large-screen-up){
+    section{
+      width:75%;
+    }
+    
+    aside{
+      border:none;
+      width:25%;
+      padding-top:2em;
+      
+      &:before{
+        content:'';
+        position:absolute;
+        top: 0;
+        left: 0;
+        width:100%;
+        display: block;
+        z-index: -1;
+        height: 200%;
+        background: lighten($purple-200, 25%);
+      }
+    }
+  }
+}
+
+// About
+#about{
+  padding-top: 3em;
+  display:inline-block;
+  
+  @include media($medium-2-screen-up){
+    min-height: 28em;
+    display: table;
+    width:100%;
+  }
+  
+  @include media($massive-screen-up){
+    min-height: 18em;
+  }
+  
+  header, section{
+    @include wrapper;
+    position:relative;
+  }
+  
+  header{
+    width: 100%;
+    background: lighten($primary-blog-color,50%);
+    padding-top:2em;
+    
+    @include media($medium-2-screen-up){
+      width: 25%;
+      padding:0;
+      display: table-cell;
+      
+      h2 {
+        vertical-align: middle;
+        @include transform(rotateZ(-90deg) translate(0%,60%));
+      }
+    }
+  }
+  section{
+    margin: 0 5.55555556%;
+    
+    @include media($medium-2-screen-up){
+      width: 75%;
+      margin:0;
+      display: table-cell;
+      padding-left: 1.99em;
+      padding-right: 3.15em;
+    }
+    
+    @include media($large-2-screen-up){
+      padding-left: 2.4em;
+      padding-right: 4.15em;
+    }
+  }
+}
+
+.csstransforms #about header h2{
+  @include media($medium-2-screen-up){
+    white-space: nowrap;
+    position:absolute;
+    top:1em;
+    left:0;
+    text-align: right;
+  }
+  @include media($massive-screen-up){
+    top:6em;
+  }
+}
+
+// Blog
+.blog header{
+  display: table;
+  width: 100%;
+
+  &:before {
+    content: '';
+    background: $primary-blog-color;
+    display: none;
+    width:0;
+    
+    @include media($medium-screen-up){
+      display: table-cell;
+      width: 25%;
+      height: 10em;
+    }
+  }
+
+  .inner {
+    background:$paper-color;
+    display: table-cell;
+    vertical-align: bottom;
+    padding: 1em 1.75em;
+  }
+}
+
+.blog .posts{
+  float: left;
+  width: 100%;
+  display: block;
+}
+
+.morph-button-fixed, 
+.morph-button-fixed:not(.open) .morph-content,
+.post{
+  height: 12em;
+}
+
+.blog .post {
+  float:left;
+  width: 50%;
+  position:relative;
+  background: $primary-blog-color;
+  
+  a, button, .morph-content{
+    background-color:$primary-blog-color;
+  }
+  .morph-content{
+    color: $paper-color;
+  }
+  
+  &:nth-child(2n){
+    background:$red;
+    a, button, .morph-content{
+      background-color:$red;
+    }
+    .morph-content{
+      color: $paper-color;
+    }
+  }
+  
+  &:nth-child(3n){
+    background:$cyan;
+    a, button, .morph-content{
+      background-color:$cyan;
+    }
+    .morph-content{
+      color: $lightbg-text;
+    }
+  }
+  
+  &:nth-child(4n){
+    background:$primary-blog-color;
+    a, button, .morph-content{
+      background-color:$primary-blog-color;
+    }
+    .morph-content{
+      color: $paper-color;
+    }
+  }
+  
+  @include media($medium-screen-up){
+    &, .morph-button-overlay .morph-content{
+      width:25%;
+    }
+    .morph-button-overlay.open .morph-content{
+      width:100%;
+    }
+  }
+}
+
+// Blog page
+@import "blog-page";
 
 footer.main{
   margin-top:1.5em;
