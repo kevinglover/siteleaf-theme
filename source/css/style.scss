@@ -186,11 +186,21 @@ header.peakaboo.header{
     float:left;
     position:relative;
   }
-  @include media($medium-2-screen-up){
+  
+  aside{
+    border: 2px solid $purple-200;
+    padding-top: 1.75em;
+    padding-bottom: 1.25em;
+  }
+  
+  @include media($large-screen-up){
     section{
       width:75%;
     }
+  }
+  @include media($large-screen-up){
     aside{
+      border:none;
       width:25%;
       padding-top:2em;
       
@@ -203,7 +213,7 @@ header.peakaboo.header{
         display: block;
         z-index: -1;
         height: 200%;
-        background: lighten($purple-200, 25%)
+        background: lighten($purple-200, 25%);
       }
     }
   }
@@ -212,6 +222,7 @@ header.peakaboo.header{
 // About
 #about{
   padding-top: 3em;
+  display:inline-block;
   
   @include media($medium-2-screen-up){
     min-height: 28em;
