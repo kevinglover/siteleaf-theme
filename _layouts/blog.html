@@ -1,12 +1,18 @@
+{% capture section_title %}
+  {{ title }}
+{% endcapture %}
+
+{% capture chapter_title %}
+{% if title != 'Blog' %}
+  {{ title }}
+{% endif %}
+{% endcapture %}
+
+{% capture header_meta %}
+  {% if title == 'Blog' %} data-page="main" data-top="true"{% endif %}
+{% endcapture %}
+
 {% capture content %}
-  <header class="peakaboo" {% if title == 'Blog' %} data-page="main" {% endif %}>
-    <div class="wrapper">
-      <div class="header-title">
-        <span class="section-title">Blog</span>
-        <span class="chapter-title">{{ title }}</span>
-      </div>
-    </div>
-  </header>
   <article class="blog page">
     <ol class="posts">
       {% for post in site.pages.blog.posts %}

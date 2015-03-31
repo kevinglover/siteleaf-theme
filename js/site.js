@@ -71,6 +71,19 @@
     }
   });
   
+  $(function(){
+    $(document).ready(function(){
+      var url = window.location.pathname,
+          $logo = $(".logo a");
+      if($logo.attr('href') == url){
+        $logo.on('click',function(evt){
+          evt.preventDefault();
+          $("html, body").animate({scrollTop:0},500, 'easeInQuad');
+        });
+      }
+    });
+  });
+  
   //Init expandable content
   (function() {	
 		var docElem = window.document.documentElement, didScroll, scrollPosition;

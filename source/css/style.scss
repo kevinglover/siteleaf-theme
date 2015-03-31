@@ -26,7 +26,7 @@ body.scroll-lock{
   padding-top:1em;
 }
 
-#masthead, #figures, #summary, #content, #footer .inner{
+#masthead, #figures, #summary>.content, #content, #footer .inner{
   @include container;
   section {
     @include wrapper;
@@ -103,12 +103,13 @@ p.lead{
 $primary-blog-color: $blue-grey-700;
 
 
-header.peakaboo.index{
+header.peakaboo.header{
     padding-top:0;
     overflow: hidden;
 
   .header-title{
     display:table;
+    width:100%;
     margin: 0;
     padding:0;
     
@@ -119,7 +120,7 @@ header.peakaboo.index{
     }
     
     .logo{
-        width: 27.6666%;
+        width: 25.1%;
         height: 15em;
         background: whitesmoke;
         overflow:hidden;
@@ -131,17 +132,133 @@ header.peakaboo.index{
         padding-top: 1em;
     }
   }
-  &.mini .header-title .logo{
-    height: 2.5em;
-    text-align: center;
-    width: 21.6666%;
-    img{
-      height:100%;
-      max-height:100%;
+  &.mini .header-title{
+    .section-title,
+    .chapter-title{
+      padding-top: 0.5em;
+      display:inline-block;
+    }
+    
+    .logo{
+      height: 2.5em;
+      text-align: center;
+      width: 50%;
+      position: relative;
+      
+      @include media($medium-screen-up){
+        width: 25.1%;
+      }
+      
+      img{
+        height:100%;
+        max-height:100%;
+        position: absolute;
+        top: 0;
+        left: 30%;
+      }
     }
   }
 }
 
+// Summary 
+#summary{
+  background: $purple-200;
+  float: left;
+  color: $white;
+  padding: 2.5em 0 1.5em;
+  
+  section{
+    width: 100%;
+    float: right;
+    
+    @include media($medium-screen-up){
+      width: 75%;
+    }
+  }
+}
+
+//Preamble
+#preamble{
+  @include container;
+  
+  section, aside{
+    @include wrapper;
+    float:left;
+    position:relative;
+  }
+  @include media($medium-2-screen-up){
+    section{
+      width:75%;
+    }
+    aside{
+      width:25%;
+      padding-top:2em;
+      
+      &:before{
+        content:'';
+        position:absolute;
+        top: 0;
+        left: 0;
+        width:100%;
+        display: block;
+        z-index: -1;
+        height: 200%;
+        background: lighten($purple-200, 25%)
+      }
+    }
+  }
+}
+
+// About
+#about{
+  padding-top: 3em;
+  
+  @include media($medium-2-screen-up){
+    min-height: 28em;
+    display: table;
+  }
+  
+  header, section{
+    @include wrapper;
+    position:relative;
+  }
+  
+  header{
+    width: 100%;
+    background: lighten($primary-blog-color,50%);
+    padding-top:2em;
+    
+    @include media($medium-2-screen-up){
+      width: 25%;
+      padding:0;
+      display: table-cell;
+      
+      h2 {
+        vertical-align: middle;
+        @include transform(rotateZ(-90deg) translate(0%,60%));
+      }
+    }
+  }
+  section{
+    width: 100%;
+    
+    @include media($medium-2-screen-up){
+      width: 75%;
+      display: table-cell;
+    }
+  }
+}
+@include media($medium-2-screen-up){
+  .csstransforms #about header h2{
+    white-space: nowrap;
+    position:absolute;
+    top:1em;
+    left:0;
+    text-align: right;
+  }
+}
+
+// Blog
 .blog header{
   display: table;
   width: 100%;

@@ -2339,35 +2339,35 @@ body.scroll-lock {
   padding-top: 1em;
 }
 
-#masthead, #figures, #summary, #content, #footer .inner {
+#masthead, #figures, #summary > .content, #content, #footer .inner {
   margin: 0 5.55555556%;
 }
 @media screen and (min-width: 45em) {
-  #masthead, #figures, #summary, #content, #footer .inner {
+  #masthead, #figures, #summary > .content, #content, #footer .inner {
     margin: 0 16.66666667%;
   }
 }
 @media screen and (min-width: 55.5em) {
-  #masthead, #figures, #summary, #content, #footer .inner {
+  #masthead, #figures, #summary > .content, #content, #footer .inner {
     margin: 0 5.55555556%;
   }
 }
 @media screen and (min-width: 87em) {
-  #masthead, #figures, #summary, #content, #footer .inner {
+  #masthead, #figures, #summary > .content, #content, #footer .inner {
     margin: 0 16.66666667%;
   }
 }
 @media screen and (min-width: 156em) {
-  #masthead, #figures, #summary, #content, #footer .inner {
+  #masthead, #figures, #summary > .content, #content, #footer .inner {
     margin: 0 27.77777778%;
   }
 }
 @media screen and (min-width: 156em) {
-  #masthead, #figures, #summary, #content, #footer .inner {
+  #masthead, #figures, #summary > .content, #content, #footer .inner {
     margin: 0 27.77777778%;
   }
 }
-#masthead section, #figures section, #summary section, #content section, #footer .inner section {
+#masthead section, #figures section, #summary > .content section, #content section, #footer .inner section {
   padding: 0 0.75em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -2423,42 +2423,187 @@ p.lead {
   padding: 0.70721358em 0 0.50015105em;
 }
 
-header.peakaboo.index {
+header.peakaboo.header {
   padding-top: 0;
   overflow: hidden;
 }
-header.peakaboo.index .header-title {
+header.peakaboo.header .header-title {
   display: table;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
-header.peakaboo.index .header-title .logo,
-header.peakaboo.index .header-title .section-title {
+header.peakaboo.header .header-title .logo,
+header.peakaboo.header .header-title .section-title {
   display: table-cell;
   vertical-align: top;
 }
-header.peakaboo.index .header-title .logo {
-  width: 27.6666%;
+header.peakaboo.header .header-title .logo {
+  width: 25.1%;
   height: 15em;
   background: whitesmoke;
   overflow: hidden;
   padding-top: 1.25em;
 }
-header.peakaboo.index .header-title .section-title {
+header.peakaboo.header .header-title .section-title {
   padding-left: 0.25em;
   padding-right: 0.25em;
   padding-top: 1em;
 }
-header.peakaboo.index.mini .header-title .logo {
+header.peakaboo.header.mini .header-title .section-title,
+header.peakaboo.header.mini .header-title .chapter-title {
+  padding-top: 0.5em;
+  display: inline-block;
+}
+header.peakaboo.header.mini .header-title .logo {
   height: 2.5em;
   text-align: center;
-  width: 21.6666%;
+  width: 50%;
+  position: relative;
 }
-header.peakaboo.index.mini .header-title .logo img {
+@media screen and (min-width: 40em) {
+  header.peakaboo.header.mini .header-title .logo {
+    width: 25.1%;
+  }
+}
+header.peakaboo.header.mini .header-title .logo img {
   height: 100%;
   max-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 30%;
 }
 
+#summary {
+  background: #ce93d8;
+  float: left;
+  color: #ffffff;
+  padding: 2.5em 0 1.5em;
+}
+#summary section {
+  width: 100%;
+  float: right;
+}
+@media screen and (min-width: 40em) {
+  #summary section {
+    width: 75%;
+  }
+}
+
+#preamble {
+  margin: 0 5.55555556%;
+}
+@media screen and (min-width: 45em) {
+  #preamble {
+    margin: 0 16.66666667%;
+  }
+}
+@media screen and (min-width: 55.5em) {
+  #preamble {
+    margin: 0 5.55555556%;
+  }
+}
+@media screen and (min-width: 87em) {
+  #preamble {
+    margin: 0 16.66666667%;
+  }
+}
+@media screen and (min-width: 156em) {
+  #preamble {
+    margin: 0 27.77777778%;
+  }
+}
+@media screen and (min-width: 156em) {
+  #preamble {
+    margin: 0 27.77777778%;
+  }
+}
+#preamble section, #preamble aside {
+  padding: 0 0.75em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  position: relative;
+}
+@media screen and (min-width: 45em) {
+  #preamble section {
+    width: 75%;
+  }
+  #preamble aside {
+    width: 25%;
+    padding-top: 2em;
+  }
+  #preamble aside:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    z-index: -1;
+    height: 200%;
+    background: #f8f1fa;
+  }
+}
+
+#about {
+  padding-top: 3em;
+}
+@media screen and (min-width: 45em) {
+  #about {
+    min-height: 28em;
+    display: table;
+  }
+}
+#about header, #about section {
+  padding: 0 0.75em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+#about header {
+  width: 100%;
+  background: #ccd7dc;
+  padding-top: 2em;
+}
+@media screen and (min-width: 45em) {
+  #about header {
+    width: 25%;
+    padding: 0;
+    display: table-cell;
+  }
+  #about header h2 {
+    vertical-align: middle;
+    -webkit-transform: rotateZ(-90deg) translate(0%, 60%);
+    -moz-transform: rotateZ(-90deg) translate(0%, 60%);
+    -ms-transform: rotateZ(-90deg) translate(0%, 60%);
+    -o-transform: rotateZ(-90deg) translate(0%, 60%);
+    transform: rotateZ(-90deg) translate(0%, 60%);
+  }
+}
+#about section {
+  width: 100%;
+}
+@media screen and (min-width: 45em) {
+  #about section {
+    width: 75%;
+    display: table-cell;
+  }
+}
+
+@media screen and (min-width: 45em) {
+  .csstransforms #about header h2 {
+    white-space: nowrap;
+    position: absolute;
+    top: 1em;
+    left: 0;
+    text-align: right;
+  }
+}
 .blog header {
   display: table;
   width: 100%;
