@@ -2426,6 +2426,7 @@ p.lead {
 header.peakaboo.header {
   padding-top: 0;
   overflow: hidden;
+  background: #4D4D4D;
 }
 header.peakaboo.header .header-title {
   display: table;
@@ -2436,14 +2437,15 @@ header.peakaboo.header .header-title {
 header.peakaboo.header .header-title .logo,
 header.peakaboo.header .header-title .section-title {
   display: table-cell;
-  vertical-align: top;
+  vertical-align: middle;
 }
 header.peakaboo.header .header-title .logo {
   width: 25%;
   height: 15em;
-  background: whitesmoke;
+  background: #2f2f2f;
   overflow: hidden;
   padding-top: 1.25em;
+  text-align: center;
 }
 header.peakaboo.header .header-title .section-title {
   padding-left: 0.25em;
@@ -2471,7 +2473,8 @@ header.peakaboo.header.mini .header-title .logo img {
   max-height: 100%;
   position: absolute;
   top: 0;
-  left: 30%;
+  left: 40%;
+  padding: 10px;
 }
 
 #summary {

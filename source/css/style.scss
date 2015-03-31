@@ -106,6 +106,7 @@ $primary-blog-color: $blue-grey-700;
 header.peakaboo.header{
     padding-top:0;
     overflow: hidden;
+    background:#4D4D4D;
 
   .header-title{
     display:table;
@@ -116,15 +117,16 @@ header.peakaboo.header{
     .logo,
     .section-title{
         display:table-cell;
-        vertical-align: top;
+        vertical-align: middle;
     }
     
     .logo{
         width: 25%;
         height: 15em;
-        background: whitesmoke;
+        background: rgb(47, 47, 47);
         overflow:hidden;
         padding-top: 1.25em;
+        text-align:center;
     }
     .section-title{
         padding-left:0.25em;
@@ -154,7 +156,8 @@ header.peakaboo.header{
         max-height:100%;
         position: absolute;
         top: 0;
-        left: 30%;
+        left: 40%;
+        padding: 10px;
       }
     }
   }
