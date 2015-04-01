@@ -1,13 +1,30 @@
 /* @group diamonds */
-	$diamondSize: 8em;
-	$belowDiamondSize: 100%;
-	  
+  $diamondSize: 8em;
+  $belowDiamondSize: 100%;
+    
 .morph-button-fixed .morph-content > div{
-	@include container;
-	
-	.content-style-overlay{
-		@include wrapper;
-	}
+  @include container;
+  
+  @media screen and (min-width: 55.5em){
+    margin: 0 16.66666667%;
+  }
+  
+  .content-style-overlay{
+    @include wrapper;
+  }
+}
+
+.morph-button-fixed .morph-content>div .content-style-overlay {
+  padding-bottom: 10em;
+  
+  p:last-of-type:not(:first-of-type):after{
+    content: '\2b22';
+    display: inline-block;
+    position: relative;
+    top: -3px;
+    left: 2px;
+    font-size: 0.8em;
+  }
 }
 
 button span.date {
@@ -16,18 +33,18 @@ button span.date {
 }
 
 .blog.page{
-	// .morph-button-fixed, 
-	// .morph-button-fixed:not(.open) .morph-content,
-	// .post{
-	// 	width:$diamondSize;
-	// 	height:$diamondSize;
-	// }
+  // .morph-button-fixed, 
+  // .morph-button-fixed:not(.open) .morph-content,
+  // .post{
+  // 	width:$diamondSize;
+  // 	height:$diamondSize;
+  // }
   
   .posts{
-		background-color:$paper-color;
-	}
+    background-color:$paper-color;
+  }
   // Material background shades
-	.post{
+  .post{
     @include background-color-variant($grey-400);
     
     &.red {
@@ -69,7 +86,7 @@ button span.date {
     &.light-yellow {
         @include background-color-variant($yellow-300);
     }
-		&.yellow {
+    &.yellow {
         @include background-color-variant($yellow-600);
     }
     &.orange {

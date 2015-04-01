@@ -103,10 +103,18 @@ p.lead{
 $primary-blog-color: $blue-grey-700;
 
 header.peakaboo.header{
-    padding-top:0;
-    overflow: hidden;
-    background:#4D4D4D;
-
+  padding-top:0;
+  overflow: hidden;
+  background:#4D4D4D;
+  
+  &:not(.mini){
+    height: 10em;
+    
+    @include media($large-2-screen-up){
+      height: 12em;
+    }
+  }
+    
   .header-title{
     display:table;
     width:100%;
@@ -121,7 +129,7 @@ header.peakaboo.header{
     
     .logo{
         width: 25%;
-        height: 15em;
+        height: 10em;
         background: rgb(47, 47, 47);
         overflow:hidden;
         padding-top: 1.25em;
@@ -130,6 +138,10 @@ header.peakaboo.header{
         
         &:hover, &:focus{
           background: #2F2F2F!important;
+        }
+        
+        @include media($large-2-screen-up){
+          height: 12em;
         }
     }
     .section-title{
@@ -167,6 +179,11 @@ header.peakaboo.header{
   }
 }
 
+//Page Menu
+.page-menu{
+  font-family:$heading-font-family;
+}
+
 // Index banner
 $main-color:$red;
 $secondary-color: $blue-grey-700;
@@ -183,10 +200,13 @@ $secondary-color: $blue-grey-700;
           content: '';
           display: block;
           width: 25%;
-          margin-top: 4.6em;
+          top: 10em;
           height: 40%;
           z-index: 0;
           background: color-opacity($lime-200,0.33);
+      }
+      @include media($large-2-screen-up){
+        top: 12em;
       }
     }
   }
@@ -221,6 +241,7 @@ $secondary-color: $blue-grey-700;
   }
   
   aside{
+    font-family:$heading-font-family;
     border: 2px solid $purple-200;
     padding-top: 1.75em;
     padding-bottom: 1.25em;
@@ -355,6 +376,11 @@ $secondary-color: $blue-grey-700;
     display: table-cell;
     vertical-align: bottom;
     padding: 1em 1.75em;
+    
+    span.mdi-navigation-arrow-forward {
+      top: 9px;
+      position: relative;
+    }
   }
 }
 
@@ -362,6 +388,10 @@ $secondary-color: $blue-grey-700;
   float: left;
   width: 100%;
   display: block;
+}
+
+.morph-button>button{
+  font-family: $heading-font-family;
 }
 
 .morph-button-fixed, 
@@ -376,7 +406,7 @@ $secondary-color: $blue-grey-700;
   position:relative;
   background: $primary-blog-color;
   
-  a, button, .morph-content{
+  button, .morph-content{
     background-color:$primary-blog-color;
   }
   .morph-content{
@@ -419,6 +449,20 @@ $secondary-color: $blue-grey-700;
     }
     .morph-button-overlay.open .morph-content{
       width:100%;
+    }
+  }
+  
+  .content{
+    h2 {
+      width: 83%;
+      clear: both;
+    }
+
+    span.date {
+      float: left;
+      width: 100%;
+      opacity:0.8;
+      font-weight: $bold-font-weight;
     }
   }
 }

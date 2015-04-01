@@ -5,26 +5,23 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>{{site.title}} | {{title}}</title>
     <link rel="alternate" type="application/rss+xml" href="{{site.feed_url}}" />
-    <link rel="stylesheet" type="text/css" href="/css/ripples.min.css" />
-    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="/css/material-icons.css" />
-    <link rel="stylesheet" type="text/css" href="/css/component.css" />
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link href='http://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700|Libre+Baskerville' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" type="text/css" href="/styles/site.min.css" />
     {{css}}
     <script src="/js/modernizr.js"></script>
   </head>
   <body class="page-{{title|slug}}">
     <nav id="bt-menu" class="bt-menu">
-    	<a href="#" class="bt-menu-trigger"><span>Menu</span></a>
+      <a href="#" class="bt-menu-trigger"><span>Menu</span></a>
       <ul class="page-menu">
         {% for page in site.pages %}
           <li><a href="{{page.url}}"{% if page.url == url %} class="is-current-page"{% endif %}>{{page.title}}</a></li>
         {% endfor %}
       </ul>
       <ul>
-					<li><a href="http://www.twitter.com/imkevinglover" class="bt-icon fa fa-twitter">Twitter</a></li>
-					<li><a href="https://github.com/kevinglover" class="bt-icon fa fa-github">icon-github</a></li>
-				</ul>
+          <li><a href="http://www.twitter.com/imkevinglover" class="bt-icon fa fa-twitter">Twitter</a></li>
+          <li><a href="https://github.com/kevinglover" class="bt-icon fa fa-github">icon-github</a></li>
+        </ul>
     </nav>
     <div class="main">
       <header class="peakaboo header" {{header_meta}}>
@@ -48,15 +45,5 @@
       </div>
     </footer>
   </body>
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/material/material.min.js"></script>
-  <script src="/js/material/ripples.min.js"></script>
-  <script src="/js/easing.js"></script>
-  <script src="/js/selectize/selectize.min.js"></script>
-  <script src="/js/jquery.diamonds.js"></script>
-  <script src="js/classie.js"></script>
-  <script src="/js/menu.js"></script>
-  <script src="/js/uiMorphingButton.js"></script>
-  <script src="/js/site.js"></script>
-  <script src="/js/gridlet.js"></script>
+  <script src="/scripts/site.min.js"></script>
 </html>

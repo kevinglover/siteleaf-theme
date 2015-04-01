@@ -33,5 +33,9 @@
     "grunt-wiredep": "^2.0.0",
     "matchdep": "^0.3.0",
     "sass": "^0.5.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-cssmin": "^0.12.2",
+    "grunt-contrib-uglify": "^0.8.1"
   }
 }

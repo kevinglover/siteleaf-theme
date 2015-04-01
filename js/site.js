@@ -39,7 +39,6 @@
         $mini = $peakaboo.clone().addClass('mini');
         
         var $h1 = $mini.find('h1');
-        console.log($h1);
         $h1.after($("<span/>").attr({'class':$h1.attr('class')}).html($h1.html()));
         $h1.remove();
         
@@ -86,79 +85,96 @@
   
   //Init expandable content
   (function() {	
-		var docElem = window.document.documentElement, didScroll, scrollPosition;
+    var docElem = window.document.documentElement, didScroll, scrollPosition;
 
-		// trick to prevent scrolling when opening/closing button
-		function noScrollFn() {
-			window.scrollTo( scrollPosition ? scrollPosition.x : 0, scrollPosition ? scrollPosition.y : 0 );
-		}
+    // trick to prevent scrolling when opening/closing button
+    function noScrollFn() {
+      window.scrollTo( scrollPosition ? scrollPosition.x : 0, scrollPosition ? scrollPosition.y : 0 );
+    }
 
-		function noScroll() {
-			window.removeEventListener( 'scroll', scrollHandler );
-			window.addEventListener( 'scroll', noScrollFn );
-		}
+    function noScroll() {
+      window.removeEventListener( 'scroll', scrollHandler );
+      window.addEventListener( 'scroll', noScrollFn );
+    }
 
-		function scrollFn() {
-			window.addEventListener( 'scroll', scrollHandler );
-		}
+    function scrollFn() {
+      window.addEventListener( 'scroll', scrollHandler );
+    }
 
-		function canScroll() {
-			window.removeEventListener( 'scroll', noScrollFn );
-			scrollFn();
-		}
+    function canScroll() {
+      window.removeEventListener( 'scroll', noScrollFn );
+      scrollFn();
+    }
 
-		function scrollHandler() {
-			if( !didScroll ) {
-				didScroll = true;
-				setTimeout( function() { scrollPage(); }, 60 );
-			}
-		};
+    function scrollHandler() {
+      if( !didScroll ) {
+        didScroll = true;
+        setTimeout( function() { scrollPage(); }, 60 );
+      }
+    };
 
-		function scrollPage() {
-			scrollPosition = { x : window.pageXOffset || docElem.scrollLeft, y : window.pageYOffset || docElem.scrollTop };
-			didScroll = false;
-		};
+    function scrollPage() {
+      scrollPosition = { x : window.pageXOffset || docElem.scrollLeft, y : window.pageYOffset || docElem.scrollTop };
+      didScroll = false;
+    };
 
-		scrollFn();
-		
-		var $buttons = $( '.morph-button' );
-		
+    scrollFn();
+    
+    var $buttons = $( '.morph-button' );
+    
     $buttons.each(function(){
       var el = this;
 
-		new UIMorphingButton( el, {
-			closeEl : '.icon-close',
-			onBeforeOpen : function() {
-				// don't allow to scroll
-				noScroll();
-        var $header = $("header.peakaboo.mini");
-        if($(el).offset().top <= ($header.offset().top+$header.height())){
-          $header.animate({"top":"-100px"},150,'easeInQuad');
+      new UIMorphingButton( el, {
+        closeEl : '.icon-close',
+        onBeforeOpen : function() {
+          // don't allow to scroll
+          noScroll();
+          var $header = $("header.peakaboo.mini");
+          if($(el).offset().top <= ($header.offset().top+$header.height())){
+            $header.animate({"top":"-100px"},150,'easeInQuad');
+          }
+        },
+        onAfterOpen : function() {
+          // can scroll again
+          canScroll();
+          // add class "noscroll" to body
+          classie.addClass( document.body, 'noscroll' );
+          // add scroll class to main el
+          classie.addClass( el, 'scroll' );
+          var id = $(el).attr('data-id');
+          if(id){
+            window.location.hash = id;
+          }
+        },
+        onBeforeClose : function() {
+          // remove class "noscroll" to body
+          classie.removeClass( document.body, 'noscroll' );
+          // remove scroll class from main el
+          classie.removeClass( el, 'scroll' );
+          // don't allow to scroll
+          noScroll();
+        },
+        onAfterClose : function() {
+          // can scroll again
+          canScroll();
+          $("header.peakaboo.mini").animate({"top":"0"},150,'easeOutQuad');
+          window.location.hash = '';
         }
-			},
-			onAfterOpen : function() {
-				// can scroll again
-				canScroll();
-				// add class "noscroll" to body
-				classie.addClass( document.body, 'noscroll' );
-				// add scroll class to main el
-				classie.addClass( el, 'scroll' );
-			},
-			onBeforeClose : function() {
-				// remove class "noscroll" to body
-				classie.removeClass( document.body, 'noscroll' );
-				// remove scroll class from main el
-				classie.removeClass( el, 'scroll' );
-				// don't allow to scroll
-				noScroll();
-			},
-			onAfterClose : function() {
-				// can scroll again
-				canScroll();
-        $("header.peakaboo.mini").animate({"top":"0"},150,'easeOutQuad');
-			}
-		} );
-  });
-	})();
+      });
+    });
+    
+    $(document).ready(function(){
+      var hash = window.location.hash;
+      hash = hash.replace('#','');
+      if(hash!==''){
+        $selected = $(".morph-button[data-id="+hash+"] button");
+        $selected.click();
+      }
+      else{
+        window.location.hash = '';
+      }
+    });
+  })();
   
 })(this);

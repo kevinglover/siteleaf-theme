@@ -17,7 +17,7 @@
     <ol class="posts">
       {% for post in site.pages.blog.posts %}
         <li class="post {{post.meta['bg-color']}}">
-          <div class="morph-button morph-button-overlay morph-button-fixed">
+          <div class="morph-button morph-button-overlay morph-button-fixed" data-id="{{post.title|slug}}">
             <button type="button">
               {{post.title}}<br/>
               <span class="date">{{post.date | date: "%b %d"}}</span>
