@@ -231,6 +231,10 @@
 	color: #1abc9c;
 }
 
+.content-style-overlay {
+  position: relative;
+}
+
 /* Morphing Buttons */
 .icon-close {
 	z-index: 100;
@@ -241,6 +245,11 @@
 	text-align: center;
 	line-height: 3;
 	cursor: pointer;
+	float: right;
+	right: 0;
+	top: 16px;
+	position: absolute;
+	font-size: 2em;
 }
 
 .icon:before {

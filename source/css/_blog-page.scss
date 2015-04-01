@@ -2,12 +2,17 @@
 	$diamondSize: 8em;
 	$belowDiamondSize: 100%;
 	  
-
-.content-style-overlay{
+.morph-button-fixed .morph-content > div{
 	@include container;
-	.content{
+	
+	.content-style-overlay{
 		@include wrapper;
 	}
+}
+
+button span.date {
+  font-size: 0.8em;
+  opacity: 0.7;
 }
 
 .blog.page{

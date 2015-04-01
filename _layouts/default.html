@@ -13,7 +13,7 @@
     {{css}}
     <script src="/js/modernizr.js"></script>
   </head>
-  <body>
+  <body class="page-{{title|slug}}">
     <nav id="bt-menu" class="bt-menu">
     	<a href="#" class="bt-menu-trigger"><span>Menu</span></a>
       <ul class="page-menu">
@@ -29,11 +29,9 @@
     <div class="main">
       <header class="peakaboo header" {{header_meta}}>
           <div class="header-title">
-            <div class="logo">
-              <a href="{{site.pages.index.url}}">
-                <img src="/assets/logo.png"/>
-              </a>
-            </div>
+            <a class="logo" href="{{site.pages.index.url}}">
+              <img src="/assets/logo.png"/>
+            </a>
             <h1 class="section-title">{{section_title}}</h1>
             {% if chapter-title != '' %}
             <span class="chapter-title">{{chapter_title}}</span>

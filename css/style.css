@@ -2446,6 +2446,12 @@ header.peakaboo.header .header-title .logo {
   overflow: hidden;
   padding-top: 1.25em;
   text-align: center;
+  -webkit-transition: background 0.2s;
+  -moz-transition: background 0.2s;
+  transition: background 0.2s;
+}
+header.peakaboo.header .header-title .logo:hover, header.peakaboo.header .header-title .logo:focus {
+  background: #2F2F2F !important;
 }
 header.peakaboo.header .header-title .section-title {
   padding-left: 0.25em;
@@ -2477,8 +2483,29 @@ header.peakaboo.header.mini .header-title .logo img {
   padding: 10px;
 }
 
+.page-index header.peakaboo.header .header-title {
+  background: #f44336;
+}
+.page-index header.peakaboo.header .header-title .logo {
+  overflow: visible;
+  z-index: 200;
+  background: #455a64;
+}
+@media screen and (min-width: 40em) {
+  .page-index header.peakaboo.header .header-title .logo:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 25%;
+    margin-top: 4.6em;
+    height: 40%;
+    z-index: 0;
+    background: rgba(230, 238, 156, 0.33);
+  }
+}
+
 #summary {
-  background: #ce93d8;
+  background: #00bcd4;
   float: left;
   color: #ffffff;
   padding: 2.5em 0 1.5em;
@@ -2636,6 +2663,16 @@ header.peakaboo.header.mini .header-title .logo img {
   }
 }
 
+.page-blog header.peakaboo.header {
+  background: #f2ede0;
+}
+.page-blog header.peakaboo.header .header-title .logo {
+  background: #00bfa5;
+}
+.page-blog header.peakaboo.header .header-title .section-title {
+  color: #424242;
+}
+
 .blog header {
   display: table;
   width: 100%;
@@ -2721,40 +2758,45 @@ header.peakaboo.header.mini .header-title .logo img {
 }
 
 /* @group diamonds */
-.content-style-overlay {
+.morph-button-fixed .morph-content > div {
   margin: 0 5.55555556%;
 }
 @media screen and (min-width: 45em) {
-  .content-style-overlay {
+  .morph-button-fixed .morph-content > div {
     margin: 0 16.66666667%;
   }
 }
 @media screen and (min-width: 55.5em) {
-  .content-style-overlay {
+  .morph-button-fixed .morph-content > div {
     margin: 0 5.55555556%;
   }
 }
 @media screen and (min-width: 87em) {
-  .content-style-overlay {
+  .morph-button-fixed .morph-content > div {
     margin: 0 16.66666667%;
   }
 }
 @media screen and (min-width: 156em) {
-  .content-style-overlay {
+  .morph-button-fixed .morph-content > div {
     margin: 0 27.77777778%;
   }
 }
 @media screen and (min-width: 156em) {
-  .content-style-overlay {
+  .morph-button-fixed .morph-content > div {
     margin: 0 27.77777778%;
   }
 }
-.content-style-overlay .content {
+.morph-button-fixed .morph-content > div .content-style-overlay {
   padding: 0 0.75em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+button span.date {
+  font-size: 0.8em;
+  opacity: 0.7;
 }
 
 .blog.page .posts {

@@ -48,12 +48,16 @@
       {% for post in site.pages.blog.posts limit:4 %}
         <li class="post">
           <div class="morph-button morph-button-overlay morph-button-fixed">
-            <button type="button">{{post.title}}</button>
+            <button type="button">
+              {{post.title}}<br/>
+              <span class="date">{{post.date | date: "%b %d"}}</span>
+            </button>
             <div class="morph-content">
               <div>
                 <div class="content-style-overlay">
                   <span class="icon icon-close">Close the overlay</span>
                   <h2>{{post.title}}</h2>
+                  <span class="date">{{post.date | date: "%Y %b %d"}}</span>
                   {{post.body}}
                 </div>
               </div>

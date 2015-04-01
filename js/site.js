@@ -74,7 +74,7 @@
   $(function(){
     $(document).ready(function(){
       var url = window.location.pathname,
-          $logo = $(".logo a");
+          $logo = $("a.logo");
       if($logo.attr('href') == url){
         $logo.on('click',function(evt){
           evt.preventDefault();

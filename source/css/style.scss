@@ -102,7 +102,6 @@ p.lead{
 // Home
 $primary-blog-color: $blue-grey-700;
 
-
 header.peakaboo.header{
     padding-top:0;
     overflow: hidden;
@@ -127,6 +126,11 @@ header.peakaboo.header{
         overflow:hidden;
         padding-top: 1.25em;
         text-align:center;
+        @include transition(background 0.2s);
+        
+        &:hover, &:focus{
+          background: #2F2F2F!important;
+        }
     }
     .section-title{
         padding-left:0.25em;
@@ -163,9 +167,34 @@ header.peakaboo.header{
   }
 }
 
+// Index banner
+$main-color:$red;
+$secondary-color: $blue-grey-700;
+.page-index header.peakaboo.header .header-title {
+  background:$main-color;
+  .logo{
+      overflow:visible;
+      z-index:200;
+      background: $secondary-color;
+      
+      &:after {
+        @include media($medium-screen-up){
+          position: absolute;
+          content: '';
+          display: block;
+          width: 25%;
+          margin-top: 4.6em;
+          height: 40%;
+          z-index: 0;
+          background: color-opacity($lime-200,0.33);
+      }
+    }
+  }
+}
+
 // Summary 
 #summary{
-  background: $purple-200;
+  background: $cyan;
   float: left;
   color: $white;
   padding: 2.5em 0 1.5em;
@@ -290,6 +319,20 @@ header.peakaboo.header{
 }
 
 // Blog
+
+.page-blog{
+  header.peakaboo.header{
+    background:$paper-color;
+
+    .header-title .logo{
+      background:$teal-A700;
+    }
+    .header-title .section-title{
+      color:$base-font-color;
+    }
+  }
+}
+
 .blog header{
   display: table;
   width: 100%;
