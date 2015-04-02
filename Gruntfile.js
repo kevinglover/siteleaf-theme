@@ -42,7 +42,7 @@ module.exports = function(grunt) {
     
     uglify: {
       js: {
-        files: { 'scripts/site.min.js': ['js/jquery.min.js','js/easing.js','js/classie.js','js/menu.js','js/material/*.js','js/selectize/*.js','js/uiMorphingButton.js','js/site.js','js/gridlet.js'] },
+        files: { 'scripts/site.min.js': ['js/jquery.min.js','js/easing.js','js/classie.js','js/menu.js','js/material/*.js','js/selectize/*.js','js/uiMorphingButton.js','js/site.js'] },
         options: {
             preserveComments: false,
             sourceMap: true

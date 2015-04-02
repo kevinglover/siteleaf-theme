@@ -464,6 +464,24 @@ $secondary-color: $blue-grey-700;
       opacity:0.8;
       font-weight: $bold-font-weight;
     }
+    .half{
+      @include wrapper;
+      padding: 0;
+      
+      @include media($medium-2-screen-up){
+        width:50%;
+        display: table-cell;
+        vertical-align: middle;
+
+        &:nth-child(2n){
+          padding-right:0.75em;
+        }
+        
+        &:nth-child(n+2){
+          padding-right:0.75em;
+        }
+      }
+    }
   }
 }
 

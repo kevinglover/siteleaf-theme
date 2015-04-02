@@ -2796,6 +2796,27 @@ header.peakaboo.header.mini .header-title .logo img {
   opacity: 0.8;
   font-weight: 500;
 }
+.blog .post .content .half {
+  padding: 0 0.75em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+@media screen and (min-width: 45em) {
+  .blog .post .content .half {
+    width: 50%;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .blog .post .content .half:nth-child(2n) {
+    padding-right: 0.75em;
+  }
+  .blog .post .content .half:nth-child(n+2) {
+    padding-right: 0.75em;
+  }
+}
 
 /* @group diamonds */
 .morph-button-fixed .morph-content > div {
@@ -2873,12 +2894,138 @@ button span.date {
 .blog.page .post.red button:hover {
   background-color: #f55a4e;
 }
+.blog.page .post.red-100 button, .blog.page .post.red-100 .morph-content {
+  background-color: #ffcdd2;
+  color: #616161;
+}
+.blog.page .post.red-100 button:hover {
+  background-color: #ffe7e9;
+}
+.blog.page .post.red-200 button, .blog.page .post.red-200 .morph-content {
+  background-color: #ef9a9a;
+  color: #616161;
+}
+.blog.page .post.red-200 button:hover {
+  background-color: #f2b0b0;
+}
+.blog.page .post.red-300 button, .blog.page .post.red-300 .morph-content {
+  background-color: #e57373;
+  color: #f5f5f5;
+}
+.blog.page .post.red-300 button:hover {
+  background-color: #e98989;
+}
+.blog.page .post.red-400 button, .blog.page .post.red-400 .morph-content {
+  background-color: #ef5350;
+  color: #f5f5f5;
+}
+.blog.page .post.red-400 button:hover {
+  background-color: #f16a67;
+}
+.blog.page .post.red-500 button, .blog.page .post.red-500 .morph-content {
+  background-color: #f44336;
+  color: #f5f5f5;
+}
+.blog.page .post.red-500 button:hover {
+  background-color: #f55a4e;
+}
+.blog.page .post.red-600 button, .blog.page .post.red-600 .morph-content {
+  background-color: #e53935;
+  color: #f5f5f5;
+}
+.blog.page .post.red-600 button:hover {
+  background-color: #e84f4c;
+}
+.blog.page .post.red-700 button, .blog.page .post.red-700 .morph-content {
+  background-color: #d32f2f;
+  color: #f5f5f5;
+}
+.blog.page .post.red-700 button:hover {
+  background-color: #d74444;
+}
+.blog.page .post.red-800 button, .blog.page .post.red-800 .morph-content {
+  background-color: #c62828;
+  color: #f5f5f5;
+}
+.blog.page .post.red-800 button:hover {
+  background-color: #d63232;
+}
+.blog.page .post.red-900 button, .blog.page .post.red-900 .morph-content {
+  background-color: #b71c1c;
+  color: #f5f5f5;
+}
+.blog.page .post.red-900 button:hover {
+  background-color: #cd1f1f;
+}
 .blog.page .post.pink button, .blog.page .post.pink .morph-content {
   background-color: #e91e63;
   color: #f5f5f5;
 }
 .blog.page .post.pink button:hover {
   background-color: #eb3573;
+}
+.blog.page .post.pink-100 button, .blog.page .post.pink-100 .morph-content {
+  background-color: #f8bbd0;
+  color: #616161;
+}
+.blog.page .post.pink-100 button:hover {
+  background-color: #fad2e0;
+}
+.blog.page .post.pink-200 button, .blog.page .post.pink-200 .morph-content {
+  background-color: #f48fb1;
+  color: #616161;
+}
+.blog.page .post.pink-200 button:hover {
+  background-color: #f6a6c1;
+}
+.blog.page .post.pink-300 button, .blog.page .post.pink-300 .morph-content {
+  background-color: #f06292;
+  color: #f5f5f5;
+}
+.blog.page .post.pink-300 button:hover {
+  background-color: #f279a2;
+}
+.blog.page .post.pink-400 button, .blog.page .post.pink-400 .morph-content {
+  background-color: #ec407a;
+  color: #f5f5f5;
+}
+.blog.page .post.pink-400 button:hover {
+  background-color: #ee578a;
+}
+.blog.page .post.pink-500 button, .blog.page .post.pink-500 .morph-content {
+  background-color: #e91e63;
+  color: #f5f5f5;
+}
+.blog.page .post.pink-500 button:hover {
+  background-color: #eb3573;
+}
+.blog.page .post.pink-600 button, .blog.page .post.pink-600 .morph-content {
+  background-color: #d81b60;
+  color: #f5f5f5;
+}
+.blog.page .post.pink-600 button:hover {
+  background-color: #e4286d;
+}
+.blog.page .post.pink-700 button, .blog.page .post.pink-700 .morph-content {
+  background-color: #c2185b;
+  color: #f5f5f5;
+}
+.blog.page .post.pink-700 button:hover {
+  background-color: #d91b66;
+}
+.blog.page .post.pink-800 button, .blog.page .post.pink-800 .morph-content {
+  background-color: #ad1457;
+  color: #f5f5f5;
+}
+.blog.page .post.pink-800 button:hover {
+  background-color: #c41762;
+}
+.blog.page .post.pink-900 button, .blog.page .post.pink-900 .morph-content {
+  background-color: #880e4f;
+  color: #f5f5f5;
+}
+.blog.page .post.pink-900 button:hover {
+  background-color: #9f105c;
 }
 .blog.page .post.purple button, .blog.page .post.purple .morph-content {
   background-color: #9c27b0;
@@ -2887,12 +3034,138 @@ button span.date {
 .blog.page .post.purple button:hover {
   background-color: #af2cc5;
 }
+.blog.page .post.purple-100 button, .blog.page .post.purple-100 .morph-content {
+  background-color: #e1bee7;
+  color: #616161;
+}
+.blog.page .post.purple-100 button:hover {
+  background-color: #ead1ee;
+}
+.blog.page .post.purple-200 button, .blog.page .post.purple-200 .morph-content {
+  background-color: #ce93d8;
+  color: #616161;
+}
+.blog.page .post.purple-200 button:hover {
+  background-color: #d6a6df;
+}
+.blog.page .post.purple-300 button, .blog.page .post.purple-300 .morph-content {
+  background-color: #ba68c8;
+  color: #f5f5f5;
+}
+.blog.page .post.purple-300 button:hover {
+  background-color: #c37bcf;
+}
+.blog.page .post.purple-400 button, .blog.page .post.purple-400 .morph-content {
+  background-color: #ab47bc;
+  color: #f5f5f5;
+}
+.blog.page .post.purple-400 button:hover {
+  background-color: #b45ac3;
+}
+.blog.page .post.purple-500 button, .blog.page .post.purple-500 .morph-content {
+  background-color: #9c27b0;
+  color: #f5f5f5;
+}
+.blog.page .post.purple-500 button:hover {
+  background-color: #af2cc5;
+}
+.blog.page .post.purple-600 button, .blog.page .post.purple-600 .morph-content {
+  background-color: #8e24aa;
+  color: #f5f5f5;
+}
+.blog.page .post.purple-600 button:hover {
+  background-color: #a028bf;
+}
+.blog.page .post.purple-700 button, .blog.page .post.purple-700 .morph-content {
+  background-color: #7b1fa2;
+  color: #f5f5f5;
+}
+.blog.page .post.purple-700 button:hover {
+  background-color: #8b23b7;
+}
+.blog.page .post.purple-800 button, .blog.page .post.purple-800 .morph-content {
+  background-color: #6a1b9a;
+  color: #f5f5f5;
+}
+.blog.page .post.purple-800 button:hover {
+  background-color: #791fb0;
+}
+.blog.page .post.purple-900 button, .blog.page .post.purple-900 .morph-content {
+  background-color: #4a148c;
+  color: #f5f5f5;
+}
+.blog.page .post.purple-900 button:hover {
+  background-color: #5617a2;
+}
 .blog.page .post.deep-purple button, .blog.page .post.deep-purple .morph-content {
   background-color: #673ab7;
   color: #f5f5f5;
 }
 .blog.page .post.deep-purple button:hover {
   background-color: #7446c4;
+}
+.blog.page .post.deep-purple-100 button, .blog.page .post.deep-purple-100 .morph-content {
+  background-color: #d1c4e9;
+  color: #616161;
+}
+.blog.page .post.deep-purple-100 button:hover {
+  background-color: #dfd7f0;
+}
+.blog.page .post.deep-purple-200 button, .blog.page .post.deep-purple-200 .morph-content {
+  background-color: #b39ddb;
+  color: #616161;
+}
+.blog.page .post.deep-purple-200 button:hover {
+  background-color: #c1b0e2;
+}
+.blog.page .post.deep-purple-300 button, .blog.page .post.deep-purple-300 .morph-content {
+  background-color: #9575cd;
+  color: #f5f5f5;
+}
+.blog.page .post.deep-purple-300 button:hover {
+  background-color: #a388d4;
+}
+.blog.page .post.deep-purple-400 button, .blog.page .post.deep-purple-400 .morph-content {
+  background-color: #7e57c2;
+  color: #f5f5f5;
+}
+.blog.page .post.deep-purple-400 button:hover {
+  background-color: #8c6ac9;
+}
+.blog.page .post.deep-purple-500 button, .blog.page .post.deep-purple-500 .morph-content {
+  background-color: #673ab7;
+  color: #f5f5f5;
+}
+.blog.page .post.deep-purple-500 button:hover {
+  background-color: #7446c4;
+}
+.blog.page .post.deep-purple-600 button, .blog.page .post.deep-purple-600 .morph-content {
+  background-color: #5e35b1;
+  color: #f5f5f5;
+}
+.blog.page .post.deep-purple-600 button:hover {
+  background-color: #693bc4;
+}
+.blog.page .post.deep-purple-700 button, .blog.page .post.deep-purple-700 .morph-content {
+  background-color: #512da8;
+  color: #f5f5f5;
+}
+.blog.page .post.deep-purple-700 button:hover {
+  background-color: #5b32bc;
+}
+.blog.page .post.deep-purple-800 button, .blog.page .post.deep-purple-800 .morph-content {
+  background-color: #4527a0;
+  color: #f5f5f5;
+}
+.blog.page .post.deep-purple-800 button:hover {
+  background-color: #4e2cb5;
+}
+.blog.page .post.deep-purple-900 button, .blog.page .post.deep-purple-900 .morph-content {
+  background-color: #311b92;
+  color: #f5f5f5;
+}
+.blog.page .post.deep-purple-900 button:hover {
+  background-color: #381fa8;
 }
 .blog.page .post.indigo button, .blog.page .post.indigo .morph-content {
   background-color: #3f51b5;
@@ -2901,12 +3174,138 @@ button span.date {
 .blog.page .post.indigo button:hover {
   background-color: #4d5ec1;
 }
+.blog.page .post.indigo-100 button, .blog.page .post.indigo-100 .morph-content {
+  background-color: #c5cae9;
+  color: #616161;
+}
+.blog.page .post.indigo-100 button:hover {
+  background-color: #d7dbf0;
+}
+.blog.page .post.indigo-200 button, .blog.page .post.indigo-200 .morph-content {
+  background-color: #9fa8da;
+  color: #616161;
+}
+.blog.page .post.indigo-200 button:hover {
+  background-color: #b1b9e1;
+}
+.blog.page .post.indigo-300 button, .blog.page .post.indigo-300 .morph-content {
+  background-color: #7986cb;
+  color: #f5f5f5;
+}
+.blog.page .post.indigo-300 button:hover {
+  background-color: #8b97d2;
+}
+.blog.page .post.indigo-400 button, .blog.page .post.indigo-400 .morph-content {
+  background-color: #5c6bc0;
+  color: #f5f5f5;
+}
+.blog.page .post.indigo-400 button:hover {
+  background-color: #6e7cc7;
+}
+.blog.page .post.indigo-500 button, .blog.page .post.indigo-500 .morph-content {
+  background-color: #3f51b5;
+  color: #f5f5f5;
+}
+.blog.page .post.indigo-500 button:hover {
+  background-color: #4d5ec1;
+}
+.blog.page .post.indigo-600 button, .blog.page .post.indigo-600 .morph-content {
+  background-color: #3949ab;
+  color: #f5f5f5;
+}
+.blog.page .post.indigo-600 button:hover {
+  background-color: #3f51be;
+}
+.blog.page .post.indigo-700 button, .blog.page .post.indigo-700 .morph-content {
+  background-color: #303f9f;
+  color: #f5f5f5;
+}
+.blog.page .post.indigo-700 button:hover {
+  background-color: #3647b3;
+}
+.blog.page .post.indigo-800 button, .blog.page .post.indigo-800 .morph-content {
+  background-color: #283593;
+  color: #f5f5f5;
+}
+.blog.page .post.indigo-800 button:hover {
+  background-color: #2d3ca7;
+}
+.blog.page .post.indigo-900 button, .blog.page .post.indigo-900 .morph-content {
+  background-color: #1a237e;
+  color: #f5f5f5;
+}
+.blog.page .post.indigo-900 button:hover {
+  background-color: #1e2993;
+}
 .blog.page .post.light-blue button, .blog.page .post.light-blue .morph-content {
   background-color: #03a9f4;
   color: #f5f5f5;
 }
 .blog.page .post.light-blue button:hover {
   background-color: #14b4fc;
+}
+.blog.page .post.light-blue-100 button, .blog.page .post.light-blue-100 .morph-content {
+  background-color: #b3e5fc;
+  color: #616161;
+}
+.blog.page .post.light-blue-100 button:hover {
+  background-color: #ccedfd;
+}
+.blog.page .post.light-blue-200 button, .blog.page .post.light-blue-200 .morph-content {
+  background-color: #81d4fa;
+  color: #616161;
+}
+.blog.page .post.light-blue-200 button:hover {
+  background-color: #9adcfb;
+}
+.blog.page .post.light-blue-300 button, .blog.page .post.light-blue-300 .morph-content {
+  background-color: #4fc3f7;
+  color: #f5f5f5;
+}
+.blog.page .post.light-blue-300 button:hover {
+  background-color: #67cbf8;
+}
+.blog.page .post.light-blue-400 button, .blog.page .post.light-blue-400 .morph-content {
+  background-color: #29b6f6;
+  color: #f5f5f5;
+}
+.blog.page .post.light-blue-400 button:hover {
+  background-color: #41bef7;
+}
+.blog.page .post.light-blue-500 button, .blog.page .post.light-blue-500 .morph-content {
+  background-color: #03a9f4;
+  color: #f5f5f5;
+}
+.blog.page .post.light-blue-500 button:hover {
+  background-color: #14b4fc;
+}
+.blog.page .post.light-blue-600 button, .blog.page .post.light-blue-600 .morph-content {
+  background-color: #039be5;
+  color: #f5f5f5;
+}
+.blog.page .post.light-blue-600 button:hover {
+  background-color: #06abfc;
+}
+.blog.page .post.light-blue-700 button, .blog.page .post.light-blue-700 .morph-content {
+  background-color: #0288d1;
+  color: #f5f5f5;
+}
+.blog.page .post.light-blue-700 button:hover {
+  background-color: #0298ea;
+}
+.blog.page .post.light-blue-800 button, .blog.page .post.light-blue-800 .morph-content {
+  background-color: #0277bd;
+  color: #f5f5f5;
+}
+.blog.page .post.light-blue-800 button:hover {
+  background-color: #0287d6;
+}
+.blog.page .post.light-blue-900 button, .blog.page .post.light-blue-900 .morph-content {
+  background-color: #01579b;
+  color: #f5f5f5;
+}
+.blog.page .post.light-blue-900 button:hover {
+  background-color: #0165b4;
 }
 .blog.page .post.blue button, .blog.page .post.blue .morph-content {
   background-color: #64b5f6;
@@ -2915,12 +3314,138 @@ button span.date {
 .blog.page .post.blue button:hover {
   background-color: #7cc1f7;
 }
+.blog.page .post.blue-100 button, .blog.page .post.blue-100 .morph-content {
+  background-color: #bbdefb;
+  color: #616161;
+}
+.blog.page .post.blue-100 button:hover {
+  background-color: #d3eafc;
+}
+.blog.page .post.blue-200 button, .blog.page .post.blue-200 .morph-content {
+  background-color: #90caf9;
+  color: #616161;
+}
+.blog.page .post.blue-200 button:hover {
+  background-color: #a8d6fa;
+}
+.blog.page .post.blue-300 button, .blog.page .post.blue-300 .morph-content {
+  background-color: #64b5f6;
+  color: #f5f5f5;
+}
+.blog.page .post.blue-300 button:hover {
+  background-color: #7cc1f7;
+}
+.blog.page .post.blue-400 button, .blog.page .post.blue-400 .morph-content {
+  background-color: #42a5f5;
+  color: #f5f5f5;
+}
+.blog.page .post.blue-400 button:hover {
+  background-color: #5ab1f6;
+}
+.blog.page .post.blue-500 button, .blog.page .post.blue-500 .morph-content {
+  background-color: #2196f3;
+  color: #f5f5f5;
+}
+.blog.page .post.blue-500 button:hover {
+  background-color: #39a1f4;
+}
+.blog.page .post.blue-600 button, .blog.page .post.blue-600 .morph-content {
+  background-color: #1e88e5;
+  color: #f5f5f5;
+}
+.blog.page .post.blue-600 button:hover {
+  background-color: #3594e8;
+}
+.blog.page .post.blue-700 button, .blog.page .post.blue-700 .morph-content {
+  background-color: #1976d2;
+  color: #f5f5f5;
+}
+.blog.page .post.blue-700 button:hover {
+  background-color: #2083e4;
+}
+.blog.page .post.blue-800 button, .blog.page .post.blue-800 .morph-content {
+  background-color: #1565c0;
+  color: #f5f5f5;
+}
+.blog.page .post.blue-800 button:hover {
+  background-color: #1871d7;
+}
+.blog.page .post.blue-900 button, .blog.page .post.blue-900 .morph-content {
+  background-color: #0d47a1;
+  color: #f5f5f5;
+}
+.blog.page .post.blue-900 button:hover {
+  background-color: #0f51b9;
+}
 .blog.page .post.green button, .blog.page .post.green .morph-content {
   background-color: #81c784;
   color: #f5f5f5;
 }
 .blog.page .post.green button:hover {
   background-color: #93cf95;
+}
+.blog.page .post.green-100 button, .blog.page .post.green-100 .morph-content {
+  background-color: #c8e6c9;
+  color: #616161;
+}
+.blog.page .post.green-100 button:hover {
+  background-color: #daeeda;
+}
+.blog.page .post.green-200 button, .blog.page .post.green-200 .morph-content {
+  background-color: #a5d6a7;
+  color: #616161;
+}
+.blog.page .post.green-200 button:hover {
+  background-color: #b7deb8;
+}
+.blog.page .post.green-300 button, .blog.page .post.green-300 .morph-content {
+  background-color: #81c784;
+  color: #f5f5f5;
+}
+.blog.page .post.green-300 button:hover {
+  background-color: #93cf95;
+}
+.blog.page .post.green-400 button, .blog.page .post.green-400 .morph-content {
+  background-color: #66bb6a;
+  color: #f5f5f5;
+}
+.blog.page .post.green-400 button:hover {
+  background-color: #78c37b;
+}
+.blog.page .post.green-500 button, .blog.page .post.green-500 .morph-content {
+  background-color: #4caf50;
+  color: #f5f5f5;
+}
+.blog.page .post.green-500 button:hover {
+  background-color: #5cb860;
+}
+.blog.page .post.green-600 button, .blog.page .post.green-600 .morph-content {
+  background-color: #43a047;
+  color: #f5f5f5;
+}
+.blog.page .post.green-600 button:hover {
+  background-color: #4bb24f;
+}
+.blog.page .post.green-700 button, .blog.page .post.green-700 .morph-content {
+  background-color: #388e3c;
+  color: #f5f5f5;
+}
+.blog.page .post.green-700 button:hover {
+  background-color: #3fa044;
+}
+.blog.page .post.green-800 button, .blog.page .post.green-800 .morph-content {
+  background-color: #2e7d32;
+  color: #f5f5f5;
+}
+.blog.page .post.green-800 button:hover {
+  background-color: #359039;
+}
+.blog.page .post.green-900 button, .blog.page .post.green-900 .morph-content {
+  background-color: #1b5e20;
+  color: #f5f5f5;
+}
+.blog.page .post.green-900 button:hover {
+  background-color: #217227;
 }
 .blog.page .post.cyan button, .blog.page .post.cyan .morph-content {
   background-color: #00bcd4;
@@ -2929,12 +3454,138 @@ button span.date {
 .blog.page .post.cyan button:hover {
   background-color: #00d3ee;
 }
+.blog.page .post.cyan-100 button, .blog.page .post.cyan-100 .morph-content {
+  background-color: #b2ebf2;
+  color: #616161;
+}
+.blog.page .post.cyan-100 button:hover {
+  background-color: #c8f1f6;
+}
+.blog.page .post.cyan-200 button, .blog.page .post.cyan-200 .morph-content {
+  background-color: #80deea;
+  color: #616161;
+}
+.blog.page .post.cyan-200 button:hover {
+  background-color: #96e4ee;
+}
+.blog.page .post.cyan-300 button, .blog.page .post.cyan-300 .morph-content {
+  background-color: #4dd0e1;
+  color: #f5f5f5;
+}
+.blog.page .post.cyan-300 button:hover {
+  background-color: #63d6e5;
+}
+.blog.page .post.cyan-400 button, .blog.page .post.cyan-400 .morph-content {
+  background-color: #26c6da;
+  color: #f5f5f5;
+}
+.blog.page .post.cyan-400 button:hover {
+  background-color: #3cccde;
+}
+.blog.page .post.cyan-500 button, .blog.page .post.cyan-500 .morph-content {
+  background-color: #00bcd4;
+  color: #f5f5f5;
+}
+.blog.page .post.cyan-500 button:hover {
+  background-color: #00d3ee;
+}
+.blog.page .post.cyan-600 button, .blog.page .post.cyan-600 .morph-content {
+  background-color: #00acc1;
+  color: #f5f5f5;
+}
+.blog.page .post.cyan-600 button:hover {
+  background-color: #00c3db;
+}
+.blog.page .post.cyan-700 button, .blog.page .post.cyan-700 .morph-content {
+  background-color: #0097a7;
+  color: #f5f5f5;
+}
+.blog.page .post.cyan-700 button:hover {
+  background-color: #00aec1;
+}
+.blog.page .post.cyan-800 button, .blog.page .post.cyan-800 .morph-content {
+  background-color: #00838f;
+  color: #f5f5f5;
+}
+.blog.page .post.cyan-800 button:hover {
+  background-color: #009aa9;
+}
+.blog.page .post.cyan-900 button, .blog.page .post.cyan-900 .morph-content {
+  background-color: #006064;
+  color: #f5f5f5;
+}
+.blog.page .post.cyan-900 button:hover {
+  background-color: #00787e;
+}
 .blog.page .post.teal button, .blog.page .post.teal .morph-content {
   background-color: #009688;
   color: #f5f5f5;
 }
 .blog.page .post.teal button:hover {
   background-color: #00b09f;
+}
+.blog.page .post.teal-100 button, .blog.page .post.teal-100 .morph-content {
+  background-color: #b2dfdb;
+  color: #616161;
+}
+.blog.page .post.teal-100 button:hover {
+  background-color: #c4e6e3;
+}
+.blog.page .post.teal-200 button, .blog.page .post.teal-200 .morph-content {
+  background-color: #80cbc4;
+  color: #f5f5f5;
+}
+.blog.page .post.teal-200 button:hover {
+  background-color: #92d2cc;
+}
+.blog.page .post.teal-300 button, .blog.page .post.teal-300 .morph-content {
+  background-color: #4db6ac;
+  color: #f5f5f5;
+}
+.blog.page .post.teal-300 button:hover {
+  background-color: #5fbdb4;
+}
+.blog.page .post.teal-400 button, .blog.page .post.teal-400 .morph-content {
+  background-color: #26a69a;
+  color: #f5f5f5;
+}
+.blog.page .post.teal-400 button:hover {
+  background-color: #2bbbad;
+}
+.blog.page .post.teal-500 button, .blog.page .post.teal-500 .morph-content {
+  background-color: #009688;
+  color: #f5f5f5;
+}
+.blog.page .post.teal-500 button:hover {
+  background-color: #00b09f;
+}
+.blog.page .post.teal-600 button, .blog.page .post.teal-600 .morph-content {
+  background-color: #00897b;
+  color: #f5f5f5;
+}
+.blog.page .post.teal-600 button:hover {
+  background-color: #00a392;
+}
+.blog.page .post.teal-700 button, .blog.page .post.teal-700 .morph-content {
+  background-color: #00796b;
+  color: #f5f5f5;
+}
+.blog.page .post.teal-700 button:hover {
+  background-color: #009382;
+}
+.blog.page .post.teal-800 button, .blog.page .post.teal-800 .morph-content {
+  background-color: #00695c;
+  color: #f5f5f5;
+}
+.blog.page .post.teal-800 button:hover {
+  background-color: #008372;
+}
+.blog.page .post.teal-900 button, .blog.page .post.teal-900 .morph-content {
+  background-color: #004d40;
+  color: #f5f5f5;
+}
+.blog.page .post.teal-900 button:hover {
+  background-color: #006755;
 }
 .blog.page .post.light-green button, .blog.page .post.light-green .morph-content {
   background-color: #8bc34a;
@@ -2943,12 +3594,138 @@ button span.date {
 .blog.page .post.light-green button:hover {
   background-color: #97c95d;
 }
+.blog.page .post.light-green-100 button, .blog.page .post.light-green-100 .morph-content {
+  background-color: #dcedc8;
+  color: #616161;
+}
+.blog.page .post.light-green-100 button:hover {
+  background-color: #e8f3db;
+}
+.blog.page .post.light-green-200 button, .blog.page .post.light-green-200 .morph-content {
+  background-color: #c5e1a5;
+  color: #616161;
+}
+.blog.page .post.light-green-200 button:hover {
+  background-color: #d1e7b8;
+}
+.blog.page .post.light-green-300 button, .blog.page .post.light-green-300 .morph-content {
+  background-color: #aed581;
+  color: #f5f5f5;
+}
+.blog.page .post.light-green-300 button:hover {
+  background-color: #badb94;
+}
+.blog.page .post.light-green-400 button, .blog.page .post.light-green-400 .morph-content {
+  background-color: #9ccc65;
+  color: #f5f5f5;
+}
+.blog.page .post.light-green-400 button:hover {
+  background-color: #a8d278;
+}
+.blog.page .post.light-green-500 button, .blog.page .post.light-green-500 .morph-content {
+  background-color: #8bc34a;
+  color: #f5f5f5;
+}
+.blog.page .post.light-green-500 button:hover {
+  background-color: #97c95d;
+}
+.blog.page .post.light-green-600 button, .blog.page .post.light-green-600 .morph-content {
+  background-color: #7cb342;
+  color: #f5f5f5;
+}
+.blog.page .post.light-green-600 button:hover {
+  background-color: #89be50;
+}
+.blog.page .post.light-green-700 button, .blog.page .post.light-green-700 .morph-content {
+  background-color: #689f38;
+  color: #f5f5f5;
+}
+.blog.page .post.light-green-700 button:hover {
+  background-color: #74b23f;
+}
+.blog.page .post.light-green-800 button, .blog.page .post.light-green-800 .morph-content {
+  background-color: #558b2f;
+  color: #f5f5f5;
+}
+.blog.page .post.light-green-800 button:hover {
+  background-color: #619e35;
+}
+.blog.page .post.light-green-900 button, .blog.page .post.light-green-900 .morph-content {
+  background-color: #33691e;
+  color: #f5f5f5;
+}
+.blog.page .post.light-green-900 button:hover {
+  background-color: #3d7d24;
+}
 .blog.page .post.lime button, .blog.page .post.lime .morph-content {
   background-color: #cddc39;
   color: #f5f5f5;
 }
 .blog.page .post.lime button:hover {
   background-color: #d2e04f;
+}
+.blog.page .post.lime-100 button, .blog.page .post.lime-100 .morph-content {
+  background-color: #f0f4c3;
+  color: #616161;
+}
+.blog.page .post.lime-100 button:hover {
+  background-color: #f5f8d9;
+}
+.blog.page .post.lime-200 button, .blog.page .post.lime-200 .morph-content {
+  background-color: #e6ee9c;
+  color: #616161;
+}
+.blog.page .post.lime-200 button:hover {
+  background-color: #ebf2b2;
+}
+.blog.page .post.lime-300 button, .blog.page .post.lime-300 .morph-content {
+  background-color: #dce775;
+  color: #f5f5f5;
+}
+.blog.page .post.lime-300 button:hover {
+  background-color: #e2eb8b;
+}
+.blog.page .post.lime-400 button, .blog.page .post.lime-400 .morph-content {
+  background-color: #d4e157;
+  color: #f5f5f5;
+}
+.blog.page .post.lime-400 button:hover {
+  background-color: #dae56d;
+}
+.blog.page .post.lime-500 button, .blog.page .post.lime-500 .morph-content {
+  background-color: #cddc39;
+  color: #f5f5f5;
+}
+.blog.page .post.lime-500 button:hover {
+  background-color: #d2e04f;
+}
+.blog.page .post.lime-600 button, .blog.page .post.lime-600 .morph-content {
+  background-color: #c0ca33;
+  color: #f5f5f5;
+}
+.blog.page .post.lime-600 button:hover {
+  background-color: #c7d046;
+}
+.blog.page .post.lime-700 button, .blog.page .post.lime-700 .morph-content {
+  background-color: #afb42b;
+  color: #f5f5f5;
+}
+.blog.page .post.lime-700 button:hover {
+  background-color: #c3c930;
+}
+.blog.page .post.lime-800 button, .blog.page .post.lime-800 .morph-content {
+  background-color: #9e9d24;
+  color: #f5f5f5;
+}
+.blog.page .post.lime-800 button:hover {
+  background-color: #b3b229;
+}
+.blog.page .post.lime-900 button, .blog.page .post.lime-900 .morph-content {
+  background-color: #827717;
+  color: #f5f5f5;
+}
+.blog.page .post.lime-900 button:hover {
+  background-color: #988b1b;
 }
 .blog.page .post.light-yellow button, .blog.page .post.light-yellow .morph-content {
   background-color: #fff176;
@@ -2967,12 +3744,141 @@ button span.date {
 .blog.page .post.yellow button:hover {
   background-color: #fddd4e;
 }
+.blog.page .post.yellow-100 button, .blog.page .post.yellow-100 .morph-content {
+  background-color: #fff9c4;
+  color: #616161;
+}
+.blog.page .post.yellow-100 button:hover {
+  background-color: #fffcdd;
+}
+.blog.page .post.yellow-200 button, .blog.page .post.yellow-200 .morph-content {
+  background-color: #fff59d;
+  color: #616161;
+}
+.blog.page .post.yellow-200 button:hover {
+  background-color: #fff8b6;
+}
+.blog.page .post.yellow-300 button, .blog.page .post.yellow-300 .morph-content {
+  background-color: #fff176;
+  color: #616161;
+}
+.blog.page .post.yellow-300 button:hover {
+  background-color: #fff490;
+}
+.blog.page .post.yellow-400 button, .blog.page .post.yellow-400 .morph-content {
+  background-color: #ffee58;
+  color: #f5f5f5;
+}
+.blog.page .post.yellow-400 button:hover {
+  background-color: #fff172;
+}
+.blog.page .post.yellow-500 button, .blog.page .post.yellow-500 .morph-content {
+  background-color: #ffeb3b;
+  color: #f5f5f5;
+}
+.blog.page .post.yellow-500 button:hover {
+  background-color: #ffee55;
+}
+.blog.page .post.yellow-600 button, .blog.page .post.yellow-600 .morph-content {
+  background-color: #fdd835;
+  color: #f5f5f5;
+}
+.blog.page .post.yellow-600 .morph-content {
+  color: #332900;
+}
+.blog.page .post.yellow-600 button:hover {
+  background-color: #fddd4e;
+}
+.blog.page .post.yellow-700 button, .blog.page .post.yellow-700 .morph-content {
+  background-color: #fbc02d;
+  color: #f5f5f5;
+}
+.blog.page .post.yellow-700 button:hover {
+  background-color: #fbc846;
+}
+.blog.page .post.yellow-800 button, .blog.page .post.yellow-800 .morph-content {
+  background-color: #f9a825;
+  color: #f5f5f5;
+}
+.blog.page .post.yellow-800 button:hover {
+  background-color: #fab23e;
+}
+.blog.page .post.yellow-900 button, .blog.page .post.yellow-900 .morph-content {
+  background-color: #f57f17;
+  color: #f5f5f5;
+}
+.blog.page .post.yellow-900 button:hover {
+  background-color: #f68c2f;
+}
 .blog.page .post.orange button, .blog.page .post.orange .morph-content {
   background-color: #ff9800;
   color: #f5f5f5;
 }
 .blog.page .post.orange button:hover {
   background-color: #ffa21a;
+}
+.blog.page .post.orange-100 button, .blog.page .post.orange-100 .morph-content {
+  background-color: #ffe0b2;
+  color: #616161;
+}
+.blog.page .post.orange-100 button:hover {
+  background-color: #ffeacc;
+}
+.blog.page .post.orange-200 button, .blog.page .post.orange-200 .morph-content {
+  background-color: #ffcc80;
+  color: #616161;
+}
+.blog.page .post.orange-200 button:hover {
+  background-color: #ffd69a;
+}
+.blog.page .post.orange-300 button, .blog.page .post.orange-300 .morph-content {
+  background-color: #ffb74d;
+  color: #f5f5f5;
+}
+.blog.page .post.orange-300 button:hover {
+  background-color: #ffc166;
+}
+.blog.page .post.orange-400 button, .blog.page .post.orange-400 .morph-content {
+  background-color: #ffa726;
+  color: #f5f5f5;
+}
+.blog.page .post.orange-400 button:hover {
+  background-color: #ffb140;
+}
+.blog.page .post.orange-500 button, .blog.page .post.orange-500 .morph-content {
+  background-color: #ff9800;
+  color: #f5f5f5;
+}
+.blog.page .post.orange-500 button:hover {
+  background-color: #ffa21a;
+}
+.blog.page .post.orange-600 button, .blog.page .post.orange-600 .morph-content {
+  background-color: #fb8c00;
+  color: #f5f5f5;
+}
+.blog.page .post.orange-600 button:hover {
+  background-color: #ff9816;
+}
+.blog.page .post.orange-700 button, .blog.page .post.orange-700 .morph-content {
+  background-color: #f57c00;
+  color: #f5f5f5;
+}
+.blog.page .post.orange-700 button:hover {
+  background-color: #ff8910;
+}
+.blog.page .post.orange-800 button, .blog.page .post.orange-800 .morph-content {
+  background-color: #ef6c00;
+  color: #f5f5f5;
+}
+.blog.page .post.orange-800 button:hover {
+  background-color: #ff7809;
+}
+.blog.page .post.orange-900 button, .blog.page .post.orange-900 .morph-content {
+  background-color: #e65100;
+  color: #f5f5f5;
+}
+.blog.page .post.orange-900 button:hover {
+  background-color: #ff5a00;
 }
 .blog.page .post.deep-orange button, .blog.page .post.deep-orange .morph-content {
   background-color: #ff5722;
@@ -2981,12 +3887,138 @@ button span.date {
 .blog.page .post.deep-orange button:hover {
   background-color: #ff6a3c;
 }
+.blog.page .post.deep-orange-100 button, .blog.page .post.deep-orange-100 .morph-content {
+  background-color: #ffccbc;
+  color: #616161;
+}
+.blog.page .post.deep-orange-100 button:hover {
+  background-color: #ffdfd6;
+}
+.blog.page .post.deep-orange-200 button, .blog.page .post.deep-orange-200 .morph-content {
+  background-color: #ffab91;
+  color: #616161;
+}
+.blog.page .post.deep-orange-200 button:hover {
+  background-color: #ffbeab;
+}
+.blog.page .post.deep-orange-300 button, .blog.page .post.deep-orange-300 .morph-content {
+  background-color: #ff8a65;
+  color: #f5f5f5;
+}
+.blog.page .post.deep-orange-300 button:hover {
+  background-color: #ff9d7e;
+}
+.blog.page .post.deep-orange-400 button, .blog.page .post.deep-orange-400 .morph-content {
+  background-color: #ff7043;
+  color: #f5f5f5;
+}
+.blog.page .post.deep-orange-400 button:hover {
+  background-color: #ff835c;
+}
+.blog.page .post.deep-orange-500 button, .blog.page .post.deep-orange-500 .morph-content {
+  background-color: #ff5722;
+  color: #f5f5f5;
+}
+.blog.page .post.deep-orange-500 button:hover {
+  background-color: #ff6a3c;
+}
+.blog.page .post.deep-orange-600 button, .blog.page .post.deep-orange-600 .morph-content {
+  background-color: #f4511e;
+  color: #f5f5f5;
+}
+.blog.page .post.deep-orange-600 button:hover {
+  background-color: #f56436;
+}
+.blog.page .post.deep-orange-700 button, .blog.page .post.deep-orange-700 .morph-content {
+  background-color: #e64a19;
+  color: #f5f5f5;
+}
+.blog.page .post.deep-orange-700 button:hover {
+  background-color: #e95c30;
+}
+.blog.page .post.deep-orange-800 button, .blog.page .post.deep-orange-800 .morph-content {
+  background-color: #d84315;
+  color: #f5f5f5;
+}
+.blog.page .post.deep-orange-800 button:hover {
+  background-color: #e94d1d;
+}
+.blog.page .post.deep-orange-900 button, .blog.page .post.deep-orange-900 .morph-content {
+  background-color: #bf360c;
+  color: #f5f5f5;
+}
+.blog.page .post.deep-orange-900 button:hover {
+  background-color: #d73d0e;
+}
 .blog.page .post.grey button, .blog.page .post.grey .morph-content {
   background-color: #9e9e9e;
   color: #f5f5f5;
 }
 .blog.page .post.grey button:hover {
   background-color: #ababab;
+}
+.blog.page .post.grey-100 button, .blog.page .post.grey-100 .morph-content {
+  background-color: #f5f5f5;
+  color: #616161;
+}
+.blog.page .post.grey-100 button:hover {
+  background-color: white;
+}
+.blog.page .post.grey-200 button, .blog.page .post.grey-200 .morph-content {
+  background-color: #eeeeee;
+  color: #616161;
+}
+.blog.page .post.grey-200 button:hover {
+  background-color: #fbfbfb;
+}
+.blog.page .post.grey-300 button, .blog.page .post.grey-300 .morph-content {
+  background-color: #e0e0e0;
+  color: #616161;
+}
+.blog.page .post.grey-300 button:hover {
+  background-color: #ededed;
+}
+.blog.page .post.grey-400 button, .blog.page .post.grey-400 .morph-content {
+  background-color: #bdbdbd;
+  color: #616161;
+}
+.blog.page .post.grey-400 button:hover {
+  background-color: #cacaca;
+}
+.blog.page .post.grey-500 button, .blog.page .post.grey-500 .morph-content {
+  background-color: #9e9e9e;
+  color: #f5f5f5;
+}
+.blog.page .post.grey-500 button:hover {
+  background-color: #ababab;
+}
+.blog.page .post.grey-600 button, .blog.page .post.grey-600 .morph-content {
+  background-color: #757575;
+  color: #f5f5f5;
+}
+.blog.page .post.grey-600 button:hover {
+  background-color: #828282;
+}
+.blog.page .post.grey-700 button, .blog.page .post.grey-700 .morph-content {
+  background-color: #616161;
+  color: #f5f5f5;
+}
+.blog.page .post.grey-700 button:hover {
+  background-color: #6e6e6e;
+}
+.blog.page .post.grey-800 button, .blog.page .post.grey-800 .morph-content {
+  background-color: #424242;
+  color: #f5f5f5;
+}
+.blog.page .post.grey-800 button:hover {
+  background-color: #4f4f4f;
+}
+.blog.page .post.grey-900 button, .blog.page .post.grey-900 .morph-content {
+  background-color: #212121;
+  color: #f5f5f5;
+}
+.blog.page .post.grey-900 button:hover {
+  background-color: #2e2e2e;
 }
 .blog.page .post.blue-grey button, .blog.page .post.blue-grey .morph-content {
   background-color: #607d8b;
@@ -2995,12 +4027,138 @@ button span.date {
 .blog.page .post.blue-grey button:hover {
   background-color: #6b8a99;
 }
+.blog.page .post.blue-grey-100 button, .blog.page .post.blue-grey-100 .morph-content {
+  background-color: #cfd8dc;
+  color: #616161;
+}
+.blog.page .post.blue-grey-100 button:hover {
+  background-color: #dee4e7;
+}
+.blog.page .post.blue-grey-200 button, .blog.page .post.blue-grey-200 .morph-content {
+  background-color: #b0bec5;
+  color: #616161;
+}
+.blog.page .post.blue-grey-200 button:hover {
+  background-color: #bfcad0;
+}
+.blog.page .post.blue-grey-300 button, .blog.page .post.blue-grey-300 .morph-content {
+  background-color: #90a4ae;
+  color: #f5f5f5;
+}
+.blog.page .post.blue-grey-300 button:hover {
+  background-color: #9fb0b9;
+}
+.blog.page .post.blue-grey-400 button, .blog.page .post.blue-grey-400 .morph-content {
+  background-color: #78909c;
+  color: #f5f5f5;
+}
+.blog.page .post.blue-grey-400 button:hover {
+  background-color: #879ca7;
+}
+.blog.page .post.blue-grey-500 button, .blog.page .post.blue-grey-500 .morph-content {
+  background-color: #607d8b;
+  color: #f5f5f5;
+}
+.blog.page .post.blue-grey-500 button:hover {
+  background-color: #6b8a99;
+}
+.blog.page .post.blue-grey-600 button, .blog.page .post.blue-grey-600 .morph-content {
+  background-color: #546e7a;
+  color: #f5f5f5;
+}
+.blog.page .post.blue-grey-600 button:hover {
+  background-color: #5e7c89;
+}
+.blog.page .post.blue-grey-700 button, .blog.page .post.blue-grey-700 .morph-content {
+  background-color: #455a64;
+  color: #f5f5f5;
+}
+.blog.page .post.blue-grey-700 button:hover {
+  background-color: #4f6873;
+}
+.blog.page .post.blue-grey-800 button, .blog.page .post.blue-grey-800 .morph-content {
+  background-color: #37474f;
+  color: #f5f5f5;
+}
+.blog.page .post.blue-grey-800 button:hover {
+  background-color: #41555e;
+}
+.blog.page .post.blue-grey-900 button, .blog.page .post.blue-grey-900 .morph-content {
+  background-color: #263238;
+  color: #f5f5f5;
+}
+.blog.page .post.blue-grey-900 button:hover {
+  background-color: #304047;
+}
 .blog.page .post.brown button, .blog.page .post.brown .morph-content {
   background-color: #795548;
   color: #f5f5f5;
 }
 .blog.page .post.brown button:hover {
   background-color: #896052;
+}
+.blog.page .post.brown-100 button, .blog.page .post.brown-100 .morph-content {
+  background-color: #d7ccc8;
+  color: #616161;
+}
+.blog.page .post.brown-100 button:hover {
+  background-color: #e2dad7;
+}
+.blog.page .post.brown-200 button, .blog.page .post.brown-200 .morph-content {
+  background-color: #bcaaa4;
+  color: #f5f5f5;
+}
+.blog.page .post.brown-200 button:hover {
+  background-color: #c7b8b3;
+}
+.blog.page .post.brown-300 button, .blog.page .post.brown-300 .morph-content {
+  background-color: #a1887f;
+  color: #f5f5f5;
+}
+.blog.page .post.brown-300 button:hover {
+  background-color: #ac968e;
+}
+.blog.page .post.brown-400 button, .blog.page .post.brown-400 .morph-content {
+  background-color: #8d6e63;
+  color: #f5f5f5;
+}
+.blog.page .post.brown-400 button:hover {
+  background-color: #9a7b6f;
+}
+.blog.page .post.brown-500 button, .blog.page .post.brown-500 .morph-content {
+  background-color: #795548;
+  color: #f5f5f5;
+}
+.blog.page .post.brown-500 button:hover {
+  background-color: #896052;
+}
+.blog.page .post.brown-600 button, .blog.page .post.brown-600 .morph-content {
+  background-color: #6d4c41;
+  color: #f5f5f5;
+}
+.blog.page .post.brown-600 button:hover {
+  background-color: #7d574b;
+}
+.blog.page .post.brown-700 button, .blog.page .post.brown-700 .morph-content {
+  background-color: #5d4037;
+  color: #f5f5f5;
+}
+.blog.page .post.brown-700 button:hover {
+  background-color: #6d4b40;
+}
+.blog.page .post.brown-800 button, .blog.page .post.brown-800 .morph-content {
+  background-color: #4e342e;
+  color: #f5f5f5;
+}
+.blog.page .post.brown-800 button:hover {
+  background-color: #5e3f37;
+}
+.blog.page .post.brown-900 button, .blog.page .post.brown-900 .morph-content {
+  background-color: #3e2723;
+  color: #f5f5f5;
+}
+.blog.page .post.brown-900 button:hover {
+  background-color: #4e312c;
 }
 .blog.page .post.light-grey button, .blog.page .post.light-grey .morph-content {
   background-color: #f5f5f5;
