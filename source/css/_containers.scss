@@ -13,17 +13,32 @@ body.scroll-lock{
   width: 100%;
 }
 
-#footer{
-  margin-top:1em;
-  padding-top:1em;
-}
-
 #masthead, #figures, #summary>.content, #content, #footer .inner{
   @include container;
   section {
     @include wrapper;
   }
 }
+
+#footer{
+  margin-top: 0;
+  padding-top: 3.5em;
+  padding-bottom: 1em;
+  background-color:#A4B8C2;
+  border-bottom: 1.5em solid $white;
+  text-align:right;
+  font-size:0.8em;            
+  
+  .inner{
+    margin: 0 $column;
+  }
+}
+
+.page-blog #footer{
+  background: $teal-A700;
+  border-bottom: 1.5em solid $paper-color;
+}
+
 
 #masthead h1{
   @include site-title;

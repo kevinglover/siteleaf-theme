@@ -5,7 +5,7 @@
 
 @import "base/peakaboo";
 
-
+$primary-blog-color: $blue-grey-700;
 $paper-color: #f2ede0;
 
 @import "containers";
@@ -14,8 +14,6 @@ $paper-color: #f2ede0;
 @import "header";
 
 // Home
-$primary-blog-color: $blue-grey-700;
-
 
 //Page Menu
 .page-menu{
@@ -39,7 +37,7 @@ $secondary-color: $blue-grey-700;
           display: block;
           width: 25%;
           top: 10em;
-          height: 40%;
+          height: 55%;
           z-index: 0;
           background: color-opacity($lime-200,0.33);
       }

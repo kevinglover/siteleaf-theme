@@ -61,11 +61,11 @@ button span.date {
         position:absolute;
         bottom:0;
         z-index:100;
-        width:2em;
+        width:1em;
         font-size:2.5em;
         padding:1em 0;
         margin:0 49%;
-        margin:0 calc(50% - 1em);
+        margin:0 calc(50% - 0.5em);
         @include transition(transform 0.4s ease, opacity 0.3s ease);
         @include material-icon;
         cursor:pointer;
@@ -87,9 +87,10 @@ button span.date {
             @include transform(rotateZ(90deg) translateX(0));
           }
         }
-        
-        &:hover{
-          opacity:0.8;
+      }
+      @media screen and (max-height: 22em){
+        & {
+            font-size: 55%
         }
       }
       
@@ -127,6 +128,7 @@ button span.date {
   padding-bottom: 10em;
   
   p:last-of-type:not(:first-of-type):after{
+    font-family:Arial, sans-serif;
     content: '\2b22';
     display: inline-block;
     position: relative;
@@ -190,37 +192,40 @@ button span.date {
   width: 50%;
   position:relative;
   
-  button, .morph-content{
-    background-color:$primary-blog-color;
-  }
-  .morph-content{
-    color: $paper-color;
-  }
+  .page-index &{
   
-  &:nth-child(2n){
-    a, button, .morph-content{
-      background-color:$red;
-    }
-    .morph-content{
-      color: $paper-color;
-    }
-  }
-  
-  &:nth-child(3n){
-    a, button, .morph-content{
-      background-color:$cyan;
-    }
-    .morph-content{
-      color: $lightbg-text;
-    }
-  }
-  
-  &:nth-child(4n){
-    a, button, .morph-content{
+    button, .morph-content{
       background-color:$primary-blog-color;
     }
     .morph-content{
       color: $paper-color;
+    }
+    
+    &:nth-child(2n){
+      a, button, .morph-content{
+        background-color:$red;
+      }
+      .morph-content{
+        color: $paper-color;
+      }
+    }
+    
+    &:nth-child(3n){
+      a, button, .morph-content{
+        background-color:$cyan;
+      }
+      .morph-content{
+        color: $lightbg-text;
+      }
+    }
+    
+    &:nth-child(4n){
+      a, button, .morph-content{
+        background-color:$primary-blog-color;
+      }
+      .morph-content{
+        color: $paper-color;
+      }
     }
   }
   
@@ -266,6 +271,14 @@ button span.date {
   }
 }
 
+
+#blog h2 a {
+  color: rgb(164, 184, 194);
+  
+  &:hover,&:focus{
+    color: #00bfa5;
+  }
+}
 
 // Blog Page
 

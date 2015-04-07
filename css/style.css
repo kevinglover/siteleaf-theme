@@ -2333,11 +2333,6 @@ body.scroll-lock {
   width: 100%;
 }
 
-#footer {
-  margin-top: 1em;
-  padding-top: 1em;
-}
-
 #masthead, #figures, #summary > .content, #content, #footer .inner {
   margin: 0 5.55555556%;
 }
@@ -2372,6 +2367,24 @@ body.scroll-lock {
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+#footer {
+  margin-top: 0;
+  padding-top: 3.5em;
+  padding-bottom: 1em;
+  background-color: #A4B8C2;
+  border-bottom: 1.5em solid #ffffff;
+  text-align: right;
+  font-size: 0.8em;
+}
+#footer .inner {
+  margin: 0 5.55555556%;
+}
+
+.page-blog #footer {
+  background: #00bfa5;
+  border-bottom: 1.5em solid #f2ede0;
 }
 
 #masthead h1 {
@@ -2532,7 +2545,7 @@ header.peakaboo.header.mini .header-title .logo img {
     display: block;
     width: 25%;
     top: 10em;
-    height: 40%;
+    height: 55%;
     z-index: 0;
     background: rgba(230, 238, 156, 0.33);
   }
@@ -2787,11 +2800,11 @@ button span.date {
   position: absolute;
   bottom: 0;
   z-index: 100;
-  width: 2em;
+  width: 1em;
   font-size: 2.5em;
   padding: 1em 0;
   margin: 0 49%;
-  margin: 0 calc(50% - 1em);
+  margin: 0 calc(50% - 0.5em);
   -webkit-transition: -webkit-transform 0.4s ease, opacity 0.3s ease;
   -moz-transition: -moz-transform 0.4s ease, opacity 0.3s ease;
   transition: transform 0.4s ease, opacity 0.3s ease;
@@ -2864,8 +2877,10 @@ button span.date {
     transform: rotateZ(90deg) translateX(0);
   }
 }
-.morph-button-fixed .morph-content > div .content-style-overlay header:after:hover {
-  opacity: 0.8;
+@media screen and (max-height: 22em) {
+  .morph-button-fixed .morph-content > div .content-style-overlay header {
+    font-size: 55%;
+  }
 }
 .morph-button-fixed .morph-content > div .content-style-overlay header .content {
   display: table;
@@ -2900,6 +2915,7 @@ button span.date {
   padding-bottom: 10em;
 }
 .morph-button-fixed .morph-content > div .content-style-overlay p:last-of-type:not(:first-of-type):after {
+  font-family: Arial, sans-serif;
   content: '\2b22';
   display: inline-block;
   position: relative;
@@ -2957,28 +2973,28 @@ button span.date {
   width: 50%;
   position: relative;
 }
-.blog .post button, .blog .post .morph-content {
+.page-index .blog .post button, .page-index .blog .post .morph-content {
   background-color: #455a64;
 }
-.blog .post .morph-content {
+.page-index .blog .post .morph-content {
   color: #f2ede0;
 }
-.blog .post:nth-child(2n) a, .blog .post:nth-child(2n) button, .blog .post:nth-child(2n) .morph-content {
+.page-index .blog .post:nth-child(2n) a, .page-index .blog .post:nth-child(2n) button, .page-index .blog .post:nth-child(2n) .morph-content {
   background-color: #f44336;
 }
-.blog .post:nth-child(2n) .morph-content {
+.page-index .blog .post:nth-child(2n) .morph-content {
   color: #f2ede0;
 }
-.blog .post:nth-child(3n) a, .blog .post:nth-child(3n) button, .blog .post:nth-child(3n) .morph-content {
+.page-index .blog .post:nth-child(3n) a, .page-index .blog .post:nth-child(3n) button, .page-index .blog .post:nth-child(3n) .morph-content {
   background-color: #00bcd4;
 }
-.blog .post:nth-child(3n) .morph-content {
+.page-index .blog .post:nth-child(3n) .morph-content {
   color: #616161;
 }
-.blog .post:nth-child(4n) a, .blog .post:nth-child(4n) button, .blog .post:nth-child(4n) .morph-content {
+.page-index .blog .post:nth-child(4n) a, .page-index .blog .post:nth-child(4n) button, .page-index .blog .post:nth-child(4n) .morph-content {
   background-color: #455a64;
 }
-.blog .post:nth-child(4n) .morph-content {
+.page-index .blog .post:nth-child(4n) .morph-content {
   color: #f2ede0;
 }
 @media screen and (min-width: 40em) {
@@ -3019,6 +3035,13 @@ button span.date {
   .blog .post .content .half:nth-child(n+2) {
     padding-right: 0.75em;
   }
+}
+
+#blog h2 a {
+  color: #a4b8c2;
+}
+#blog h2 a:hover, #blog h2 a:focus {
+  color: #00bfa5;
 }
 
 .page-blog header.peakaboo.header {
