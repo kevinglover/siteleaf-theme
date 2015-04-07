@@ -63,24 +63,38 @@ module.exports = function(grunt) {
       }
     },
     
+    zip: {
+      main: {
+        src: ['_layouts/**','blog/*','data/*','fonts/*','styles/*','scripts/*','index.html'],
+        dest: 'theme.zip'
+      }
+    },
+    
     nodeunit: {
       all: ['test/*_tests.js']
     }
   });
   
   // load all grunt tasks  
-  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-zip');
+
+
     
   //if you choose to use scss, or any preprocessor, you can add it here
-  grunt.registerTask('default', ['sass', 'copy', 'uglify', 'cssmin']);
+  grunt.registerTask('default', ['sass', 'copy']);
+  
+  grunt.registerTask('minify', ['sass', 'copy', 'uglify', 'cssmin']);
   
   grunt.registerTask('active-watch', ['sass', 'copy', 'uglify', 'cssmin', 'watch']);
+  
+  grunt.registerTask('active-watch-minify', ['sass', 'copy', 'watch']);
     
   //travis CI task
-  grunt.registerTask('travis', ['sass', 'copy', 'uglify', 'cssmin', 'watch', 'nodeunit']);
+  grunt.registerTask('travis', ['sass', 'copy', 'uglify', 'cssmin', 'watch', 'zip', 'nodeunit']);
   
 };

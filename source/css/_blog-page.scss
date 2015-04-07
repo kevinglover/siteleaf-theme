@@ -1,17 +1,126 @@
-/* @group diamonds */
-  $diamondSize: 8em;
-  $belowDiamondSize: 100%;
-    
-.morph-button-fixed .morph-content > div{
-  @include container;
+// Blog Styles
+
+
+// General
+
+
+.icon.icon-close{
+  display:none;
+  visibility:hidden;
+}
+
+.btn-close{
+  @include transition(top 0.5s cubic-bezier(0.7,0,0.3,1), background-color 0.5s ease, color 0.5s ease);
   
-  @media screen and (min-width: 55.5em){
-    margin: 0 16.66666667%;
+  &.hide{
+      top:-3em;
   }
+}
+
+
+button span.date {
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+
+.morph-button-fixed .morph-content > div{
   
   .content-style-overlay{
-    @include wrapper;
+    header, section{
+        position:relative;
+        width:100%;
+        display:inline-block;
+    }
+
+    section{
+      color:$base-font-color;
+      padding-top:1em;
+    }
+    
+    .content{
+      @include container;
+      
+      @media screen and (min-width: 55.5em){
+        margin: 0 16.66666667%;
+      }
+      
+      .inner{
+        @include wrapper;
+      }
+    }
+    
+    header{
+      overflow:hidden;
+      height: 100%;
+      height: 100vh;
+      display:block;
+      
+      &:after{
+        content:"\e897";
+        @include transform(rotateZ(90deg));
+        position:absolute;
+        bottom:0;
+        z-index:100;
+        width:2em;
+        font-size:2.5em;
+        padding:1em 0;
+        margin:0 49%;
+        margin:0 calc(50% - 1em);
+        @include transition(transform 0.4s ease, opacity 0.3s ease);
+        @include material-icon;
+        cursor:pointer;
+        
+        @include animation-name(bounce);
+        @include animation-duration(2s);
+        @include animation-timing-function(ease);
+        @include animation-iteration-count(infinite);
+        
+        @include keyframes(bounce) {
+          0% {
+            @include transform(rotateZ(90deg) translateX(0));
+          }
+          
+          50% {
+            @include transform(rotateZ(90deg) translateX(0.1em));
+          }
+          100% {
+            @include transform(rotateZ(90deg) translateX(0));
+          }
+        }
+        
+        &:hover{
+          opacity:0.8;
+        }
+      }
+      
+      .content{
+        display:table;
+        height:100%;
+        text-align:center;
+        width: 89%;
+        margin: auto;
+        @media screen and (min-width: 45em){
+          width: 66.22222%;
+        }
+        
+        .inner{
+          display:table-cell;
+          vertical-align:middle;
+        }
+      }
+    }
   }
+}
+
+
+.morph-button-fixed .morph-content > div{
+  @include transition(background-color 0.4s, opacity 0.2s ease, visibility 0s 0.1s, height 0s 0.1s);
+}
+
+.morph-button-fixed.open .morph-content > div{
+  background-color:$base-background-color;
+  position:relative;
+  width:100%;
 }
 
 .morph-button-fixed .morph-content>div .content-style-overlay {
@@ -27,608 +136,153 @@
   }
 }
 
-button span.date {
-  font-size: 0.8em;
-  opacity: 0.7;
+
+// Home Page Blog Elements
+
+#blog>header{
+  display: table;
+  width: 100%;
+
+  &:before {
+    content: '';
+    background: $primary-blog-color;
+    display: none;
+    width:0;
+    
+    @include media($medium-screen-up){
+      display: table-cell;
+      width: 25%;
+      height: 10em;
+    }
+  }
+
+  .inner {
+    background:#F5F7F8;
+    display: table-cell;
+    vertical-align: bottom;
+    padding: 1em 1.75em;
+    
+    span.mdi-navigation-arrow-forward {
+      top: 9px;
+      position: relative;
+    }
+  }
 }
 
-.blog.page{
-  // .morph-button-fixed, 
-  // .morph-button-fixed:not(.open) .morph-content,
-  // .post{
-  // 	width:$diamondSize;
-  // 	height:$diamondSize;
-  // }
+.blog .posts{
+  float: left;
+  width: 100%;
+  display: block;
+}
+
+.morph-button>button{
+  font-family: $heading-font-family;
+}
+
+.morph-button-fixed, 
+.morph-button-fixed:not(.open) .morph-content,
+.post{
+  height: 12em;
+}
+
+.blog .post {
+  float:left;
+  width: 50%;
+  position:relative;
   
-  .posts{
-    background-color:$paper-color;
+  button, .morph-content{
+    background-color:$primary-blog-color;
   }
-  // Material background shades
-  .post{
-    @include background-color-variant($grey-400);
-    
-    //red
-    &.red {
-        @include background-color-variant($red)
-    }
-    &.red-100 {
-        @include background-color-variant($red-100)
-    }
-    &.red-200 {
-        @include background-color-variant($red-200)
-    }
-    &.red-300 {
-        @include background-color-variant($red-300)
-    }
-    &.red-400 {
-        @include background-color-variant($red-400)
-    }
-    &.red-500 {
-        @include background-color-variant($red-500)
-    }
-    &.red-600 {
-        @include background-color-variant($red-600)
-    }
-    &.red-700 {
-        @include background-color-variant($red-700)
-    }
-    &.red-800 {
-        @include background-color-variant($red-800)
-    }
-    &.red-900 {
-        @include background-color-variant($red-900)
-    }
-    
-    //pink
-    &.pink {
-        @include background-color-variant($pink);
-    }
-    &.pink-100 {
-        @include background-color-variant($pink-100)
-    }
-    &.pink-200 {
-        @include background-color-variant($pink-200)
-    }
-    &.pink-300 {
-        @include background-color-variant($pink-300)
-    }
-    &.pink-400 {
-        @include background-color-variant($pink-400)
-    }
-    &.pink-500 {
-        @include background-color-variant($pink-500)
-    }
-    &.pink-600 {
-        @include background-color-variant($pink-600)
-    }
-    &.pink-700 {
-        @include background-color-variant($pink-700)
-    }
-    &.pink-800 {
-        @include background-color-variant($pink-800)
-    }
-    &.pink-900 {
-        @include background-color-variant($pink-900)
-    }
-    
-    //purple
-    &.purple {
-        @include background-color-variant($purple);
-    }
-    &.purple-100 {
-        @include background-color-variant($purple-100)
-    }
-    &.purple-200 {
-        @include background-color-variant($purple-200)
-    }
-    &.purple-300 {
-        @include background-color-variant($purple-300)
-    }
-    &.purple-400 {
-        @include background-color-variant($purple-400)
-    }
-    &.purple-500 {
-        @include background-color-variant($purple-500)
-    }
-    &.purple-600 {
-        @include background-color-variant($purple-600)
-    }
-    &.purple-700 {
-        @include background-color-variant($purple-700)
-    }
-    &.purple-800 {
-        @include background-color-variant($purple-800)
-    }
-    &.purple-900 {
-        @include background-color-variant($purple-900)
-    }
-    
-    //deep purple
-    &.deep-purple {
-        @include background-color-variant($deep-purple);
-    }
-    &.deep-purple-100 {
-        @include background-color-variant($deep-purple-100)
-    }
-    &.deep-purple-200 {
-        @include background-color-variant($deep-purple-200)
-    }
-    &.deep-purple-300 {
-        @include background-color-variant($deep-purple-300)
-    }
-    &.deep-purple-400 {
-        @include background-color-variant($deep-purple-400)
-    }
-    &.deep-purple-500 {
-        @include background-color-variant($deep-purple-500)
-    }
-    &.deep-purple-600 {
-        @include background-color-variant($deep-purple-600)
-    }
-    &.deep-purple-700 {
-        @include background-color-variant($deep-purple-700)
-    }
-    &.deep-purple-800 {
-        @include background-color-variant($deep-purple-800)
-    }
-    &.deep-purple-900 {
-        @include background-color-variant($deep-purple-900)
-    }
-    
-    &.indigo {
-        @include background-color-variant($indigo);
-    }
-    &.indigo-100 {
-        @include background-color-variant($indigo-100)
-    }
-    &.indigo-200 {
-        @include background-color-variant($indigo-200)
-    }
-    &.indigo-300 {
-        @include background-color-variant($indigo-300)
-    }
-    &.indigo-400 {
-        @include background-color-variant($indigo-400)
-    }
-    &.indigo-500 {
-        @include background-color-variant($indigo-500)
-    }
-    &.indigo-600 {
-        @include background-color-variant($indigo-600)
-    }
-    &.indigo-700 {
-        @include background-color-variant($indigo-700)
-    }
-    &.indigo-800 {
-        @include background-color-variant($indigo-800)
-    }
-    &.indigo-900 {
-        @include background-color-variant($indigo-900)
-    }
-    
-    //light blue
-    &.light-blue {
-        @include background-color-variant($light-blue);
-    }
-    &.light-blue-100 {
-        @include background-color-variant($light-blue-100)
-    }
-    &.light-blue-200 {
-        @include background-color-variant($light-blue-200)
-    }
-    &.light-blue-300 {
-        @include background-color-variant($light-blue-300)
-    }
-    &.light-blue-400 {
-        @include background-color-variant($light-blue-400)
-    }
-    &.light-blue-500 {
-        @include background-color-variant($light-blue-500)
-    }
-    &.light-blue-600 {
-        @include background-color-variant($light-blue-600)
-    }
-    &.light-blue-700 {
-        @include background-color-variant($light-blue-700)
-    }
-    &.light-blue-800 {
-        @include background-color-variant($light-blue-800)
-    }
-    &.light-blue-900 {
-        @include background-color-variant($light-blue-900)
-    }
-    
-    //blue
-    &.blue {
-        @include background-color-variant($blue-300);
-    }
-    &.blue-100 {
-        @include background-color-variant($blue-100)
-    }
-    &.blue-200 {
-        @include background-color-variant($blue-200)
-    }
-    &.blue-300 {
-        @include background-color-variant($blue-300)
-    }
-    &.blue-400 {
-        @include background-color-variant($blue-400)
-    }
-    &.blue-500 {
-        @include background-color-variant($blue-500)
-    }
-    &.blue-600 {
-        @include background-color-variant($blue-600)
-    }
-    &.blue-700 {
-        @include background-color-variant($blue-700)
-    }
-    &.blue-800 {
-        @include background-color-variant($blue-800)
-    }
-    &.blue-900 {
-        @include background-color-variant($blue-900)
-    }
-    
-    //green
-    &.green {
-        @include background-color-variant($green-300);
-    }
-    &.green-100 {
-        @include background-color-variant($green-100)
-    }
-    &.green-200 {
-        @include background-color-variant($green-200)
-    }
-    &.green-300 {
-        @include background-color-variant($green-300)
-    }
-    &.green-400 {
-        @include background-color-variant($green-400)
-    }
-    &.green-500 {
-        @include background-color-variant($green-500)
-    }
-    &.green-600 {
-        @include background-color-variant($green-600)
-    }
-    &.green-700 {
-        @include background-color-variant($green-700)
-    }
-    &.green-800 {
-        @include background-color-variant($green-800)
-    }
-    &.green-900 {
-        @include background-color-variant($green-900)
-    }
-    
-    //cyan
-    &.cyan {
-        @include background-color-variant($cyan);
-    }
-    &.cyan-100 {
-        @include background-color-variant($cyan-100)
-    }
-    &.cyan-200 {
-        @include background-color-variant($cyan-200)
-    }
-    &.cyan-300 {
-        @include background-color-variant($cyan-300)
-    }
-    &.cyan-400 {
-        @include background-color-variant($cyan-400)
-    }
-    &.cyan-500 {
-        @include background-color-variant($cyan-500)
-    }
-    &.cyan-600 {
-        @include background-color-variant($cyan-600)
-    }
-    &.cyan-700 {
-        @include background-color-variant($cyan-700)
-    }
-    &.cyan-800 {
-        @include background-color-variant($cyan-800)
-    }
-    &.cyan-900 {
-        @include background-color-variant($cyan-900)
-    }
-    
-    //teal
-    &.teal {
-        @include background-color-variant($teal);
-    }
-    &.teal-100 {
-        @include background-color-variant($teal-100)
-    }
-    &.teal-200 {
-        @include background-color-variant($teal-200)
-    }
-    &.teal-300 {
-        @include background-color-variant($teal-300)
-    }
-    &.teal-400 {
-        @include background-color-variant($teal-400)
-    }
-    &.teal-500 {
-        @include background-color-variant($teal-500)
-    }
-    &.teal-600 {
-        @include background-color-variant($teal-600)
-    }
-    &.teal-700 {
-        @include background-color-variant($teal-700)
-    }
-    &.teal-800 {
-        @include background-color-variant($teal-800)
-    }
-    &.teal-900 {
-        @include background-color-variant($teal-900)
-    }
-    
-    //light green
-    &.light-green {
-        @include background-color-variant($light-green);
-    }
-    &.light-green-100 {
-        @include background-color-variant($light-green-100)
-    }
-    &.light-green-200 {
-        @include background-color-variant($light-green-200)
-    }
-    &.light-green-300 {
-        @include background-color-variant($light-green-300)
-    }
-    &.light-green-400 {
-        @include background-color-variant($light-green-400)
-    }
-    &.light-green-500 {
-        @include background-color-variant($light-green-500)
-    }
-    &.light-green-600 {
-        @include background-color-variant($light-green-600)
-    }
-    &.light-green-700 {
-        @include background-color-variant($light-green-700)
-    }
-    &.light-green-800 {
-        @include background-color-variant($light-green-800)
-    }
-    &.light-green-900 {
-        @include background-color-variant($light-green-900)
-    }
-    
-    //lime
-    &.lime {
-        @include background-color-variant($lime);
-    }
-    &.lime-100 {
-        @include background-color-variant($lime-100)
-    }
-    &.lime-200 {
-        @include background-color-variant($lime-200)
-    }
-    &.lime-300 {
-        @include background-color-variant($lime-300)
-    }
-    &.lime-400 {
-        @include background-color-variant($lime-400)
-    }
-    &.lime-500 {
-        @include background-color-variant($lime-500)
-    }
-    &.lime-600 {
-        @include background-color-variant($lime-600)
-    }
-    &.lime-700 {
-        @include background-color-variant($lime-700)
-    }
-    &.lime-800 {
-        @include background-color-variant($lime-800)
-    }
-    &.lime-900 {
-        @include background-color-variant($lime-900)
-    }
-    
-    &.light-yellow {
-        @include background-color-variant($yellow-300);
-    }
-    
-    //yellow
-    &.yellow {
-        @include background-color-variant($yellow-600);
-    }
-    &.yellow-100 {
-        @include background-color-variant($yellow-100)
-    }
-    &.yellow-200 {
-        @include background-color-variant($yellow-200)
-    }
-    &.yellow-300 {
-        @include background-color-variant($yellow-300)
-    }
-    &.yellow-400 {
-        @include background-color-variant($yellow-400)
-    }
-    &.yellow-500 {
-        @include background-color-variant($yellow-500)
-    }
-    &.yellow-600 {
-        @include background-color-variant($yellow-600)
-    }
-    &.yellow-700 {
-        @include background-color-variant($yellow-700)
-    }
-    &.yellow-800 {
-        @include background-color-variant($yellow-800)
-    }
-    &.yellow-900 {
-        @include background-color-variant($yellow-900)
-    }
-    
-    //orange
-    &.orange {
-        @include background-color-variant($orange);
-    }
-    &.orange-100 {
-        @include background-color-variant($orange-100)
-    }
-    &.orange-200 {
-        @include background-color-variant($orange-200)
-    }
-    &.orange-300 {
-        @include background-color-variant($orange-300)
-    }
-    &.orange-400 {
-        @include background-color-variant($orange-400)
-    }
-    &.orange-500 {
-        @include background-color-variant($orange-500)
-    }
-    &.orange-600 {
-        @include background-color-variant($orange-600)
-    }
-    &.orange-700 {
-        @include background-color-variant($orange-700)
-    }
-    &.orange-800 {
-        @include background-color-variant($orange-800)
-    }
-    &.orange-900 {
-        @include background-color-variant($orange-900)
-    }
-    
-    //deep orange
-    &.deep-orange {
-        @include background-color-variant($deep-orange);
-    }
-    &.deep-orange-100 {
-        @include background-color-variant($deep-orange-100)
-    }
-    &.deep-orange-200 {
-        @include background-color-variant($deep-orange-200)
-    }
-    &.deep-orange-300 {
-        @include background-color-variant($deep-orange-300)
-    }
-    &.deep-orange-400 {
-        @include background-color-variant($deep-orange-400)
-    }
-    &.deep-orange-500 {
-        @include background-color-variant($deep-orange-500)
-    }
-    &.deep-orange-600 {
-        @include background-color-variant($deep-orange-600)
-    }
-    &.deep-orange-700 {
-        @include background-color-variant($deep-orange-700)
-    }
-    &.deep-orange-800 {
-        @include background-color-variant($deep-orange-800)
-    }
-    &.deep-orange-900 {
-        @include background-color-variant($deep-orange-900)
-    }
-    
-    //grey
-    &.grey {
-        @include background-color-variant($grey);
-    }
-    &.grey-100 {
-        @include background-color-variant($grey-100)
-    }
-    &.grey-200 {
-        @include background-color-variant($grey-200)
-    }
-    &.grey-300 {
-        @include background-color-variant($grey-300)
-    }
-    &.grey-400 {
-        @include background-color-variant($grey-400)
-    }
-    &.grey-500 {
-        @include background-color-variant($grey-500)
-    }
-    &.grey-600 {
-        @include background-color-variant($grey-600)
-    }
-    &.grey-700 {
-        @include background-color-variant($grey-700)
-    }
-    &.grey-800 {
-        @include background-color-variant($grey-800)
-    }
-    &.grey-900 {
-        @include background-color-variant($grey-900)
-    }
-    
-    //blue-grey
-    &.blue-grey {
-        @include background-color-variant($blue-grey);
-    }
-    &.blue-grey-100 {
-        @include background-color-variant($blue-grey-100)
-    }
-    &.blue-grey-200 {
-        @include background-color-variant($blue-grey-200)
-    }
-    &.blue-grey-300 {
-        @include background-color-variant($blue-grey-300)
-    }
-    &.blue-grey-400 {
-        @include background-color-variant($blue-grey-400)
-    }
-    &.blue-grey-500 {
-        @include background-color-variant($blue-grey-500)
-    }
-    &.blue-grey-600 {
-        @include background-color-variant($blue-grey-600)
-    }
-    &.blue-grey-700 {
-        @include background-color-variant($blue-grey-700)
-    }
-    &.blue-grey-800 {
-        @include background-color-variant($blue-grey-800)
-    }
-    &.blue-grey-900 {
-        @include background-color-variant($blue-grey-900)
-    }
-    
-    //brown
-    &.brown {
-        @include background-color-variant($brown);
-    }
-    &.brown-100 {
-        @include background-color-variant($brown-100)
-    }
-    &.brown-200 {
-        @include background-color-variant($brown-200)
-    }
-    &.brown-300 {
-        @include background-color-variant($brown-300)
-    }
-    &.brown-400 {
-        @include background-color-variant($brown-400)
-    }
-    &.brown-500 {
-        @include background-color-variant($brown-500)
-    }
-    &.brown-600 {
-        @include background-color-variant($brown-600)
-    }
-    &.brown-700 {
-        @include background-color-variant($brown-700)
-    }
-    &.brown-800 {
-        @include background-color-variant($brown-800)
-    }
-    &.brown-900 {
-        @include background-color-variant($brown-900)
-    }
-    
-    &.light-grey {
-        @include background-color-variant($light-grey);
+  .morph-content{
+    color: $paper-color;
+  }
+  
+  &:nth-child(2n){
+    a, button, .morph-content{
+      background-color:$red;
+    }
+    .morph-content{
+      color: $paper-color;
+    }
+  }
+  
+  &:nth-child(3n){
+    a, button, .morph-content{
+      background-color:$cyan;
+    }
+    .morph-content{
+      color: $lightbg-text;
+    }
+  }
+  
+  &:nth-child(4n){
+    a, button, .morph-content{
+      background-color:$primary-blog-color;
+    }
+    .morph-content{
+      color: $paper-color;
+    }
+  }
+  
+  @include media($medium-screen-up){
+    &, .morph-button-overlay .morph-content{
+      width:25%;
+    }
+    .morph-button-overlay.open .morph-content{
+      width:100%;
+    }
+  }
+  
+  .content{
+    h2 {
+      width: 83%;
+      clear: both;
+    }
+
+    span.date {
+      float: left;
+      width: 100%;
+      opacity:0.8;
+      font-weight: $bold-font-weight;
+    }
+    .half{
+      @include wrapper;
+      padding: 0;
+      
+      @include media($medium-2-screen-up){
+        width:50%;
+        display: table-cell;
+        vertical-align: middle;
+
+        &:nth-child(2n){
+          padding-right:0.75em;
+        }
+        
+        &:nth-child(n+2){
+          padding-right:0.75em;
+        }
+      }
     }
   }
 }
+
+
+// Blog Page
+
+.page-blog{
+  header.peakaboo.header{
+    background:$paper-color;
+
+    .header-title .logo{
+      background:$teal-A700;
+    }
+    .header-title .section-title{
+      color:$base-font-color;
+    }
+  }
+}
+
+
+@import "asset-colors";
+
 /* @end */

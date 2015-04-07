@@ -13,28 +13,12 @@
 {% endcapture %}
 
 {% capture content %}
+  <a href="#" class="btn-close hide" title="Close"><span></span></a>
   <article class="blog page">
     <ol class="posts">
       {% for post in site.pages.blog.posts %}
         <li class="post {{post.meta['bg-color']}}">
-          <div class="morph-button morph-button-overlay morph-button-fixed" data-id="{{post.title|slug}}">
-            <button type="button">
-              {{post.title}}<br/>
-              <span class="date">{{post.date | date: "%b %d"}}</span>
-             </button>
-            <div class="morph-content">
-              <div>
-                <div class="content-style-overlay">
-                  <span class="icon icon-close">Close the overlay</span>
-                  <div class="content">
-                    <h2>{{post.title}}</h2>
-                    <span class="date">{{post.date | date: "%Y %b %d"}}</span>
-                    {{post.body}}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div><!-- morph-button -->
+          {% include 'layouts/_snippets/post' %}
         </li>
       {% endfor %} 
     </ol>

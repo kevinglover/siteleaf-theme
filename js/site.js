@@ -81,6 +81,10 @@
         });
       }
     });
+    
+    //Material Ripples
+    $.material.ripples();
+    
   });
   
   //Init expandable content
@@ -111,12 +115,12 @@
         didScroll = true;
         setTimeout( function() { scrollPage(); }, 60 );
       }
-    };
+    }
 
     function scrollPage() {
       scrollPosition = { x : window.pageXOffset || docElem.scrollLeft, y : window.pageYOffset || docElem.scrollTop };
       didScroll = false;
-    };
+    }
 
     scrollFn();
     
@@ -130,10 +134,19 @@
         onBeforeOpen : function() {
           // don't allow to scroll
           noScroll();
+          // hide header if it's in the way
           var $header = $("header.peakaboo.mini");
           if($(el).offset().top <= ($header.offset().top+$header.height())){
             $header.animate({"top":"-100px"},150,'easeInQuad');
           }
+          
+          var content = $(el).find('.inner>.data').data('content'),
+              $inner = $(el).find('section .content>.inner');
+          $inner.html(content);
+
+          // add color to close button
+          var parent_color_class = $(el).parent('.post').attr('class').replace('post','').trim();
+          $(".btn-close").addClass(parent_color_class);
         },
         onAfterOpen : function() {
           // can scroll again
@@ -144,8 +157,11 @@
           classie.addClass( el, 'scroll' );
           var id = $(el).attr('data-id');
           if(id){
-            window.location.hash = id;
+            window.location.hash = '/'+id;
           }
+          
+          //show close button
+          $(".btn-close").removeClass('hide');
         },
         onBeforeClose : function() {
           // remove class "noscroll" to body
@@ -154,26 +170,44 @@
           classie.removeClass( el, 'scroll' );
           // don't allow to scroll
           noScroll();
+          
+          //hide close button
+          $(".btn-close").addClass('hide');
         },
         onAfterClose : function() {
           // can scroll again
           canScroll();
           $("header.peakaboo.mini").animate({"top":"0"},150,'easeOutQuad');
-          window.location.hash = '';
+          window.location.hash = '/';
+          
+          //remove color class from close button
+          var parent_class = $(el).parent('.post').attr('class');
+          $(".btn-close").removeClass(parent_class);
         }
       });
     });
     
     $(document).ready(function(){
       var hash = window.location.hash;
-      hash = hash.replace('#','');
+      hash = hash.replace('#/','');
       if(hash!==''){
         $selected = $(".morph-button[data-id="+hash+"] button");
         $selected.click();
       }
       else{
-        window.location.hash = '';
+        window.location.hash = '/';
       }
+      
+      $(".btn-close").on('click',function(evt){
+        evt.preventDefault();
+        $(".morph-button-overlay.active .icon-close").click(); 
+      });
+      
+      $(".content-style-overlay header").on('click',function(){
+        var heading_top = $(".active .content-style-overlay header").height();
+        $(".morph-button-overlay.scroll .morph-content").animate({'scrollTop':heading_top-32},500);
+      });
+      
     });
   })();
   

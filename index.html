@@ -30,14 +30,16 @@
   
   <article id="about">
     <header>
-      <h2>About Me</h2>
+      <h2>{{site.pages.index.posts.about.meta['alt-title']}}</h2>
     </header>
     <section>
       {{ site.pages.index.posts.about }}
     </section>
   </article>
   
-  <article class="blog">
+  <a class="btn-close hide" title="Close"><span></span></a>
+  
+  <article id="blog" class="blog">
     <header>
       <div class="inner">
         <h2><a href="{{site.pages.blog.url}}">Blog<span class="mdi-navigation-arrow-forward"></span></a></h2>
@@ -46,23 +48,18 @@
     </header>
     <ol class="posts">
       {% for post in site.pages.blog.posts limit:4 %}
-        <li class="post">
-          <div class="morph-button morph-button-overlay morph-button-fixed">
-            <button type="button">
-              {{post.title}}<br/>
-              <span class="date">{{post.date | date: "%b %d"}}</span>
-            </button>
-            <div class="morph-content">
-              <div>
-                <div class="content content-style-overlay">
-                  <span class="icon icon-close">Close the overlay</span>
-                  <h2>{{post.title}}</h2>
-                  <span class="date">{{post.date | date: "%Y %b %d"}}</span>
-                  {{post.body}}
-                </div>
-              </div>
-            </div>
-          </div><!-- morph-button -->
+        {% if forloop.index == 2 %}
+          {% assign className = 'red' %}
+        
+        {% elsif forloop.index == 3 %}
+          {% assign className = 'cyan' %}
+        
+        {% else %}
+          {% assign className = 'blue-grey-700' %}
+        {% endif %}
+        
+        <li class="post {{className}}">
+          {% include 'layouts/_snippets/post' %}
         </li>
       {% endfor %} 
     </ol>

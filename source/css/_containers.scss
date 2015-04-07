@@ -1,0 +1,64 @@
+// Body and Container Styles
+
+body{
+  overflow-x: hidden;
+}
+
+body.scroll-lock{
+  overflow:hidden;
+}
+
+.main, #footer{
+  display: inline-block;
+  width: 100%;
+}
+
+#footer{
+  margin-top:1em;
+  padding-top:1em;
+}
+
+#masthead, #figures, #summary>.content, #content, #footer .inner{
+  @include container;
+  section {
+    @include wrapper;
+  }
+}
+
+#masthead h1{
+  @include site-title;
+}
+
+#content > article.posts{
+  padding:0;
+}
+
+#content > .half{
+  @include wrapper;
+  @include media($medium-2-screen-up){
+    width:50%;
+    float:left;
+  }
+}
+
+p.lead{
+  @include lead;
+}
+
+#content{
+  ul.default {
+    @extend %default-ul;
+  }
+
+  ol.default {
+    @extend %default-ol;
+  }
+  
+  ol.circle {
+    @extend %circle-ol;
+  }
+  
+  ul.circle {
+    @extend %circle-ul;
+  }
+}

@@ -1,0 +1,29 @@
+<div class="morph-button morph-button-overlay morph-button-fixed" data-id="{{post.title|slug}}">
+  <button type="button">
+    {{post.title}}<br/>
+    <span class="date">{{post.date | date: "%b %d"}}</span>
+   </button>
+  <div class="morph-content">
+    <div>
+      <article class="content-style-overlay">
+        <span class="icon icon-close">Close the overlay</span>
+        <header>
+          <div class="content">
+            <div class="inner">
+              <span class="date">{{post.date | date: "%Y %b %d"}}</span>
+              
+              <h2>{{post.title}}</h2>
+            </div>
+          </div>
+        </header>
+        <section>
+          <div class="content">
+            <div class="inner">
+              <div class="data" data-content='{{post.body}}'></div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+  </div>
+</div><!-- morph-button -->

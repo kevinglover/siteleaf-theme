@@ -280,23 +280,33 @@
 }
 
 /* Morphing Buttons */
-.icon-close {
+.btn-close{
   display: block;
-  overflow: hidden;
-  width: 3em;
-  height: 3em;
-  text-align: center;
-  line-height: 3;
-  right: 0;
-  top: 25px;
-  font-size: 2em;
   position: fixed;
-  z-index: 9500;
+  overflow: hidden;
+  margin: 0;
+  right: 1em;
+  top:1em;
+  padding: 15px;
+  font-size: 26px;
+  width: 56px;
+  height: 56px;
+  box-shadow: 0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
   cursor: pointer;
-  opacity: 0.618;
+  background: white;
+  z-index: 9800;
+  border-radius:50%;
+  color:#333;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
 }
 
-.icon:before {
+.btn-close:hover{
+  opacity:1;
+  background-color:whitesmoke;
+}
+
+.btn-close span:before {
   content: "\e89c";
   position: relative;
   display: block;
@@ -770,7 +780,6 @@
 @media screen and (max-width: 400px) {
   .morph-button-fixed,
   .morph-button-fixed .morph-content {
-    width: 200px;
     height: 80px;
   }
 
