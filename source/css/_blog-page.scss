@@ -25,6 +25,7 @@ button span.date {
 
 .morph-button-fixed .morph-content > div{
   
+  .post.next,
   .content-style-overlay{
     header, section{
         position:relative;
@@ -42,6 +43,10 @@ button span.date {
       
       @media screen and (min-width: 55.5em){
         margin: 0 16.66666667%;
+      }
+      
+      @include media($huge-screen-up){
+        margin: 0 24.66666667%;
       }
       
       .inner{
@@ -113,7 +118,29 @@ button span.date {
   }
 }
 
-
+.blog{
+  .morph-button-fixed .morph-content>div .post.next{
+    height:100%;
+    width:100%;
+    cursor: pointer;
+    @include transition(background 0.2s, top 2s);
+    
+    header{
+      height: 50%;
+      height: 50vh;
+      cursor: pointer;
+      
+      .inner{
+        text-align:center;
+      }
+    }
+    section{
+      display: none;
+      background: $white;
+      min-height:100vh;
+    }
+  }
+}
 .morph-button-fixed .morph-content > div{
   @include transition(background-color 0.4s, opacity 0.2s ease, visibility 0s 0.1s, height 0s 0.1s);
 }
@@ -124,10 +151,34 @@ button span.date {
   width:100%;
 }
 
+
+
 .morph-button-fixed .morph-content>div .content-style-overlay {
-  padding-bottom: 10em;
+  padding-bottom: 0;
   
-  p:last-of-type:not(:first-of-type):after{
+  .next header {
+    height: 100%;
+    min-height:15em;
+    @include transition(height 0.5s);
+    
+    &:after{
+      display: none;
+    }
+  }
+  
+  &.loaded{
+    padding-bottom: 10em;
+    
+    .next header {
+      height: 25vh;
+    }
+  }
+  
+  .current section {
+    padding-bottom: 8em;
+  }
+  
+  .inner>p:last-of-type:not(:first-of-type):after{
     font-family:Arial, sans-serif;
     content: '\2b22';
     display: inline-block;
@@ -295,6 +346,21 @@ button span.date {
   }
 }
 
+.main > article.current,
+.main > article.next{
+  @include container;
+  
+  header, section{
+    @include wrapper;
+  }
+  header{
+    text-align:center;
+  }
+}
+
+.main > article.next{
+  display: none;
+}
 
 @import "asset-colors";
 

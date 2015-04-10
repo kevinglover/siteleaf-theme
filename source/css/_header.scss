@@ -1,6 +1,10 @@
 // Main header and logo
 
 
+$header-height:10em;
+
+$index-header-height:10em;
+
 header{
   h1 a{ 
     
@@ -25,10 +29,10 @@ header.peakaboo.header{
   background:#4D4D4D;
   
   &:not(.mini){
-    height: 10em;
+    height: $header-height;
     
     @include media($large-2-screen-up){
-      height: 12em;
+      height: $header-height*1.2;
     }
   }
     
@@ -50,7 +54,7 @@ header.peakaboo.header{
     
     .logo{
         width: 50%;
-        height: 10em;
+        height: $header-height;
         background: rgb(47, 47, 47);
         overflow:hidden;
         padding-top: 1.25em;
@@ -70,7 +74,7 @@ header.peakaboo.header{
         }
         
         @include media($large-2-screen-up){
-          height: 12em;
+          height: $header-height*1.2;
         }
     }
     .section-title{

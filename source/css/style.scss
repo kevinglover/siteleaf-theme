@@ -53,7 +53,7 @@ $secondary-color: $blue-grey-700;
   background: $cyan;
   float: left;
   color: $white;
-  padding: 2.5em 0 1.5em;
+  padding: 7.5em 0 1.5em;
   width: 100%;
   
   section{
@@ -69,6 +69,8 @@ $secondary-color: $blue-grey-700;
 //Preamble
 #preamble{
   @include container;
+  display: inline-block;
+  padding:5em 0;
   
   section, aside{
     @include wrapper;
@@ -81,6 +83,7 @@ $secondary-color: $blue-grey-700;
     border: 2px solid $purple-200;
     padding-top: 1.75em;
     padding-bottom: 1.25em;
+    margin-top:-5em;
   }
   
   @include media($large-screen-up){
@@ -145,6 +148,7 @@ $secondary-color: $blue-grey-700;
     }
   }
   section{
+    padding-bottom: 7em;
     margin: 0 5.55555556%;
     
     @include media($medium-2-screen-up){

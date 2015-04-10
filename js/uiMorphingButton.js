@@ -37,13 +37,23 @@
     extend( this.options, options );
     this._init();
   }
+  
+  // Init Nanobar
+  var options = {
+    bg: '#5CE424',
+
+    // id for new nanobar
+    id: 'mynano'
+  };
 
   UIMorphingButton.prototype.options = {
     closeEl : '',
     onBeforeOpen : function() { return false; },
     onAfterOpen : function() { return false; },
     onBeforeClose : function() { return false; },
-    onAfterClose : function() { return false; }
+    onAfterClose : function() { return false; },
+    postCache:{},
+    loadbar:new Nanobar( options )
   };
 
   UIMorphingButton.prototype._init = function() {
