@@ -66,7 +66,7 @@ module.exports = function(grunt) {
     
     zip: {
       main: {
-        src: ['_layouts/**','blog/*','data/*','fonts/*','styles/*','scripts/*','index.html'],
+        src: ['_layouts/**','blog/*','data/**','fonts/*','styles/*','scripts/*','index.html'],
         dest: 'theme.zip'
       }
     },
