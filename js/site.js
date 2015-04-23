@@ -285,8 +285,12 @@
         
         $current.find("header, section").css({"transform-origin":"50% 0"}).animate({"opacity": "0.2","transform":"translateY(100%) scaleX(0.5) scaleY(0.5)"},800);
         $this.css({"height":"100vh"});
+        
+        $this.parents(".content-style-overlay").removeClass("loaded");
+        
         $current.slideUp(500,function(){
           var $self = $(this);
+          
           $.get('/blog/'+ id, function(data){
             
             var html = $.parseHTML(data),

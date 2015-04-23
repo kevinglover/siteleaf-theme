@@ -2,12 +2,6 @@
   {{ title }}
 {% endcapture %}
 
-{% capture chapter_title %}
-{% if title != 'Blog' %}
-  {{ title }}
-{% endif %}
-{% endcapture %}
-
 {% capture header_meta %}
   {% if title == 'Blog' %} data-page="main" data-top="true"{% endif %}
 {% endcapture %}

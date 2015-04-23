@@ -23,10 +23,11 @@ header{
   }
 }
 
+
 header.peakaboo.header{
   padding-top:0;
-  overflow: hidden;
-  background:#4D4D4D;
+  // overflow: hidden;
+  background:$accent-color;
   
   &:not(.mini){
     height: $header-height;
@@ -34,8 +35,54 @@ header.peakaboo.header{
     @include media($large-2-screen-up){
       height: $header-height*1.2;
     }
-  }
     
+    .page-index &{
+      $card-color: #FFB938;
+      $card-overlap-color: $accent-color;
+      
+      span.card{
+        color:$accent-color;
+        font-size:80%;
+      }
+      
+      @include media($medium-screen-up){
+        .section-title {
+          border-bottom: 1em solid #00BCD4;
+          position: relative;
+        }
+        
+        span.card {
+          font-size:100%;
+          display: block;
+          bottom: -1.99em;
+          position: absolute;
+          background: $card-overlap-color;
+          color:$white;
+          left: 0.75em;
+          padding: 0.25em 2em 0.25em 1em;
+          
+          span{
+            white-space: nowrap
+          }
+          
+          &:before{
+            content: "Hello! I'm";
+            color:$card-overlap-color;
+            display: block;
+            position: absolute;
+            top: -2em;
+            left: 0;
+            width: 100%;
+            height: 2em;
+            background: $card-color;
+            padding-top: 1em;
+            padding-left: 1em;
+          }
+        }
+      }
+      
+    }
+  }
   .header-title{
     display:table;
     width:100%;
@@ -62,7 +109,7 @@ header.peakaboo.header{
         @include transition(background 0.2s);
         
         &:hover, &:focus{
-          background: #2F2F2F!important;
+          background: #2F2F2F;
         }
         
         @include media($small-screen-up-max){

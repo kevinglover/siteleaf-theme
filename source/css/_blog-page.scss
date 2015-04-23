@@ -3,7 +3,6 @@
 
 // General
 
-
 .icon.icon-close{
   display:none;
   visibility:hidden;
@@ -159,10 +158,16 @@ button span.date {
   .next header {
     height: 100%;
     min-height:15em;
-    @include transition(height 0.5s);
+    cursor: pointer;
     
+    @include transition(height 0.5s);
     &:after{
       display: none;
+    }
+    
+    .inner{
+      @include transition(transform 0.5s);
+      @include transform(scale(1));
     }
   }
   
@@ -171,11 +176,16 @@ button span.date {
     
     .next header {
       height: 25vh;
+      
+      .inner{
+        @include transform(scale(0.5));
+      }
     }
   }
   
   .current section {
     padding-bottom: 8em;
+    min-height: 75vh;
   }
   
   .inner>p:last-of-type:not(:first-of-type):after{
@@ -253,7 +263,7 @@ button span.date {
     }
     
     &:nth-child(2n){
-      a, button, .morph-content{
+      button, .morph-content{
         background-color:$red;
       }
       .morph-content{
@@ -262,7 +272,7 @@ button span.date {
     }
     
     &:nth-child(3n){
-      a, button, .morph-content{
+      button, .morph-content{
         background-color:$cyan;
       }
       .morph-content{
@@ -271,7 +281,7 @@ button span.date {
     }
     
     &:nth-child(4n){
-      a, button, .morph-content{
+      button, .morph-content{
         background-color:$primary-blog-color;
       }
       .morph-content{
@@ -346,15 +356,24 @@ button span.date {
   }
 }
 
-.main > article.current,
-.main > article.next{
-  @include container;
-  
-  header, section{
-    @include wrapper;
-  }
+
+@import "asset-colors";
+
+
+// Post Pages
+
+.main > article.current{
+
   header{
     text-align:center;
+  }
+
+  .content{
+    @include container;
+    
+    .inner{
+      @include wrapper;
+    }
   }
 }
 
@@ -362,6 +381,48 @@ button span.date {
   display: none;
 }
 
-@import "asset-colors";
+$post-header-height: 3em;
+header.peakaboo.header.blog-post{
+  
+  .header-title{
+    
+    .section-title{
+      display: none;
+    }
+  }
+  
+  &.mini{
+    background-color:color-opacity($white, 0.5);
+    
+    .header-title .logo{
+      background-color:color-opacity($white, 0.5);
+
+      &:hover, &:focus{
+        background-color:color-opacity($white, 0.5);
+      }
+      
+      img{
+        left:45%;
+        left:calc(50% - 35px);
+      }
+    }
+  }
+  
+  &:not(.mini){
+    height:$post-header-height;
+    margin-bottom:$post-header-height;
+    .header-title{
+      
+      .logo, .logo img{
+        height:$post-header-height;
+      }
+      
+      .logo{
+        background-color:$white;
+      }
+    }
+  }
+}
+
 
 /* @end */
