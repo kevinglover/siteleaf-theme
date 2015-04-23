@@ -52,12 +52,8 @@ body {
     font-size: 125%;
   }
   
-  @include media($huge-screen-up) {
-    font-size: 150%;
-  }
-  
   @include media($huge-2-screen-up){
-    font-size: 175%;
+    font-size: 150%;
   }
 }
 

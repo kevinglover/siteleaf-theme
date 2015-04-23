@@ -25,15 +25,16 @@
         </ul>
     </nav>
     <div class="main">
-      <header class="peakaboo header" {{header_meta}}>
+      <header class="peakaboo header {{header_class}}" {{header_meta}}>
           <div class="header-title">
             <a class="logo" href="{{site.pages.index.url}}">
               <img src="/assets/logo.png"/>
             </a>
-            <h1 class="section-title">{{section_title}}</h1>
-            {% if chapter-title != '' %}
-            <span class="chapter-title">{{chapter_title}}</span>
-            {% endif %}
+            <h1 class="section-title">
+              {{section_title}}
+              {% if chapter-title != '' %}
+              {% endif %}
+            </h1>
           </div>
       </header>
       {{content}}

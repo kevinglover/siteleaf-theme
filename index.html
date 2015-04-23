@@ -1,8 +1,5 @@
 {% capture section_title %}
-  {{site.pages.index.meta['title']}}
-{% endcapture %}
-
-{% capture chapter_title %}
+  <span class="card"><span>{{site.pages.index.meta['title']}}</span></span>
 {% endcapture %}
 
 {% capture header_meta %}
@@ -59,7 +56,7 @@
         {% endif %}
         
         <li class="post {{className}}">
-          {% include 'layouts/_snippets/post' %}
+          {% include 'layouts/_snippets/homepage-post' %}
         </li>
       {% endfor %} 
     </ol>

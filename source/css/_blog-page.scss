@@ -3,7 +3,6 @@
 
 // General
 
-
 .icon.icon-close{
   display:none;
   visibility:hidden;
@@ -25,6 +24,7 @@ button span.date {
 
 .morph-button-fixed .morph-content > div{
   
+  .post.next,
   .content-style-overlay{
     header, section{
         position:relative;
@@ -42,6 +42,10 @@ button span.date {
       
       @media screen and (min-width: 55.5em){
         margin: 0 16.66666667%;
+      }
+      
+      @include media($huge-screen-up){
+        margin: 0 24.66666667%;
       }
       
       .inner{
@@ -113,7 +117,29 @@ button span.date {
   }
 }
 
-
+.blog{
+  .morph-button-fixed .morph-content>div .post.next{
+    height:100%;
+    width:100%;
+    cursor: pointer;
+    @include transition(background 0.2s, top 2s);
+    
+    header{
+      height: 50%;
+      height: 50vh;
+      cursor: pointer;
+      
+      .inner{
+        text-align:center;
+      }
+    }
+    section{
+      display: none;
+      background: $white;
+      min-height:100vh;
+    }
+  }
+}
 .morph-button-fixed .morph-content > div{
   @include transition(background-color 0.4s, opacity 0.2s ease, visibility 0s 0.1s, height 0s 0.1s);
 }
@@ -124,10 +150,45 @@ button span.date {
   width:100%;
 }
 
+
+
 .morph-button-fixed .morph-content>div .content-style-overlay {
-  padding-bottom: 10em;
+  padding-bottom: 0;
   
-  p:last-of-type:not(:first-of-type):after{
+  .next header {
+    height: 100%;
+    min-height:15em;
+    cursor: pointer;
+    
+    @include transition(height 0.5s);
+    &:after{
+      display: none;
+    }
+    
+    .inner{
+      @include transition(transform 0.5s);
+      @include transform(scale(1));
+    }
+  }
+  
+  &.loaded{
+    padding-bottom: 10em;
+    
+    .next header {
+      height: 25vh;
+      
+      .inner{
+        @include transform(scale(0.5));
+      }
+    }
+  }
+  
+  .current section {
+    padding-bottom: 8em;
+    min-height: 75vh;
+  }
+  
+  .inner>p:last-of-type:not(:first-of-type):after{
     font-family:Arial, sans-serif;
     content: '\2b22';
     display: inline-block;
@@ -202,7 +263,7 @@ button span.date {
     }
     
     &:nth-child(2n){
-      a, button, .morph-content{
+      button, .morph-content{
         background-color:$red;
       }
       .morph-content{
@@ -211,7 +272,7 @@ button span.date {
     }
     
     &:nth-child(3n){
-      a, button, .morph-content{
+      button, .morph-content{
         background-color:$cyan;
       }
       .morph-content{
@@ -220,7 +281,7 @@ button span.date {
     }
     
     &:nth-child(4n){
-      a, button, .morph-content{
+      button, .morph-content{
         background-color:$primary-blog-color;
       }
       .morph-content{
@@ -297,5 +358,71 @@ button span.date {
 
 
 @import "asset-colors";
+
+
+// Post Pages
+
+.main > article.current{
+
+  header{
+    text-align:center;
+  }
+
+  .content{
+    @include container;
+    
+    .inner{
+      @include wrapper;
+    }
+  }
+}
+
+.main > article.next{
+  display: none;
+}
+
+$post-header-height: 3em;
+header.peakaboo.header.blog-post{
+  
+  .header-title{
+    
+    .section-title{
+      display: none;
+    }
+  }
+  
+  &.mini{
+    background-color:color-opacity($white, 0.5);
+    
+    .header-title .logo{
+      background-color:color-opacity($white, 0.5);
+
+      &:hover, &:focus{
+        background-color:color-opacity($white, 0.5);
+      }
+      
+      img{
+        left:45%;
+        left:calc(50% - 35px);
+      }
+    }
+  }
+  
+  &:not(.mini){
+    height:$post-header-height;
+    margin-bottom:$post-header-height;
+    .header-title{
+      
+      .logo, .logo img{
+        height:$post-header-height;
+      }
+      
+      .logo{
+        background-color:$white;
+      }
+    }
+  }
+}
+
 
 /* @end */

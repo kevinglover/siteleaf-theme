@@ -6,7 +6,7 @@
     background-color:$paper-color;
   }
   // Material background shades
-  .post{
+  .post, header{
     @include background-color-variant($grey-400);
     
     //red

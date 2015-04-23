@@ -7,6 +7,7 @@
 
 $primary-blog-color: $blue-grey-700;
 $paper-color: #f2ede0;
+$accent-color: #262642;
 
 @import "containers";
 
@@ -21,31 +22,43 @@ $paper-color: #f2ede0;
 }
 
 // Index banner
-$main-color:$red;
+$main-color:$white;
 $secondary-color: $blue-grey-700;
-.page-index header.peakaboo.header .header-title {
-  background:$main-color;
-  .logo{
-      overflow:visible;
-      z-index:200;
-      background: $secondary-color;
-      
+.page-index {
+  header.peakaboo.header .header-title {
+    background:$main-color;
+    color:$accent-color;
+    
+    .logo{
+        overflow:visible;
+        z-index:200;
+        background: #19C2BB;//$secondary-color;
+        
       &:after {
-        @include media($medium-screen-up){
-          position: absolute;
-          content: '';
-          display: block;
-          width: 25%;
-          top: 10em;
-          height: 55%;
-          z-index: 0;
-          background: color-opacity($lime-200,0.33);
-      }
-      @include media($large-2-screen-up){
-        top: 12em;
+          @include media($medium-screen-up){
+            position: absolute;
+            content: '';
+            display: block;
+            width: 25%;
+            top: 10em;
+            height: 65%;
+            z-index: 0;
+            background: color-opacity($lime-200,0.33);
+        }
+        @include media($large-2-screen-up){
+          top: 12em;
+        }
       }
     }
   }
+  header.peakaboo.header.mini .header-title{
+    .logo{
+      &:after{
+        display: none;
+      }
+    }
+  }
+  
 }
 
 // Summary 
@@ -53,7 +66,7 @@ $secondary-color: $blue-grey-700;
   background: $cyan;
   float: left;
   color: $white;
-  padding: 2.5em 0 1.5em;
+  padding:5.5em 0 1.5em;
   width: 100%;
   
   section{
@@ -69,6 +82,7 @@ $secondary-color: $blue-grey-700;
 //Preamble
 #preamble{
   @include container;
+  display: inline-block;
   
   section, aside{
     @include wrapper;
@@ -81,14 +95,20 @@ $secondary-color: $blue-grey-700;
     border: 2px solid $purple-200;
     padding-top: 1.75em;
     padding-bottom: 1.25em;
+    margin-top:0.75em;
   }
   
   @include media($large-screen-up){
+    &{
+      padding:5em 0;
+    }
+    
     section{
       width:75%;
     }
     
     aside{
+      margin-top:-5em;
       border:none;
       width:25%;
       padding-top:2em;
@@ -145,6 +165,7 @@ $secondary-color: $blue-grey-700;
     }
   }
   section{
+    padding-bottom: 7em;
     margin: 0 5.55555556%;
     
     @include media($medium-2-screen-up){
