@@ -428,9 +428,44 @@
         @include background-color-variant($yellow-900);
     }
     
+    //amber
+    &.amber {
+        @include background-color-variant($amber);
+    }
+    &.amber-100 {
+        @include background-color-variant($amber-100);
+    }
+    &.amber-200 {
+        @include background-color-variant($amber-200);
+    }
+    &.amber-300 {
+        @include background-color-variant($amber-300);
+    }
+    &.amber-400 {
+        @include background-color-variant($amber-400);
+    }
+    &.amber-500 {
+        @include background-color-variant($amber-500);
+    }
+    &.amber-600 {
+        @include background-color-variant($amber-600);
+    }
+    &.amber-700 {
+        @include background-color-variant($amber-700);
+    }
+    &.amber-800 {
+        @include background-color-variant($amber-800);
+    }
+    &.amber-900 {
+        @include background-color-variant($amber-900);
+    }
+    
     //orange
     &.orange {
         @include background-color-variant($orange);
+    }
+    &.orange-50 {
+        @include background-color-variant($orange-50);
     }
     &.orange-100 {
         @include background-color-variant($orange-100);

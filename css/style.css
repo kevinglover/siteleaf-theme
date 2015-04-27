@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1756,6 +1757,16 @@ h6 {
   clear: both;
   display: inline-block;
   width: 100%;
+  text-transform: uppercase;
+  text-shadow: 5px 4px 3px rgba(0, 0, 0, 0.125), 3px 8px 3px rgba(0, 0, 0, 0.1);
+}
+article.page section h1, article.page section
+h2, article.page section
+h3, article.page section
+h4, article.page section header.peakaboo.mini .header-title, header.peakaboo.mini article.page section .header-title, article.page section
+h5, article.page section
+h6 {
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.125), 0px 3px 2px rgba(0, 0, 0, 0.1);
 }
 
 h1, h2 {
@@ -2752,6 +2763,7 @@ header.peakaboo.header.mini .header-title .logo img {
     top: 1em;
     left: 0;
     text-align: right;
+    text-shadow: -5px 4px 3px rgba(0, 0, 0, 0.125), -3px 8px 3px rgba(0, 0, 0, 0.1);
   }
 }
 @media screen and (min-width: 156em) {
@@ -4642,6 +4654,116 @@ button span.date {
   background-color: #f57f17;
   color: #f5f5f5;
 }
+.blog .post.amber button, .blog .post.amber .morph-content, .blog header.amber button, .blog header.amber .morph-content {
+  background-color: #ffc107;
+  color: #f5f5f5;
+}
+.blog .post.amber button:hover, .blog header.amber button:hover {
+  background-color: #ffc721;
+}
+.blog .post.amber, .blog header.amber {
+  background-color: #ffc107;
+  color: #f5f5f5;
+}
+.blog .post.amber-100 button, .blog .post.amber-100 .morph-content, .blog header.amber-100 button, .blog header.amber-100 .morph-content {
+  background-color: #ffecb3;
+  color: #616161;
+}
+.blog .post.amber-100 button:hover, .blog header.amber-100 button:hover {
+  background-color: #fff2cc;
+}
+.blog .post.amber-100, .blog header.amber-100 {
+  background-color: #ffecb3;
+  color: #616161;
+}
+.blog .post.amber-200 button, .blog .post.amber-200 .morph-content, .blog header.amber-200 button, .blog header.amber-200 .morph-content {
+  background-color: #ffe082;
+  color: #616161;
+}
+.blog .post.amber-200 button:hover, .blog header.amber-200 button:hover {
+  background-color: #ffe69b;
+}
+.blog .post.amber-200, .blog header.amber-200 {
+  background-color: #ffe082;
+  color: #616161;
+}
+.blog .post.amber-300 button, .blog .post.amber-300 .morph-content, .blog header.amber-300 button, .blog header.amber-300 .morph-content {
+  background-color: #ffd54f;
+  color: #f5f5f5;
+}
+.blog .post.amber-300 button:hover, .blog header.amber-300 button:hover {
+  background-color: #ffdb68;
+}
+.blog .post.amber-300, .blog header.amber-300 {
+  background-color: #ffd54f;
+  color: #f5f5f5;
+}
+.blog .post.amber-400 button, .blog .post.amber-400 .morph-content, .blog header.amber-400 button, .blog header.amber-400 .morph-content {
+  background-color: #ffca28;
+  color: #f5f5f5;
+}
+.blog .post.amber-400 button:hover, .blog header.amber-400 button:hover {
+  background-color: #ffd042;
+}
+.blog .post.amber-400, .blog header.amber-400 {
+  background-color: #ffca28;
+  color: #f5f5f5;
+}
+.blog .post.amber-500 button, .blog .post.amber-500 .morph-content, .blog header.amber-500 button, .blog header.amber-500 .morph-content {
+  background-color: #ffc107;
+  color: #f5f5f5;
+}
+.blog .post.amber-500 button:hover, .blog header.amber-500 button:hover {
+  background-color: #ffc721;
+}
+.blog .post.amber-500, .blog header.amber-500 {
+  background-color: #ffc107;
+  color: #f5f5f5;
+}
+.blog .post.amber-600 button, .blog .post.amber-600 .morph-content, .blog header.amber-600 button, .blog header.amber-600 .morph-content {
+  background-color: #ffb300;
+  color: #f5f5f5;
+}
+.blog .post.amber-600 button:hover, .blog header.amber-600 button:hover {
+  background-color: #ffbb1a;
+}
+.blog .post.amber-600, .blog header.amber-600 {
+  background-color: #ffb300;
+  color: #f5f5f5;
+}
+.blog .post.amber-700 button, .blog .post.amber-700 .morph-content, .blog header.amber-700 button, .blog header.amber-700 .morph-content {
+  background-color: #ffa000;
+  color: #f5f5f5;
+}
+.blog .post.amber-700 button:hover, .blog header.amber-700 button:hover {
+  background-color: #ffaa1a;
+}
+.blog .post.amber-700, .blog header.amber-700 {
+  background-color: #ffa000;
+  color: #f5f5f5;
+}
+.blog .post.amber-800 button, .blog .post.amber-800 .morph-content, .blog header.amber-800 button, .blog header.amber-800 .morph-content {
+  background-color: #ff8f00;
+  color: #f5f5f5;
+}
+.blog .post.amber-800 button:hover, .blog header.amber-800 button:hover {
+  background-color: #ff9a1a;
+}
+.blog .post.amber-800, .blog header.amber-800 {
+  background-color: #ff8f00;
+  color: #f5f5f5;
+}
+.blog .post.amber-900 button, .blog .post.amber-900 .morph-content, .blog header.amber-900 button, .blog header.amber-900 .morph-content {
+  background-color: #ff6f00;
+  color: #f5f5f5;
+}
+.blog .post.amber-900 button:hover, .blog header.amber-900 button:hover {
+  background-color: #ff7d1a;
+}
+.blog .post.amber-900, .blog header.amber-900 {
+  background-color: #ff6f00;
+  color: #f5f5f5;
+}
 .blog .post.orange button, .blog .post.orange .morph-content, .blog header.orange button, .blog header.orange .morph-content {
   background-color: #ff9800;
   color: #f5f5f5;
@@ -4652,6 +4774,17 @@ button span.date {
 .blog .post.orange, .blog header.orange {
   background-color: #ff9800;
   color: #f5f5f5;
+}
+.blog .post.orange-50 button, .blog .post.orange-50 .morph-content, .blog header.orange-50 button, .blog header.orange-50 .morph-content {
+  background-color: #fff3e0;
+  color: #616161;
+}
+.blog .post.orange-50 button:hover, .blog header.orange-50 button:hover {
+  background-color: #fffdfa;
+}
+.blog .post.orange-50, .blog header.orange-50 {
+  background-color: #fff3e0;
+  color: #616161;
 }
 .blog .post.orange-100 button, .blog .post.orange-100 .morph-content, .blog header.orange-100 button, .blog header.orange-100 .morph-content {
   background-color: #ffe0b2;
@@ -7107,6 +7240,42 @@ header.peakaboo.header.blog-post:not(.mini) .header-title .logo {
 }
 
 /* @end */
+blockquote {
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "“" "”" "‘" "’";
+  position: relative;
+  display: inline-block;
+}
+blockquote:before {
+  color: #ccc;
+  content: '\201C';
+  font-size: 8.5em;
+  line-height: 1em;
+  margin-right: .25em;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+blockquote p {
+  display: inline-block;
+  width: 80%;
+  font-size: 2.25em;
+  line-height: 1;
+  margin-left: 1.5em;
+}
+blockquote p cite {
+  width: 100%;
+  display: inline-block;
+  margin-left: 3em;
+  font-size: 1.25rem;
+  opacity: 0.66;
+}
+blockquote p cite:before {
+  content: '\2014';
+}
+
 footer.main {
   margin-top: 1.5em;
   padding: 1.5em 0;
