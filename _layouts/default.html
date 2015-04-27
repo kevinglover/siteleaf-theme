@@ -10,15 +10,14 @@
       <link rel="stylesheet" type="text/css" href="/styles/site.min.css" />
     {{css}}
     <script src="/scripts/modernizr.js"></script>
+    
+    {{site.pages.index.pages.google-analytics.body}}
+    
   </head>
   <body class="page-{{title|slug}}">
     <nav id="bt-menu" class="bt-menu">
       <a href="#" class="bt-menu-trigger"><span>Menu</span></a>
-      <ul class="page-menu">
-        {% for page in site.pages %}
-          <li><a href="{{page.url}}"{% if page.url == url %} class="is-current-page"{% endif %}>{{page.title}}</a></li>
-        {% endfor %}
-      </ul>
+      {% include 'layouts/nav' %}
       <ul>
           <li><a href="http://www.twitter.com/imkevinglover" class="bt-icon fa fa-twitter">Twitter</a></li>
           <li><a href="https://github.com/kevinglover" class="bt-icon fa fa-github">icon-github</a></li>

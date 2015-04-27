@@ -1,5 +1,10 @@
 <ul class="page-menu">
+  
+  {% assign allowed_pages = 'Index, Blog' %}
+  
   {% for page in site.pages %}
+  {% if allowed_pages contains page.title %}
     <li><a href="{{page.url}}"{% if page.url == url %} class="is-current-page"{% endif %}>{{page.title}}</a></li>
+  {% endif %}
   {% endfor %}
 </ul>
