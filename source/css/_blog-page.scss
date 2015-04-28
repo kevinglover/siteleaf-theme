@@ -189,13 +189,13 @@ button span.date {
   }
   
   .inner>p:last-of-type:not(:first-of-type):after{
-    font-family:Arial, sans-serif;
-    content: '\2b22';
+    content: "■";
     display: inline-block;
     position: relative;
-    top: -3px;
-    left: 2px;
-    font-size: 0.8em;
+    top: 3px;
+    margin-left: 5px;
+    font-size: 2em;
+    line-height: 0;
   }
 }
 
