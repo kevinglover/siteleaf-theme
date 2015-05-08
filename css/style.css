@@ -1616,19 +1616,25 @@ ol {
   margin-bottom: 0.75em;
   padding-left: 1.5em;
 }
-#content ol.circle {
+#content ol.circle,
+.blog .post .content ol {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-#content ol.circle li {
+#content ol.circle li,
+.blog .post .content ol li {
   counter-increment: step-counter;
   margin-bottom: 10px;
+  float: left;
+  width: 100%;
 }
-#content ol.circle li:before {
+#content ol.circle li:before,
+.blog .post .content ol li:before {
   content: counter(step-counter);
   background-color: transparent;
   border-radius: 50%;
+  font-family: "Fira Sans", sans-serif;
   color: #424242;
   border: 1px solid #424242;
   font-size: 70%;
@@ -1636,38 +1642,44 @@ ol {
   padding: 2px 5px;
   height: 2.5em;
   width: 2.5em;
-  display: inline-block;
+  display: block;
+  float: left;
   text-align: center;
 }
-#content ol.fill.circle li:before {
+#content ol.fill.circle li:before,
+.blog .post .content ol.fill li:before {
   color: #ffffff;
   border: 1px solid #424242;
   background-color: #424242;
 }
-#content ul.circle {
+#content ul.circle, .blog .post .content ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-#content ul.circle li {
+#content ul.circle li, .blog .post .content ul li {
   margin-bottom: 10px;
+  float: left;
+  width: 100%;
 }
-#content ul.circle li:before {
+#content ul.circle li:before, .blog .post .content ul li:before {
   content: '';
   background-color: transparent;
   border-radius: 50%;
   color: #424242;
+  font-family: "Fira Sans", sans-serif;
   border: 1px solid #424242;
   margin-right: 14px;
   padding: 4px;
   height: 0.75em;
   width: 0.75em;
-  display: inline-block;
+  display: block;
+  float: left;
   text-align: center;
   position: relative;
-  top: 1px;
+  top: 8px;
 }
-#content ul.fill.circle li:before {
+#content ul.fill.circle li:before, .blog .post .content ul.fill li:before {
   color: #ffffff;
   border: 1px solid #424242;
   background-color: #424242;
@@ -3154,6 +3166,11 @@ button span.date {
   opacity: 0.8;
   font-weight: 500;
 }
+.blog .post .content .inner > p > img {
+  position: absolute;
+  width: 100%;
+  max-width: none;
+}
 .blog .post .content .half {
   padding: 0 0.75em;
   -webkit-box-sizing: border-box;
@@ -3177,10 +3194,10 @@ button span.date {
 }
 
 #blog h2 a {
-  color: #a4b8c2;
+  color: #ffffff;
 }
 #blog h2 a:hover, #blog h2 a:focus {
-  color: #00bfa5;
+  color: #19C2BB;
 }
 
 .page-blog header.peakaboo.header {

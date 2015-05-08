@@ -5,24 +5,24 @@
 
 @mixin container {
   margin: 0 $column;
-  
+
   @include media($medium-2-screen-up) {
     margin: 0 $column*3;
   }
-  
+
   @include media($large-screen-up) {
     margin: 0 $column;
   }
-  
+
   @include media($huge-screen-up) {
     margin: 0 $column*3;
   }
-  
-  @include media($massive-screen-up) { 
+
+  @include media($massive-screen-up) {
     margin: 0 $column*5;
   }
-  
-  @include media($massive-screen-up) { 
+
+  @include media($massive-screen-up) {
     margin: 0 $column*5;
   }
 }
