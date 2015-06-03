@@ -3065,7 +3065,7 @@ button span.date {
   padding-bottom: 8em;
   min-height: 75vh;
 }
-.morph-button-fixed .morph-content > div .content-style-overlay .inner > p:last-of-type:not(:first-of-type):after {
+.morph-button-fixed .morph-content > div .content-style-overlay .content:last-of-type .inner > p:last-of-type:not(:first-of-type):after {
   content: "■";
   display: inline-block;
   position: relative;
@@ -3073,6 +3073,12 @@ button span.date {
   margin-left: 5px;
   font-size: 2em;
   line-height: 0;
+}
+.morph-button-fixed .morph-content > div .content-style-overlay .content ~ p {
+  text-align: center;
+}
+.morph-button-fixed .morph-content > div .content-style-overlay .content ~ p > img {
+  width: 100%;
 }
 
 #blog > header {
@@ -3167,9 +3173,11 @@ button span.date {
   font-weight: 500;
 }
 .blog .post .content .inner > p > img {
-  position: absolute;
   width: 100%;
-  max-width: none;
+}
+.blog .post .content ul {
+  padding: 1em;
+  display: inline-block;
 }
 .blog .post .content .half {
   padding: 0 0.75em;

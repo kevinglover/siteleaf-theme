@@ -188,7 +188,7 @@ button span.date {
     min-height: 75vh;
   }
 
-  .inner>p:last-of-type:not(:first-of-type):after{
+  .content:last-of-type .inner>p:last-of-type:not(:first-of-type):after{
     content: "■";
     display: inline-block;
     position: relative;
@@ -196,6 +196,14 @@ button span.date {
     margin-left: 5px;
     font-size: 2em;
     line-height: 0;
+  }
+
+  .content~p{
+    text-align:center;
+
+    &>img{
+      width:100%;
+    }
   }
 }
 
@@ -313,13 +321,13 @@ button span.date {
     }
 
     .inner>p>img{
-      position: absolute;
       width:100%;
-      max-width:none;
     }
 
     ul{
       @extend %circle-ul;
+      padding: 1em;
+      display: inline-block;
     }
 
     ol{
