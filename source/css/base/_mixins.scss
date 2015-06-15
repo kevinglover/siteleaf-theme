@@ -1,0 +1,74 @@
+// Mixins
+
+@mixin background-color-variant($color){
+  &{
+    button, .morph-content{
+      background-color:$color;
+
+      @if lightness($color) > 70% {
+        color: $lightbg-text;
+      } @else {
+        color: $darkbg-text;
+      }
+    }
+    
+    .morph-content{
+      @if ($color == $yellow-600){
+        color: darken($color, 50%);
+      }
+    }
+    
+    button{
+      &:hover{
+        background-color: lighten($color, 5%);
+      }
+    }
+  }
+
+  &{
+    background-color:$color;
+
+    @if lightness($color) > 70% {
+      color: $lightbg-text;
+    } @else {
+      color: $darkbg-text;
+    }
+  }
+}
+
+@mixin button-color-variant($color){
+  $new_color: adjust-hue($color, 180deg);
+  background-color: $new_color;
+  
+  &:hover, &:focus{
+    background-color: darken($new_color,20%)
+  }
+  
+  @if lightness($new_color) > 70% {
+    color: $lightbg-text;
+    
+    &:hover, &:focus{
+      color: lighten($lightbg-text,20%);
+    }
+  } @else {
+    color: $darkbg-text;
+    
+    &:hover, &:focus{
+      color: lighten($darkbg-text,20%);
+    }
+  }
+}
+
+@mixin material-icon{
+  text-align:center;
+  font-family: "Material-Design-Icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

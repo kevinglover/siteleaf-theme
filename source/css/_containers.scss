@@ -1,0 +1,82 @@
+// Body and Container Styles
+
+body{
+  overflow-x: hidden;
+}
+
+body.scroll-lock{
+  overflow:hidden;
+}
+
+.main{
+  display: block;
+  width:100%;
+}
+
+#footer{
+  display: inline-block;
+  width: 100%;
+}
+
+#masthead, #figures, #summary>.content, #content, #footer .inner{
+  @include container;
+  section {
+    @include wrapper;
+  }
+}
+
+#footer{
+  margin-top: 0;
+  padding-top: 3.5em;
+  padding-bottom: 1em;
+  background-color:#A4B8C2;
+  text-align:right;
+  font-size:0.8em;            
+  
+  .inner{
+    margin: 0 $column;
+  }
+}
+
+.page-blog #footer{
+  background: $teal-A700;
+}
+
+
+#masthead h1{
+  @include site-title;
+}
+
+#content > article.posts{
+  padding:0;
+}
+
+#content > .half{
+  @include wrapper;
+  @include media($medium-2-screen-up){
+    width:50%;
+    float:left;
+  }
+}
+
+p.lead{
+  @include lead;
+}
+
+#content{
+  ul.default {
+    @extend %default-ul;
+  }
+
+  ol.default {
+    @extend %default-ol;
+  }
+  
+  ol.circle {
+    @extend %circle-ol;
+  }
+  
+  ul.circle {
+    @extend %circle-ul;
+  }
+}

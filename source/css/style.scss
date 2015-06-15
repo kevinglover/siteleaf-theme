@@ -1,0 +1,251 @@
+@import "bourbon/bourbon";
+@import "base/grid-settings";
+@import "neat/neat";
+@import "base/base";
+
+@import "base/peakaboo";
+
+$primary-blog-color: $blue-grey-700;
+$paper-color: #f2ede0;
+$accent-color: #262642;
+
+@import "containers";
+
+// Header
+@import "header";
+
+// Home
+
+//Page Menu
+.page-menu{
+  font-family:$heading-font-family;
+}
+
+// Index banner
+$main-color:$white;
+$secondary-color: $blue-grey-700;
+.page-index {
+  header.peakaboo.header .header-title {
+    background:$main-color;
+    color:$accent-color;
+    
+    .logo{
+        overflow:visible;
+        z-index:200;
+        background: #19C2BB;//$secondary-color;
+        
+      &:after {
+          @include media($medium-screen-up){
+            position: absolute;
+            content: '';
+            display: block;
+            width: 25%;
+            top: 10em;
+            height: 65%;
+            z-index: 0;
+            background: color-opacity($lime-200,0.33);
+        }
+        @include media($large-2-screen-up){
+          top: 12em;
+        }
+      }
+    }
+  }
+  header.peakaboo.header.mini .header-title{
+    .logo{
+      &:after{
+        display: none;
+      }
+    }
+  }
+  
+}
+
+// Summary 
+#summary{
+  background: $cyan;
+  float: left;
+  color: $white;
+  padding:5.5em 0 1.5em;
+  width: 100%;
+  
+  section{
+    width: 100%;
+    float: right;
+    
+    @include media($medium-screen-up){
+      width: 75%;
+    }
+  }
+}
+
+//Preamble
+#preamble{
+  @include container;
+  display: inline-block;
+  
+  section, aside{
+    @include wrapper;
+    float:left;
+    position:relative;
+  }
+  
+  aside{
+    font-family:$heading-font-family;
+    border: 2px solid $purple-200;
+    padding-top: 1.75em;
+    padding-bottom: 1.25em;
+    margin-top:0.75em;
+  }
+  
+  @include media($large-screen-up){
+    &{
+      padding:5em 0;
+    }
+    
+    section{
+      width:75%;
+    }
+    
+    aside{
+      margin-top:-5em;
+      border:none;
+      width:25%;
+      padding-top:2em;
+      
+      &:before{
+        content:'';
+        position:absolute;
+        top: 0;
+        left: 0;
+        width:100%;
+        display: block;
+        z-index: -1;
+        height: 200%;
+        background: lighten($purple-200, 25%);
+      }
+    }
+  }
+}
+
+// About
+#about{
+  padding-top: 3em;
+  display:inline-block;
+  
+  @include media($medium-2-screen-up){
+    min-height: 28em;
+    display: table;
+    width:100%;
+  }
+  
+  @include media($massive-screen-up){
+    min-height: 18em;
+  }
+  
+  header, section{
+    @include wrapper;
+    position:relative;
+  }
+  
+  header{
+    width: 100%;
+    background: lighten($primary-blog-color,50%);
+    padding-top:2em;
+    
+    @include media($medium-2-screen-up){
+      width: 25%;
+      padding:0;
+      display: table-cell;
+      
+      h2 {
+        vertical-align: middle;
+        @include transform(rotateZ(-90deg) translate(0%,60%));
+      }
+    }
+  }
+  section{
+    padding-bottom: 7em;
+    margin: 0 5.55555556%;
+    
+    @include media($medium-2-screen-up){
+      width: 75%;
+      margin:0;
+      display: table-cell;
+      padding-left: 1.99em;
+      padding-right: 3.15em;
+    }
+    
+    @include media($large-2-screen-up){
+      padding-left: 2.4em;
+      padding-right: 4.15em;
+    }
+  }
+}
+
+.csstransforms #about header h2{
+  @include media($medium-2-screen-up){
+    white-space: nowrap;
+    position:absolute;
+    top:1em;
+    left:0;
+    text-align: right;
+    text-shadow: -5px 4px 3px rgba(0,0,0,.125),-3px 8px 3px rgba(0,0,0,.1);
+  }
+  @include media($massive-screen-up){
+    top:6em;
+  }
+}
+
+// Blog Styles
+@import "blog-page";
+
+// Block Quote
+blockquote {
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  position: relative;
+  display: inline-block;
+
+  &:before {
+    color: #ccc;
+    content: '\201C';
+    font-size: 8.5em;
+    line-height: 1em;
+    margin-right: .25em;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+  }
+  
+  p {
+    display: inline-block;
+    width:80%;
+    font-size:2.25em;
+    line-height:1;
+    margin-left: 1.5em;
+    
+    cite{
+      width:100%;
+      display:inline-block;
+      margin-left:3em;
+      font-size:1.25rem;
+      opacity:0.66;
+        
+      &:before{
+        content:'\2014';
+      }
+    }
+  }
+}
+
+
+// Footer
+footer.main{
+  margin-top:1.5em;
+  padding:1.5em 0;
+  background-color:$grey-800;
+  color:$grey-100;
+}

@@ -1,0 +1,23 @@
+<div class="morph-button morph-button-overlay morph-button-fixed" data-id="{{post.slug}}">
+  <button type="button">
+    {{post.title}}<br/>
+    
+    {% assign year = site.time | date: '%y' %}
+    {% assign post_year = post.date | date: '%y' %}
+    {% if year != post_year %}
+    <span class="date">{{post.date | date: "%Y %b %d"}}</span>
+    {% else %}
+    <span class="date">{{post.date | date: "%b %d"}}</span>
+    {% endif %}
+    
+   </button>
+  <div class="morph-content">
+    <div>
+      <div class="content-style-overlay">
+        <span class="icon icon-close">Close the overlay</span>
+        <article class='page current'><!--other HTML --></article>
+        <article class='page next'><!--other HTML --></article>
+      </div>
+    </div>
+  </div>
+</div><!-- morph-button -->

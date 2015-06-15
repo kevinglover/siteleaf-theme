@@ -1,0 +1,66 @@
+{% capture section_title %}
+  <span class="card"><span>{{site.pages.index.meta['title']}}</span></span>
+{% endcapture %}
+
+{% capture header_meta %}
+  data-page="main" data-top="true"
+{% endcapture %}
+
+
+{% capture content %}
+  <section id="summary">
+    <div class="content">
+      <section>
+        {{ site.pages.index.posts.summary }}
+      </section>
+    </div>
+  </section>
+  
+  <article id="preamble">
+    <section>
+      {{ site.pages.index.posts.preamble }}
+    </section>
+    <aside>
+      {{ site.pages.index.posts.sidebar }}
+    </aside>
+  </article>
+  
+  <article id="about">
+    <header>
+      <h2>{{site.pages.index.posts.about.meta['alt-title']}}</h2>
+    </header>
+    <section>
+      {{ site.pages.index.posts.about }}
+    </section>
+  </article>
+  
+  <a class="btn-close hide" title="Close"><span></span></a>
+  
+  <article id="blog" class="blog">
+    <header>
+      <div class="inner">
+        <h2><a href="{{site.pages.blog.url}}">Blog<span class="mdi-navigation-arrow-forward"></span></a></h2>
+        <p>Latest on my mind.</p>
+      </div>
+    </header>
+    <ol class="posts">
+      {% for post in site.pages.blog.posts limit:4 %}
+        {% if forloop.index == 2 %}
+          {% assign className = 'red' %}
+        
+        {% elsif forloop.index == 3 %}
+          {% assign className = 'cyan' %}
+        
+        {% else %}
+          {% assign className = 'blue-grey-700' %}
+        {% endif %}
+        
+        <li class="post {{className}}">
+          {% include 'layouts/_snippets/homepage-post' %}
+        </li>
+      {% endfor %} 
+    </ol>
+  </article>
+{% endcapture %}
+
+{% include 'layouts/default' %}
