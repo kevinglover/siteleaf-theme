@@ -2461,7 +2461,6 @@ header.peakaboo.header:not(.mini) {
 }
 .page-index header.peakaboo.header:not(.mini) span.card {
   color: #262642;
-  font-size: 80%;
 }
 @media screen and (min-width: 40em) {
   .page-index header.peakaboo.header:not(.mini) .section-title {
@@ -2513,7 +2512,7 @@ header.peakaboo.header .header-title .section-title {
   }
 }
 header.peakaboo.header .header-title .logo {
-  width: 50%;
+  width: 33%;
   height: 10em;
   background: #2f2f2f;
   overflow: hidden;
@@ -2587,13 +2586,29 @@ header.peakaboo.header.mini .header-title .logo img {
 }
 
 .page-index header.peakaboo.header .header-title {
-  background: #ffffff;
+  background: #faf7f2;
   color: #262642;
 }
 .page-index header.peakaboo.header .header-title .logo {
   overflow: visible;
   z-index: 200;
-  background: #19C2BB;
+  background: rgba(230, 238, 156, 0.15);
+}
+.page-index header.peakaboo.header .header-title .logo img {
+  max-width: 80px;
+  -webkit-transition: width 0.5s ease;
+  -moz-transition: width 0.5s ease;
+  transition: width 0.5s ease;
+}
+@media screen and (min-width: 40em) {
+  .page-index header.peakaboo.header .header-title .logo {
+    border-bottom: 2.8em solid #4CCCC0;
+  }
+}
+@media screen and (min-width: 40em) and (min-width: 61.5em) {
+  .page-index header.peakaboo.header .header-title .logo img {
+    max-width: 100px;
+  }
 }
 @media screen and (min-width: 40em) {
   .page-index header.peakaboo.header .header-title .logo:after {
@@ -2601,16 +2616,21 @@ header.peakaboo.header.mini .header-title .logo img {
     content: '';
     display: block;
     width: 25%;
+    margin-left: -1px;
     top: 10em;
     height: 65%;
     z-index: 0;
     background: rgba(230, 238, 156, 0.33);
   }
 }
-@media screen and (min-width: 61.5em) {
+@media screen and (min-width: 40em) and (min-width: 61.5em) {
   .page-index header.peakaboo.header .header-title .logo:after {
     top: 12em;
   }
+}
+
+.page-index header.peakaboo.header.mini .header-title .logo {
+  border-bottom: none;
 }
 .page-index header.peakaboo.header.mini .header-title .logo:after {
   display: none;
@@ -3212,7 +3232,7 @@ button span.date {
   background: #f2ede0;
 }
 .page-blog header.peakaboo.header .header-title .logo {
-  background: #00bfa5;
+  background: #F9F7F1;
 }
 .page-blog header.peakaboo.header .header-title .section-title {
   color: #424242;
@@ -7264,7 +7284,16 @@ header.peakaboo.header.blog-post:not(.mini) .header-title .logo {
   background-color: #ffffff;
 }
 
+.blog-post + .current .post {
+  height: auto;
+  padding-bottom: 1em;
+}
+
 /* @end */
+.text-center {
+  text-align: center;
+}
+
 blockquote {
   border-left: 10px solid #ccc;
   margin: 1.5em 10px;
@@ -7306,6 +7335,28 @@ footer.main {
   padding: 1.5em 0;
   background-color: #424242;
   color: #f5f5f5;
+}
+
+.page-404-page-not-found article section {
+  text-align: center;
+  color: #a1a1a1;
+}
+.page-404-page-not-found .error-code,
+.page-404-page-not-found .error-message {
+  width: 100%;
+  display: inline-block;
+  color: white;
+}
+.page-404-page-not-found .error-code {
+  font-size: 4em;
+  margin-top: 55px;
+}
+.page-404-page-not-found .error-message {
+  font-weight: 300;
+}
+.page-404-page-not-found #footer {
+  background: none;
+  color: #ddd;
 }
 
 /*# sourceMappingURL=style.css.map */

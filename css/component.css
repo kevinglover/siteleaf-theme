@@ -53,7 +53,7 @@
   display: inline-block;
   width: 40px;
   height: 0.4rem;
-  background: #ecf0f1;
+  background: #00BCD4;
   border-radius: 0;
   transition: 0.3s;
   position: relative;
@@ -65,7 +65,7 @@
   display: inline-block;
   width: 40px;
   height: 0.4rem;
-  background: #ecf0f1;
+  background: #65DBF4;
   border-radius: 0;
   transition: 0.3s;
   position: absolute;
@@ -208,17 +208,17 @@
   transform: scale(0);
 }
 
-.bt-menu.bt-menu-open ul:nth-of-type(2) li:first-child { 
+.bt-menu.bt-menu-open ul:nth-of-type(2) li:first-child {
   -webkit-transition-delay: 0.1s;
   transition-delay: 0.1s;
 }
 
-.bt-menu.bt-menu-open ul:nth-of-type(2) li:nth-child(2) { 
+.bt-menu.bt-menu-open ul:nth-of-type(2) li:nth-child(2) {
   -webkit-transition-delay: 0.2s;
   transition-delay: 0.2s;
 }
 
-.bt-menu.bt-menu-open ul:nth-of-type(2) li:nth-child(3) { 
+.bt-menu.bt-menu-open ul:nth-of-type(2) li:nth-child(3) {
   -webkit-transition-delay: 0.3s;
   transition-delay: 0.3s;
 }
@@ -269,10 +269,13 @@
 }
 
 .bt-menu ul:first-of-type li a:hover,
-.bt-menu ul:first-of-type li a:focus,
+.bt-menu ul:first-of-type li a:focus{
+  color: #FD5695;
+}
+
 .bt-menu ul li a:hover:before,
 .bt-menu ul li a:focus:before {
-  color: #1abc9c;
+  color: #FFDF3F;
 }
 
 .content-style-overlay {
@@ -433,7 +436,7 @@
 .morph-button-overlay.open .morph-content,
 .morph-button-sidebar.open .morph-content {
   -webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
-  transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;	
+  transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
 }
 
 /* Morph Button Style: Overlay */

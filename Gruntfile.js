@@ -1,9 +1,9 @@
 module.exports = function(grunt) {
-  
+
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    
+
     copy: {
       main: {
         files: [
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         ]
       }
     },
-    
+
     watch: {
       all: {
         options: {
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
         tasks: ['default']
       }
     },
-    
+
     sass: {
       build: {
         options: {
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    
+
     uglify: {
       js: {
         files: { 'scripts/site.min.js': ['js/jquery.min.js','js/easing.js','js/classie.js','js/menu.js','js/material/*.js','js/selectize/*.js','js/nanobar/*.js', 'js/transform.js','js/uiMorphingButton.js','js/site.js'] },
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    
+
     cssmin: {
       options: {
         shorthandCompacting: false,
@@ -63,20 +63,20 @@ module.exports = function(grunt) {
         }
       }
     },
-    
+
     zip: {
       main: {
-        src: ['_layouts/**','blog/*','data/**','fonts/*','styles/*','scripts/*','index.html'],
+        src: ['_layouts/**','blog/*','data/**','fonts/*','styles/*','scripts/*','index.html', '404.html.liquid'],
         dest: 'theme.zip'
       }
     },
-    
+
     nodeunit: {
       all: ['test/*_tests.js']
     }
   });
-  
-  // load all grunt tasks  
+
+  // load all grunt tasks
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-sass');
@@ -85,17 +85,17 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-zip');
 
 
-    
+
   //if you choose to use scss, or any preprocessor, you can add it here
   grunt.registerTask('default', ['sass', 'copy']);
-  
+
   grunt.registerTask('minify', ['sass', 'copy', 'uglify', 'cssmin']);
-  
+
   grunt.registerTask('active-watch', ['sass', 'copy', 'uglify', 'cssmin', 'watch']);
-  
+
   grunt.registerTask('active-watch-minify', ['sass', 'copy', 'watch']);
-    
+
   //travis CI task
   grunt.registerTask('travis', ['sass', 'copy', 'uglify', 'cssmin', 'watch', 'zip', 'nodeunit']);
-  
+
 };

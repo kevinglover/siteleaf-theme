@@ -1,0 +1,23 @@
+{% capture section_title %}
+  Page not Found
+{% endcapture %}
+
+{% capture header_meta %}
+  data-page="main" data-top="true"
+{% endcapture %}
+
+{% capture title %}
+  <span class="error-code">404</span>
+  <span class="error-message">Page not found.</span>
+{% endcapture %}
+
+{% capture body %}
+  <p>The page you are looking for is not here... or never existed.</p>
+  <p><a href="{{site.pages.index.url}}">Go to the front page <span class="fa fa-long-arrow-right"></span></a></p>
+{% endcapture %}
+
+{% capture content %}
+
+{% endcapture %}
+
+{% include 'layouts/404' %}
