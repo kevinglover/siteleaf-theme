@@ -1,14 +1,14 @@
 // Asset Colors
 
 .blog{
-  
+
   .posts{
     background-color:$paper-color;
   }
   // Material background shades
   .post, header{
     @include background-color-variant($grey-400);
-    
+
     //red
     &.red {
         @include background-color-variant($red)
@@ -40,7 +40,19 @@
     &.red-900 {
         @include background-color-variant($red-900);
     }
-    
+    &.red-A100 {
+        @include background-color-variant($red-A100);
+    }
+    &.red-A200 {
+        @include background-color-variant($red-A200);
+    }
+    &.red-A400 {
+        @include background-color-variant($red-A400);
+    }
+    &.red-A700 {
+        @include background-color-variant($red-A700);
+    }
+
     //pink
     &.pink {
         @include background-color-variant($pink);
@@ -72,7 +84,19 @@
     &.pink-900 {
         @include background-color-variant($pink-900);
     }
-    
+    &.pink-A100 {
+        @include background-color-variant($pink-A100);
+    }
+    &.pink-A200 {
+        @include background-color-variant($pink-A200);
+    }
+    &.pink-A400 {
+        @include background-color-variant($pink-A400);
+    }
+    &.pink-A700 {
+        @include background-color-variant($pink-A700);
+    }
+
     //purple
     &.purple {
         @include background-color-variant($purple);
@@ -104,7 +128,19 @@
     &.purple-900 {
         @include background-color-variant($purple-900);
     }
-    
+    &.purple-A100 {
+        @include background-color-variant($purple-A100);
+    }
+    &.purple-A200 {
+        @include background-color-variant($purple-A200);
+    }
+    &.purple-A400 {
+        @include background-color-variant($purple-A400);
+    }
+    &.purple-A700 {
+        @include background-color-variant($purple-A700);
+    }
+
     //deep purple
     &.deep-purple {
         @include background-color-variant($deep-purple);
@@ -136,7 +172,19 @@
     &.deep-purple-900 {
         @include background-color-variant($deep-purple-900);
     }
-    
+    &.deep-purple-A100 {
+        @include background-color-variant($deep-purple-A100);
+    }
+    &.deep-purple-A200 {
+        @include background-color-variant($deep-purple-A200);
+    }
+    &.deep-purple-A400 {
+        @include background-color-variant($deep-purple-A400);
+    }
+    &.deep-purple-A700 {
+        @include background-color-variant($deep-purple-A700);
+    }
+
     &.indigo {
         @include background-color-variant($indigo);
     }
@@ -167,7 +215,19 @@
     &.indigo-900 {
         @include background-color-variant($indigo-900);
     }
-    
+    &.indigo-A100 {
+        @include background-color-variant($indigo-A100);
+    }
+    &.indigo-A200 {
+        @include background-color-variant($indigo-A200);
+    }
+    &.indigo-A400 {
+        @include background-color-variant($indigo-A400);
+    }
+    &.indigo-A700 {
+        @include background-color-variant($indigo-A700);
+    }
+
     //light blue
     &.light-blue {
         @include background-color-variant($light-blue);
@@ -199,7 +259,19 @@
     &.light-blue-900 {
         @include background-color-variant($light-blue-900);
     }
-    
+    &.light-blue-A100 {
+        @include background-color-variant($light-blue-A100);
+    }
+    &.light-blue-A200 {
+        @include background-color-variant($light-blue-A200);
+    }
+    &.light-blue-A400 {
+        @include background-color-variant($light-blue-A400);
+    }
+    &.light-blue-A700 {
+        @include background-color-variant($light-blue-A700);
+    }
+
     //blue
     &.blue {
         @include background-color-variant($blue-300);
@@ -231,7 +303,19 @@
     &.blue-900 {
         @include background-color-variant($blue-900);
     }
-    
+    &.blue-A100 {
+        @include background-color-variant($blue-A100);
+    }
+    &.blue-A200 {
+        @include background-color-variant($blue-A200);
+    }
+    &.blue-A400 {
+        @include background-color-variant($blue-A400);
+    }
+    &.blue-A700 {
+        @include background-color-variant($blue-A700);
+    }
+
     //green
     &.green {
         @include background-color-variant($green-300);
@@ -263,7 +347,19 @@
     &.green-900 {
         @include background-color-variant($green-900);
     }
-    
+    &.green-A100 {
+        @include background-color-variant($green-A100);
+    }
+    &.green-A200 {
+        @include background-color-variant($green-A200);
+    }
+    &.green-A400 {
+        @include background-color-variant($green-A400);
+    }
+    &.green-A700 {
+        @include background-color-variant($green-A700);
+    }
+
     //cyan
     &.cyan {
         @include background-color-variant($cyan);
@@ -295,7 +391,19 @@
     &.cyan-900 {
         @include background-color-variant($cyan-900);
     }
-    
+    &.cyan-A100 {
+        @include background-color-variant($cyan-A100);
+    }
+    &.cyan-A200 {
+        @include background-color-variant($cyan-A200);
+    }
+    &.cyan-A400 {
+        @include background-color-variant($cyan-A400);
+    }
+    &.cyan-A700 {
+        @include background-color-variant($cyan-A700);
+    }
+
     //teal
     &.teal {
         @include background-color-variant($teal);
@@ -327,7 +435,19 @@
     &.teal-900 {
         @include background-color-variant($teal-900);
     }
-    
+    &.teal-A100 {
+        @include background-color-variant($teal-A100);
+    }
+    &.teal-A200 {
+        @include background-color-variant($teal-A200);
+    }
+    &.teal-A400 {
+        @include background-color-variant($teal-A400);
+    }
+    &.teal-A700 {
+        @include background-color-variant($teal-A700);
+    }
+
     //light green
     &.light-green {
         @include background-color-variant($light-green);
@@ -359,7 +479,19 @@
     &.light-green-900 {
         @include background-color-variant($light-green-900);
     }
-    
+    &.light-green-A100 {
+        @include background-color-variant($light-green-A100);
+    }
+    &.light-green-A200 {
+        @include background-color-variant($light-green-A200);
+    }
+    &.light-green-A400 {
+        @include background-color-variant($light-green-A400);
+    }
+    &.light-green-A700 {
+        @include background-color-variant($light-green-A700);
+    }
+
     //lime
     &.lime {
         @include background-color-variant($lime);
@@ -391,11 +523,23 @@
     &.lime-900 {
         @include background-color-variant($lime-900);
     }
-    
+    &.lime-A100 {
+        @include background-color-variant($lime-A100);
+    }
+    &.lime-A200 {
+        @include background-color-variant($lime-A200);
+    }
+    &.lime-A400 {
+        @include background-color-variant($lime-A400);
+    }
+    &.lime-A700 {
+        @include background-color-variant($lime-A700);
+    }
+
     &.light-yellow {
         @include background-color-variant($yellow-300);
     }
-    
+
     //yellow
     &.yellow {
         @include background-color-variant($yellow-600);
@@ -427,7 +571,19 @@
     &.yellow-900 {
         @include background-color-variant($yellow-900);
     }
-    
+    &.yellow-A100 {
+        @include background-color-variant($yellow-A100);
+    }
+    &.yellow-A200 {
+        @include background-color-variant($yellow-A200);
+    }
+    &.yellow-A400 {
+        @include background-color-variant($yellow-A400);
+    }
+    &.yellow-A700 {
+        @include background-color-variant($yellow-A700);
+    }
+
     //amber
     &.amber {
         @include background-color-variant($amber);
@@ -459,7 +615,19 @@
     &.amber-900 {
         @include background-color-variant($amber-900);
     }
-    
+    &.amber-A100 {
+        @include background-color-variant($amber-A100);
+    }
+    &.amber-A200 {
+        @include background-color-variant($amber-A200);
+    }
+    &.amber-A400 {
+        @include background-color-variant($amber-A400);
+    }
+    &.amber-A700 {
+        @include background-color-variant($amber-A700);
+    }
+
     //orange
     &.orange {
         @include background-color-variant($orange);
@@ -494,7 +662,19 @@
     &.orange-900 {
         @include background-color-variant($orange-900);
     }
-    
+    &.orange-A100 {
+        @include background-color-variant($orange-A100);
+    }
+    &.orange-A200 {
+        @include background-color-variant($orange-A200);
+    }
+    &.orange-A400 {
+        @include background-color-variant($orange-A400);
+    }
+    &.orange-A700 {
+        @include background-color-variant($orange-A700);
+    }
+
     //deep orange
     &.deep-orange {
         @include background-color-variant($deep-orange);
@@ -526,7 +706,19 @@
     &.deep-orange-900 {
         @include background-color-variant($deep-orange-900);
     }
-    
+    &.deep-orange-A100 {
+        @include background-color-variant($deep-orange-A100);
+    }
+    &.deep-orange-A200 {
+        @include background-color-variant($deep-orange-A200);
+    }
+    &.deep-orange-A400 {
+        @include background-color-variant($deep-orange-A400);
+    }
+    &.deep-orange-A700 {
+        @include background-color-variant($deep-orange-A700);
+    }
+
     //grey
     &.grey {
         @include background-color-variant($grey);
@@ -558,7 +750,19 @@
     &.grey-900 {
         @include background-color-variant($grey-900);
     }
-    
+    &.grey-A100 {
+        @include background-color-variant($grey-A100);
+    }
+    &.grey-A200 {
+        @include background-color-variant($grey-A200);
+    }
+    &.grey-A400 {
+        @include background-color-variant($grey-A400);
+    }
+    &.grey-A700 {
+        @include background-color-variant($grey-A700);
+    }
+
     //blue-grey
     &.blue-grey {
         @include background-color-variant($blue-grey);
@@ -590,7 +794,19 @@
     &.blue-grey-900 {
         @include background-color-variant($blue-grey-900);
     }
-    
+    &.blue-grey-A100 {
+        @include background-color-variant($blue-grey-A100);
+    }
+    &.blue-grey-A200 {
+        @include background-color-variant($blue-grey-A200);
+    }
+    &.blue-grey-A400 {
+        @include background-color-variant($blue-grey-A400);
+    }
+    &.blue-grey-A700 {
+        @include background-color-variant($blue-grey-A700);
+    }
+
     //brown
     &.brown {
         @include background-color-variant($brown);
@@ -622,7 +838,19 @@
     &.brown-900 {
         @include background-color-variant($brown-900);
     }
-    
+    &.brown-A100 {
+        @include background-color-variant($brown-A100);
+    }
+    &.brown-A200 {
+        @include background-color-variant($brown-A200);
+    }
+    &.brown-A400 {
+        @include background-color-variant($brown-A400);
+    }
+    &.brown-A700 {
+        @include background-color-variant($brown-A700);
+    }
+
     &.light-grey {
         @include background-color-variant($light-grey);
     }
