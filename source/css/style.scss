@@ -26,53 +26,73 @@ $main-color:$white;
 $secondary-color: $blue-grey-700;
 .page-index {
   header.peakaboo.header .header-title {
-    background:$main-color;
+    background:lighten($paper-color,5%);
     color:$accent-color;
-    
+
     .logo{
         overflow:visible;
         z-index:200;
-        background: #19C2BB;//$secondary-color;
-        
-      &:after {
-          @include media($medium-screen-up){
-            position: absolute;
-            content: '';
-            display: block;
-            width: 25%;
-            top: 10em;
-            height: 65%;
-            z-index: 0;
-            background: color-opacity($lime-200,0.33);
+        background: color-opacity($lime-200,0.15);//$secondary-color;
+
+        img{
+          max-width:80px;
+          @include transition(width 0.5s ease);
         }
-        @include media($large-2-screen-up){
-          top: 12em;
+
+      @include media($medium-screen-up){
+        & {
+          border-bottom: 2.8em solid #4CCCC0;
+
+          img{
+              @include media($large-2-screen-up){
+              max-width:100px;
+            }
+          }
+        }
+
+        &:after {
+          position: absolute;
+          content: '';
+          display: block;
+          width: 25%;
+          margin-left: -1px;
+          top: 10em;
+          height: 65%;
+          z-index: 0;
+          background: color-opacity($lime-200,0.33);
+
+          @include media($large-2-screen-up){
+            top: 12em;
+          }
         }
       }
     }
   }
   header.peakaboo.header.mini .header-title{
     .logo{
+
+      border-bottom:none;
+
       &:after{
         display: none;
       }
     }
   }
-  
+
 }
 
-// Summary 
+// Summary
 #summary{
   background: $cyan;
   float: left;
   color: $white;
   padding:5.5em 0 1.5em;
   width: 100%;
-  
+
   section{
     width: 100%;
     float: right;
-    
+
     @include media($medium-screen-up){
       width: 75%;
     }
@@ -83,13 +103,13 @@ $secondary-color: $blue-grey-700;
 #preamble{
   @include container;
   display: inline-block;
-  
+
   section, aside{
     @include wrapper;
     float:left;
     position:relative;
   }
-  
+
   aside{
     font-family:$heading-font-family;
     border: 2px solid $purple-200;
@@ -97,22 +117,22 @@ $secondary-color: $blue-grey-700;
     padding-bottom: 1.25em;
     margin-top:0.75em;
   }
-  
+
   @include media($large-screen-up){
     &{
       padding:5em 0;
     }
-    
+
     section{
       width:75%;
     }
-    
+
     aside{
       margin-top:-5em;
       border:none;
       width:25%;
       padding-top:2em;
-      
+
       &:before{
         content:'';
         position:absolute;
@@ -132,32 +152,32 @@ $secondary-color: $blue-grey-700;
 #about{
   padding-top: 3em;
   display:inline-block;
-  
+
   @include media($medium-2-screen-up){
     min-height: 28em;
     display: table;
     width:100%;
   }
-  
+
   @include media($massive-screen-up){
     min-height: 18em;
   }
-  
+
   header, section{
     @include wrapper;
     position:relative;
   }
-  
+
   header{
     width: 100%;
     background: lighten($primary-blog-color,50%);
     padding-top:2em;
-    
+
     @include media($medium-2-screen-up){
       width: 25%;
       padding:0;
       display: table-cell;
-      
+
       h2 {
         vertical-align: middle;
         @include transform(rotateZ(-90deg) translate(0%,60%));
@@ -167,7 +187,7 @@ $secondary-color: $blue-grey-700;
   section{
     padding-bottom: 7em;
     margin: 0 5.55555556%;
-    
+
     @include media($medium-2-screen-up){
       width: 75%;
       margin:0;
@@ -175,7 +195,7 @@ $secondary-color: $blue-grey-700;
       padding-left: 1.99em;
       padding-right: 3.15em;
     }
-    
+
     @include media($large-2-screen-up){
       padding-left: 2.4em;
       padding-right: 4.15em;
@@ -200,6 +220,11 @@ $secondary-color: $blue-grey-700;
 // Blog Styles
 @import "blog-page";
 
+// Text Center
+.text-center{
+  text-align: center;
+}
+
 // Block Quote
 blockquote {
   border-left: 10px solid #ccc;
@@ -219,21 +244,21 @@ blockquote {
     position: absolute;
     top: 0;
   }
-  
+
   p {
     display: inline-block;
     width:80%;
     font-size:2.25em;
     line-height:1;
     margin-left: 1.5em;
-    
+
     cite{
       width:100%;
       display:inline-block;
       margin-left:3em;
       font-size:1.25rem;
       opacity:0.66;
-        
+
       &:before{
         content:'\2014';
       }
@@ -249,3 +274,6 @@ footer.main{
   background-color:$grey-800;
   color:$grey-100;
 }
+
+// 404 Page
+@import "404";

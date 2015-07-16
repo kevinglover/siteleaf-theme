@@ -6,15 +6,15 @@ $header-height:10em;
 $index-header-height:10em;
 
 header{
-  h1 a{ 
-    
+  h1 a{
+
     img{
       height: 1em;
       display: inline-block;
       opacity: 0.8;
       padding-top: 12px;
     }
-    
+
     &:hover{
       img{
         opacity: 1;
@@ -28,29 +28,28 @@ header.peakaboo.header{
   padding-top:0;
   // overflow: hidden;
   background:$accent-color;
-  
+
   &:not(.mini){
     height: $header-height;
-    
+
     @include media($large-2-screen-up){
       height: $header-height*1.2;
     }
-    
+
     .page-index &{
       $card-color: #FFB938;
       $card-overlap-color: $accent-color;
-      
+
       span.card{
         color:$accent-color;
-        font-size:80%;
       }
-      
+
       @include media($medium-screen-up){
         .section-title {
           border-bottom: 1em solid #00BCD4;
           position: relative;
         }
-        
+
         span.card {
           font-size:100%;
           display: block;
@@ -60,11 +59,11 @@ header.peakaboo.header{
           color:$white;
           left: 0.75em;
           padding: 0.25em 2em 0.25em 1em;
-          
+
           span{
             white-space: nowrap
           }
-          
+
           &:before{
             content: "Hello! I'm";
             color:$card-overlap-color;
@@ -80,7 +79,7 @@ header.peakaboo.header{
           }
         }
       }
-      
+
     }
   }
   .header-title{
@@ -88,38 +87,38 @@ header.peakaboo.header{
     width:100%;
     margin: 0;
     padding:0;
-    
+
     .logo,
     .section-title{
         display:table-cell;
         vertical-align: middle;
-        
+
         @include media($small-screen-up-max){
           font-size: 1.5em;
         }
     }
-    
+
     .logo{
-        width: 50%;
+        width: 33%;
         height: $header-height;
         background: rgb(47, 47, 47);
         overflow:hidden;
         padding-top: 1.25em;
         text-align:center;
         @include transition(background 0.2s);
-        
+
         &:hover, &:focus{
           background: #2F2F2F;
         }
-        
+
         @include media($small-screen-up-max){
           height: 7em;
         }
-        
+
         @include media($medium-screen-up){
           width: 25%;
         }
-        
+
         @include media($large-2-screen-up){
           height: $header-height*1.2;
         }
@@ -128,38 +127,38 @@ header.peakaboo.header{
         padding-left:0.25em;
         padding-right:0.25em;
         padding-top: 0;
-        
+
         @include media($medium-screen-up){
           padding-top: 1em;
         }
     }
   }
-  &.mini{ 
-  
+  &.mini{
+
     .wrapper{
       padding: 0.2em 15px 0;
       margin-left:3.75em;
     }
-    
+
     .header-title{
-      
+
       display:none;
-      
+
       @include media($medium-screen-up){
         display:table;
       }
-      
+
       .section-title,
       .chapter-title{
         padding-top: 0.5em;
         display:inline-block;
       }
-      
+
       .logo{
         height: 2.5em;
         text-align: center;
         position: relative;
-        
+
         img{
           height:100%;
           max-height:100%;

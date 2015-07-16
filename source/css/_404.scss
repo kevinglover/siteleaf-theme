@@ -1,0 +1,28 @@
+.page-404-page-not-found{
+
+  article section {
+    text-align: center;
+    color: rgb(161, 161, 161);
+  }
+
+  .error-code,
+  .error-message{
+    width: 100%;
+    display: inline-block;
+    color: white;
+  }
+
+  .error-code {
+    font-size: 4em;
+    margin-top: 55px;
+  }
+
+  .error-message {
+    font-weight: 300;
+  }
+
+  #footer{
+    background:none;
+    color:#ddd;
+  }
+}

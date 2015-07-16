@@ -371,7 +371,7 @@ button span.date {
     background:$paper-color;
 
     .header-title .logo{
-      background:$teal-A700;
+      background:#F9F7F1;
     }
     .header-title .section-title{
       color:$base-font-color;
@@ -447,5 +447,9 @@ header.peakaboo.header.blog-post{
   }
 }
 
+.blog-post+.current .post{
+  height:auto;
+  padding-bottom: 1em;
+}
 
 /* @end */
