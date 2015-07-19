@@ -1,10 +1,24 @@
 .page-404-page-not-found{
 
-  article section {
-    text-align: center;
-    color: rgb(161, 161, 161);
-  }
+  article {
 
+    & *, footer{
+      pointer-events: none;
+      z-index: 1;
+      position: relative;
+
+      &.link{
+        &, & *{
+          pointer-events:initial;
+        }
+      }
+    }
+
+    section {
+      text-align: center;
+      color: rgb(161, 161, 161);
+    }
+  }
   .error-code,
   .error-message{
     width: 100%;
@@ -24,5 +38,151 @@
   #footer{
     background:none;
     color:#ddd;
+  }
+
+
+
+  .blackbar{
+    position:absolute;
+    float:left;
+    width:100%;
+    height:7px;
+    display:block;
+  }
+
+  header.top{
+    background:#FFF;
+    border-bottom:thin #CCC solid;
+    box-shadow:0px 2px 5px rgba(0,0,0,.4);
+    width:100%;
+    height:500px;
+    position:relative;
+    margin-bottom:30px;
+    padding-bottom:20px;
+  }
+
+  #draw-wrapper{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 0;
+    overflow:hidden;
+    padding-bottom:20px;
+
+    .draw_canvas{
+      background:#F4F4F4;
+      width:100%;
+      height:100%;
+    }
+  }
+
+   .card_contianer {
+    position: relative;
+    float:left;
+    width:50px;
+    height:50px;
+    }
+
+  .face.back {
+    display: none;
+  }
+
+  .card_contianer {
+    @include perspective(1000);
+
+  }
+  .card {
+    width:100%;
+    height:100%;
+    @include transform-style(preserve-3d);
+    @include transition(all 0.8s ease-out);
+  }
+
+  .zoom_effect{
+    z-index:15;
+  }
+
+  .card_contianer.zoom_effect .card {
+    @include transform(rotateY(180deg));
+    z-index:5;
+    position:absolute;
+  }
+
+  .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    @include backface-visibility(hidden);
+    background:#FFF;
+  }
+
+  .face.back {
+    box-shadow:3px 3px 10px rgba(0,0,0,.4);
+    display: block;
+    @include transform(rotateY(180deg));
+    @include box-sizing(border-box);
+    padding: 10px;
+    color: #666;
+    text-align: left;
+    background-color: #FFF;
+  }
+
+  .face.back p{
+    margin-left:5%;
+  }
+
+  .face.back .openbutton{
+    bottom: 5%;
+    font-size: 1em;
+    left: 65%;
+    position: absolute;
+  }
+
+  .face.back li{
+    font-size:1.2em;
+    border-bottom:#999 thin solid;
+
+  }
+
+  .face h1{
+  padding-top:10px;
+  }
+
+  .face h1, .face p{
+    line-height:1.1em;
+    margin-left:10px;
+  }
+
+  .innerglow {
+  box-shadow:inset 0 0 10px #000000;
+  }
+
+  .controls{
+    list-style:none;
+    position:absolute;
+    z-index:100;
+    right: 0;
+  }
+
+  .controls li{
+    opacity:.8;
+    display: inline-block;
+
+    #print{
+      display: none;
+    }
+    .active{
+      &#draw{
+        @extend .btn-success;
+        color:white;
+      }
+
+      &#mo_to_draw{
+        @extend .btn-success;
+        color:white;
+      }
+    }
   }
 }

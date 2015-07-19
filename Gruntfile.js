@@ -13,7 +13,8 @@ module.exports = function(grunt) {
         { expand: true, cwd: './bower_components/bourbon/app/assets/stylesheets/', src: '**', dest: './source/css/bourbon/'},
         { expand: true, cwd: './bower_components/selectize/dist/js/standalone/', src: '*.min.js', dest: './js/selectize/'},
         { expand: true, cwd: './bower_components/nanobar/', src: '*.min.js', dest: './js/nanobar/'},
-        { expand: true, cwd: './bower_components/modernizr/', src: 'modernizr.js', dest: './js/'}
+        { expand: true, cwd: './bower_components/modernizr/', src: 'modernizr.js', dest: './js/'},
+        { expand: true, cwd: './node_modules/dropcap.js/', src: 'dropcap.min.js', dest: './js/'}
 
         ]
       }
@@ -43,7 +44,7 @@ module.exports = function(grunt) {
 
     uglify: {
       js: {
-        files: { 'scripts/site.min.js': ['js/jquery.min.js','js/easing.js','js/classie.js','js/menu.js','js/material/*.js','js/selectize/*.js','js/nanobar/*.js', 'js/transform.js','js/uiMorphingButton.js','js/site.js'] },
+        files: { 'scripts/site.min.js': ['js/jquery.min.js','js/easing.js','js/classie.js','js/menu.js','js/material/*.js','js/selectize/*.js','js/nanobar/*.js', 'js/transform.js','js/uiMorphingButton.js','js/dropcap.min.js','js/404.js','js/site.js'] },
         options: {
             preserveComments: false,
             sourceMap: true

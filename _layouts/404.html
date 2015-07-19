@@ -26,8 +26,27 @@
       </div>
     </div>
   </section>
+
 </article>
 
+<ul class="controls">
+  <li><a class="btn btn-default btn-fab" id="draw" title="Toggle draw (a)"><span class="mdi-content-create"></span></a></li>
+  <li><a class="btn btn-default btn-fab" id="mo_to_draw" title="Toggle tail (d)"><span class="mdi-content-gesture"></span></a></li>
+  <li><a class="btn btn-danger btn-fab" id="clear" title="Clear"><span class="mdi-action-restore"></span></a></li>
+  <li><a class="btn btn-default btn-fab" id="print"><span class="mdi-action-print"></span></a></li>
+</ul>
+
+<div id="draw-wrapper">
+  <section class="draw_canvas"></section>
+</div>
+
+{% endcapture %}
+
+{% capture additonal_scripts %}
+<script>
+  $.material.init();
+  squareBoxes();
+</script>
 {% endcapture %}
 
 {% include 'layouts/default' %}

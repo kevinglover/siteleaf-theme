@@ -11,13 +11,13 @@
         color: $darkbg-text;
       }
     }
-    
+
     .morph-content{
       @if ($color == $yellow-600){
         color: darken($color, 50%);
       }
     }
-    
+
     button{
       &:hover{
         background-color: lighten($color, 5%);
@@ -33,26 +33,30 @@
     } @else {
       color: $darkbg-text;
     }
+
+    &+section span.dropcap{
+      color:$color;
+    }
   }
 }
 
 @mixin button-color-variant($color){
   $new_color: adjust-hue($color, 180deg);
   background-color: $new_color;
-  
+
   &:hover, &:focus{
     background-color: darken($new_color,20%)
   }
-  
+
   @if lightness($new_color) > 70% {
     color: $lightbg-text;
-    
+
     &:hover, &:focus{
       color: lighten($lightbg-text,20%);
     }
   } @else {
     color: $darkbg-text;
-    
+
     &:hover, &:focus{
       color: lighten($darkbg-text,20%);
     }
