@@ -5,4 +5,4 @@ position: 0
 layout: default
 ---
 
-Hi there
+Hi there!
