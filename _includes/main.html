@@ -1,0 +1,53 @@
+-----
+Title: Main Layout
+-----
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>{{site.title}} | {{title}}</title>
+    <link rel="alternate" type="application/rss+xml" href="{{site.feed_url}}" />
+    <link href='//fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700|Libre+Baskerville' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" type="text/css" href="/styles/site.min.css" />
+    {{css}}
+
+    {{site.pages.index.pages.google-analytics.body}}
+
+  </head>
+  <body class="page-{{title|slug}}">
+    <nav id="bt-menu" class="bt-menu">
+      <a href="#" class="bt-menu-trigger"><span>Menu</span></a>
+      
+      <ul>
+          <li><a href="http://www.twitter.com/imkevinglover" class="bt-icon fa fa-twitter">Twitter</a></li>
+          <li><a href="https://github.com/kevinglover" class="bt-icon fa fa-github">icon-github</a></li>
+        </ul>
+    </nav>
+    <div class="main">
+      <header class="peakaboo header {{header_class}}" {{header_meta}}>
+          <div class="header-title">
+            <a class="logo" href="{{site.pages.index.url}}">
+              <img src="/assets/logo.png"/>
+            </a>
+            <h1 class="section-title">
+              {{section_title}}
+              {% if chapter-title != '' %}
+              {% endif %}
+            </h1>
+          </div>
+      </header>
+      {{content}}
+    </div>
+    <footer id="footer">
+      <div class="inner">
+        <section>
+          <p>{{site.pages.index.pages.footer.body}}</p>
+        </section>
+      </div>
+    </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="/scripts/site.min.js"></script>
+  </body>
+</html>
